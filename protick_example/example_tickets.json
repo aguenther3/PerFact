@@ -1,0 +1,227 @@
+[{
+	"tsticket_author": "__5324c369c503e1dcec932dffe679da44__", /* Autor (id oder Name) */
+	"tsticket_createtime": "2011-07-06 12:19:07.956427+02", /* Erstellzeitpunkt des ersten Tickets */
+	"tsticket_creator": "__3021d703e56e182489700374093f7d85__", /* Ersteller (id oder Name) */
+	"tsticket_custvisible": "t", /* Ist das Ticket für den Kunden sichtbar (t = true, f = false) */
+	"tsticket_due": "\\N", /* Fälligkeitsdatum für Ticket */
+	"tsticket_estimatedhours": "\\N", /* Geschätzte Personenstunden Aufwand */
+	"tsticket_feedbackdue": "\\N", /* Fälligkeitsdatum für Feedback von/an Kunden */
+	"tsticket_id": "499455", /* Primär-ID (numerisch) des Tickets */
+	"tsticket_modtime": "2011-07-06 12:21:29.532422+02", /* Zeitstempel der letzten Änderung */
+	"tsticket_origid": "5377", /* Könnte eine */
+	"tsticket_owner_tsuser_id": "82", /* Ticket-System Benutzer-ID*/
+	"tsticket_qualified_tscategory_id": "\\N", /* Qualifizierte ID der Ticket-Kategorie */
+	"tsticket_reported_tscategory_id": "2", /* Gemeldete Ticket-Kategorie */
+	"tsticket_subject": "Uptimecheck - __e24fb3fe692a793afe1a67f44274e486__ reboot!", /* Titel des Tickets */
+	"tsticket_text": "", /* Inhaltstext, meist leer oder identisch mit dem ersten Timeline-Eintrag*/
+	"tsticket_tspool_id": "\\N", /* ? */
+	"tsticket_tsprio_id": "3", /* Priorität des Tickets (numerisch) */
+	"tsticket_tssubjectmatter_id": "7743", /* Thema-ID */
+	"tsticket_tsticketlc_id": "3", /* ? */
+	/* Array aus Timeline-Einträgen zu dem Ticket, die Bedeutung der Felder ist identisch mit den Feldern von Ticket-Objekten */
+	"tstimeline": [{
+		"tstimeline_author": "__5324c369c503e1dcec932dffe679da44__",
+		"tstimeline_createtime": "2011-07-06 12:19:07.956427+02",
+		"tstimeline_creator": "__3021d703e56e182489700374093f7d85__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "629389",
+		"tstimeline_modtime": "2011-07-06 12:21:29.532422+02",
+		"tstimeline_origid": "5377",
+		"tstimeline_text": "<pre>Uptimecheck - __e24fb3fe692a793afe1a67f44274e486__ reboot!<br/>\\n</pre><pre><br/>\\nLast Syslog Lines:<br/>\\nJul  6 11:10:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8562]: (root) CMD (/usr/sbin/ntpdate __f13a4b567be9ce7c72e49fca1312e064__)<br/>\\nJul  6 11:10:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8560]: (root) __735ab768f704da0f1aedaf1f34547784__ (mailed 65 bytes of output but got status 0x0001#012)<br/>\\nJul  6 11:15:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8593]: (root) CMD (command -__e047261f8276290cf403fdb5ed7ccfb9__ debian-sa1 &amp;gt; /dev/null &amp;amp;&amp;amp; debian-sa1 1 1)<br/>\\nJul  6 11:17:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8607]: (root) CMD (   cd / &amp;amp;&amp;amp; run-parts --report /etc/__678f14a680f2ec85ebe699758485b6d0__.hourly)<br/>\\nJul  6 11:19:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8621]: (root) CMD ( /usr/local/bin/__fc5fc3939f305bb58c8ca2d0bcf58ec5__/reboot.monit)<br/>\\nJul  6 11:20:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8632]: (root) CMD (/usr/sbin/ntpdate __f13a4b567be9ce7c72e49fca1312e064__)<br/>\\nJul  6 11:20:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8630]: (root) __735ab768f704da0f1aedaf1f34547784__ (mailed 65 bytes of output but got status 0x0001#012)<br/>\\nJul  6 11:25:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8663]: (root) CMD (command -__e047261f8276290cf403fdb5ed7ccfb9__ debian-sa1 &amp;gt; /dev/null &amp;amp;&amp;amp; debian-sa1 1 1)<br/>\\nJul  6 11:30:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8727]: (root) CMD (/usr/sbin/ntpdate __f13a4b567be9ce7c72e49fca1312e064__)<br/>\\nJul  6 11:30:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8725]: (root) __735ab768f704da0f1aedaf1f34547784__ (mailed 65 bytes of output but got status 0x0001#012)<br/>\\nJul  6 11:35:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8791]: (root) CMD (command -__e047261f8276290cf403fdb5ed7ccfb9__ debian-sa1 &amp;gt; /dev/null &amp;amp;&amp;amp; debian-sa1 1 1)<br/>\\nJul  6 11:38:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8809]: (root) CMD ( /usr/local/bin/__fc5fc3939f305bb58c8ca2d0bcf58ec5__/reboot.monit)<br/>\\nJul  6 11:40:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8826]: (root) CMD (/usr/sbin/ntpdate __f13a4b567be9ce7c72e49fca1312e064__)<br/>\\nJul  6 11:40:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8824]: (root) __735ab768f704da0f1aedaf1f34547784__ (mailed 65 bytes of output but got status 0x0001#012)<br/>\\nJul  6 11:41:22 __d8fb7de5c5d8c5cb3f7c1800f945b640__ ntpd[4031]: kernel time sync status change 2001<br/>\\nJul  6 11:42:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ avahi-daemon[8333]: Files changed, reloading.<br/>\\nJul  6 11:42:14 __d8fb7de5c5d8c5cb3f7c1800f945b640__ avahi-daemon[8333]: last message repeated 2 times<br/>\\nJul  6 11:42:14 __d8fb7de5c5d8c5cb3f7c1800f945b640__ avahi-daemon[8333]: Got SIGHUP, reloading.<br/>\\nJul  6 11:45:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ __678f14a680f2ec85ebe699758485b6d0__[8869]: (root) CMD (command -__e047261f8276290cf403fdb5ed7ccfb9__ debian-sa1 &amp;gt; /dev/null &amp;amp;&amp;amp; debian-sa1 1 1)<br/>\\nJul  6 11:50:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ kernel: imklog 4.2.0, log source = /proc/kmsg started.<br/>\\nJul  6 11:50:01 __d8fb7de5c5d8c5cb3f7c1800f945b640__ rsyslogd: [origin __13f43df14aa895d563147647df231cf2__=&amp;quot;rsyslogd&amp;quot; swVersion=&amp;quot;4.2.0&amp;quot; x-pid=&amp;quot;687&amp;quot; x-info=&amp;quot;http:www.rsyslog.__2d7a5f0a012c17ec28ee4564264d57a6__&amp;quot;] (re)start<br/>\\nLast Action:<br/>\\nperfact  pts/0        __ecedee215a1671e8ea6bede5ac8704f1__.__df8ddd5f7df9408a824f544337d97718__. Wed Jul  6 12:13   still logged in<br/>\\nperfact  pts/4        pluto.__df8ddd5f7df9408a824f544337d97718__.__cc823c089ff51f36e97ad12aaa5b79e8__ Wed Jul  6 12:05   still logged in<br/>\\nperfact  pts/3        __ecedee215a1671e8ea6bede5ac8704f1__.__df8ddd5f7df9408a824f544337d97718__. Wed Jul  6 12:05   still logged in<br/>\\nperfact  pts/0        __ecedee215a1671e8ea6bede5ac8704f1__.__df8ddd5f7df9408a824f544337d97718__. Wed Jul  6 11:56 - 12:11  (00:15)<br/>\\nperfact  pts/0        __ecedee215a1671e8ea6bede5ac8704f1__.__df8ddd5f7df9408a824f544337d97718__. Wed Jul  6 11:55 - 11:56  (00:01)<br/>\\nperfact  pts/0        __ecedee215a1671e8ea6bede5ac8704f1__.__df8ddd5f7df9408a824f544337d97718__. Wed Jul  6 11:54 - 11:54  (00:00)<br/>\\nperfact  pts/0        __ecedee215a1671e8ea6bede5ac8704f1__.__df8ddd5f7df9408a824f544337d97718__. Wed Jul  6 11:54 - 11:54  (00:00)<br/>\\nperfact  pts/0        __ecedee215a1671e8ea6bede5ac8704f1__.__df8ddd5f7df9408a824f544337d97718__. Wed Jul  6 11:54 - 11:54  (00:00)<br/>\\nperfact  pts/0        __ecedee215a1671e8ea6bede5ac8704f1__.__df8ddd5f7df9408a824f544337d97718__. Wed Jul  6 11:53 - 11:54  (00:00)<br/>\\nperfact  pts/2        pluto.__df8ddd5f7df9408a824f544337d97718__.__cc823c089ff51f36e97ad12aaa5b79e8__ Wed Jul  6 11:52   still logged in<br/>\\n</pre>",
+		"tstimeline_tsticket_id": "499455"
+	}]
+},
+{
+	"tsticket_author": "__b31ace393777016884af1fab3cb59acf__",
+	"tsticket_createtime": "2011-01-31 16:15:33.114971+01",
+	"tsticket_creator": "__e56fac703735dbdc5a93d49850a5016a__",
+	"tsticket_custvisible": "t",
+	"tsticket_due": "\\N",
+	"tsticket_estimatedhours": "\\N",
+	"tsticket_feedbackdue": "\\N",
+	"tsticket_id": "502190",
+	"tsticket_modtime": "2011-01-31 20:57:06.902232+01",
+	"tsticket_origid": "3288",
+	"tsticket_owner_tsuser_id": "72",
+	"tsticket_qualified_tscategory_id": "\\N",
+	"tsticket_reported_tscategory_id": "28",
+	"tsticket_subject": "Testticket",
+	"tsticket_text": "",
+	"tsticket_tspool_id": "\\N",
+	"tsticket_tsprio_id": "3",
+	"tsticket_tssubjectmatter_id": "7911",
+	"tsticket_tsticketlc_id": "3",
+	"tstimeline": [{
+		"tstimeline_author": "__b31ace393777016884af1fab3cb59acf__",
+		"tstimeline_createtime": "2011-01-31 16:15:33.114971+01",
+		"tstimeline_creator": "__e56fac703735dbdc5a93d49850a5016a__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "632124",
+		"tstimeline_modtime": "2011-01-31 20:57:06.902232+01",
+		"tstimeline_origid": "3288",
+		"tstimeline_text": "<__93861dcecbb31fbdb04e58cf443384a4__>Testticket<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__>",
+		"tstimeline_tsticket_id": "502190"
+	}]
+},
+{
+	"tsticket_author": "__fcb6f1c01318c327d649c368e1ec2e5b__",
+	"tsticket_createtime": "2013-10-09 09:15:12.307973+02",
+	"tsticket_creator": "__fcb6f1c01318c327d649c368e1ec2e5b__",
+	"tsticket_custvisible": "t",
+	"tsticket_due": "\\N",
+	"tsticket_estimatedhours": "\\N",
+	"tsticket_feedbackdue": "\\N",
+	"tsticket_id": "516967",
+	"tsticket_modtime": "2013-10-09 09:15:12.307973+02",
+	"tsticket_origid": "24680",
+	"tsticket_owner_tsuser_id": "84",
+	"tsticket_qualified_tscategory_id": "\\N",
+	"tsticket_reported_tscategory_id": "5",
+	"tsticket_subject": "Verschärfte Prüfung bei Zertifikatsanmeldung**\\n\\nBei der Anmeldung per Zertifikat wird zusätzlich zu ",
+	"tsticket_text": "",
+	"tsticket_tspool_id": "\\N",
+	"tsticket_tsprio_id": "3",
+	"tsticket_tssubjectmatter_id": "7897",
+	"tsticket_tsticketlc_id": "3",
+	"tstimeline": [{
+		"tstimeline_author": "__fcb6f1c01318c327d649c368e1ec2e5b__",
+		"tstimeline_createtime": "2013-10-09 09:15:12.307973+02",
+		"tstimeline_creator": "__fcb6f1c01318c327d649c368e1ec2e5b__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "646901",
+		"tstimeline_modtime": "2013-10-09 09:15:12.307973+02",
+		"tstimeline_origid": "24680",
+		"tstimeline_text": "<__93861dcecbb31fbdb04e58cf443384a4__><__64e0138a05e89db498f91b40e1a12a70__>Verschärfte Prüfung bei Zertifikatsanmeldung</__64e0138a05e89db498f91b40e1a12a70__><br/>\\nBei der Anmeldung per Zertifikat wird zusätzlich zu den bisherigen Prüfungen die exakte Zertifikatsstruktur überprüft und in appuser_certmd5 gespeichert.<br/>\\nDiese Signatur wird beim ersten Anmelden mit Zertifikat geschrieben und ab dann nicht mehr verändert, sondern nur noch geprüft.<br/>\\nBei Zertifikatswechsel / Verlängerung muss daher die MD5-Summe gelöscht werden.<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__>",
+		"tstimeline_tsticket_id": "516967"
+	}]
+},
+{
+	"tsticket_author": "__92f0680278d44d2c420b884ba14b476c__",
+	"tsticket_createtime": "2014-04-07 08:04:55.904179+02",
+	"tsticket_creator": "__fcb6f1c01318c327d649c368e1ec2e5b__",
+	"tsticket_custvisible": "t",
+	"tsticket_due": "\\N",
+	"tsticket_estimatedhours": "\\N",
+	"tsticket_feedbackdue": "\\N",
+	"tsticket_id": "521735",
+	"tsticket_modtime": "2014-05-30 17:57:05.263148+02",
+	"tsticket_origid": "33744",
+	"tsticket_owner_tsuser_id": "89",
+	"tsticket_qualified_tscategory_id": "\\N",
+	"tsticket_reported_tscategory_id": "25",
+	"tsticket_subject": "Online-Zugang umstellen. Momentan hängt der Internetzugang über __5adfecb8455ef9374b9be2ec30142d0e__ von der mittleren __71b16169f263b517525fdccec68f8283__-__64e0138a05e89db498f91b40e1a12a70__",
+	"tsticket_text": "<__93861dcecbb31fbdb04e58cf443384a4__><__64e0138a05e89db498f91b40e1a12a70__>Problembeschreibung</__64e0138a05e89db498f91b40e1a12a70__><br/>\\nBei Ausfall einer Internetleitung soll es möglich sein mit einfachen Mitteln den Weiterbetrieb über die andere Leitung sicherzustellen.<br/>\\nDesweiteren soll ein Gast-WLAN eingerichtet werden und der &amp;quot;Internettraffic&amp;quot; (HTTP, __e87833d1b5db40b1b52c6b4cda211ab6__ etc.) über die Leitung mit mehr Bandbreite geleitet werden.<br/>\\n<__64e0138a05e89db498f91b40e1a12a70__>Ursache</__64e0138a05e89db498f91b40e1a12a70__><br/>\\nUmzug von __f13a4b567be9ce7c72e49fca1312e064__ --&amp;gt; __ed5b45376fbd79168296d04c985624d0__/__64e0138a05e89db498f91b40e1a12a70__<br/>\\n<__64e0138a05e89db498f91b40e1a12a70__>Maßnahme</__64e0138a05e89db498f91b40e1a12a70__><br/>\\n- Reorganisation der Verkabelung im Serverraum:<br/>\\nJede __71b16169f263b517525fdccec68f8283__!Box der Internetleitungen wird nun nur noch als eine Art &amp;quot;Modem&amp;quot; verwendet. Die beiden Boxen sind kreuzweise mit den Clusterknoten __ed5b45376fbd79168296d04c985624d0__/__64e0138a05e89db498f91b40e1a12a70__ verbunden, damit bei einem Ausfall keine Verkabelung geändert werden muss. Die bisher &amp;quot;mittlere&amp;quot; als Switch eingesetzte __71b16169f263b517525fdccec68f8283__!Box entfällt und wird nun für das Gast-WLAN verwendet<br/>\\n- Komplette Überarbeitung der __f8e6060c563f9451856cda0e108bd27e___firewall.sh:<br/>\\nHier wurden unter anderem zwei Variablen USE_BOTH_INET_CONNECTIONS und PRIMARY_INET_CONNECTION eingefügt über die sich der Weg füf die Pakete schalten lässt und im Failoverfall über ein &amp;quot;PRIMARY_INET_CONNECTION=EXT_DEV2&amp;quot; und &amp;quot;rcpffirewall restart&amp;quot; der gesamte Traffic über die Unitymedialeitung schieben lässt<br/>\\n- Neuaufbau des Gast-WLAN:<br/>\\nHierfür wird nun eine __71b16169f263b517525fdccec68f8283__!Box verwendet die autark mit einem Ethernetkabel am aktiven __ed5b45376fbd79168296d04c985624d0__/__64e0138a05e89db498f91b40e1a12a70__ Knoten hängt. Im Failoverfall (Clusterschwenk) muss diese händisch umgehängt werden.<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__> ",
+	"tsticket_tspool_id": "\\N",
+	"tsticket_tsprio_id": "3",
+	"tsticket_tssubjectmatter_id": "7924",
+	"tsticket_tsticketlc_id": "3",
+	"tstimeline": [{
+		"tstimeline_author": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_createtime": "2014-04-07 08:04:55.904179+02",
+		"tstimeline_creator": "__fcb6f1c01318c327d649c368e1ec2e5b__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "651669",
+		"tstimeline_modtime": "2014-05-30 17:57:05.263148+02",
+		"tstimeline_origid": "33744",
+		"tstimeline_text": "<__93861dcecbb31fbdb04e58cf443384a4__>Online-Zugang umstellen. Momentan hängt der Internetzugang über __5adfecb8455ef9374b9be2ec30142d0e__ von der mittleren __71b16169f263b517525fdccec68f8283__-Box ab, was nicht optimal für die Verfügbarkeit ist.<br/>\\nZiel ist die Umstellung so, dass Strolch beide Zugänge auch mit einem Hub in der Mitte voll nutzen kann. Der Internetzugang der __71b16169f263b517525fdccec68f8283__-Box soll dann über Strolch geroutet werden.<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__>",
+		"tstimeline_tsticket_id": "521735"
+	},
+	{
+		"tstimeline_author": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_createtime": "2014-05-30 17:57:05.263148+02",
+		"tstimeline_creator": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "700017",
+		"tstimeline_modtime": "2014-05-30 17:57:05.263148+02",
+		"tstimeline_origid": "38979",
+		"tstimeline_text": "<__93861dcecbb31fbdb04e58cf443384a4__><__64e0138a05e89db498f91b40e1a12a70__>Problembeschreibung</__64e0138a05e89db498f91b40e1a12a70__><br/>\\nBei Ausfall einer Internetleitung soll es möglich sein mit einfachen Mitteln den Weiterbetrieb über die andere Leitung sicherzustellen.<br/>\\nDesweiteren soll ein Gast-WLAN eingerichtet werden und der &amp;quot;Internettraffic&amp;quot; (HTTP, __e87833d1b5db40b1b52c6b4cda211ab6__ etc.) über die Leitung mit mehr Bandbreite geleitet werden.<br/>\\n<__64e0138a05e89db498f91b40e1a12a70__>Ursache</__64e0138a05e89db498f91b40e1a12a70__><br/>\\nUmzug von __f13a4b567be9ce7c72e49fca1312e064__ --&amp;gt; __ed5b45376fbd79168296d04c985624d0__/__64e0138a05e89db498f91b40e1a12a70__<br/>\\n<__64e0138a05e89db498f91b40e1a12a70__>Maßnahme</__64e0138a05e89db498f91b40e1a12a70__><br/>\\n- Reorganisation der Verkabelung im Serverraum:<br/>\\nJede __71b16169f263b517525fdccec68f8283__!Box der Internetleitungen wird nun nur noch als eine Art &amp;quot;Modem&amp;quot; verwendet. Die beiden Boxen sind kreuzweise mit den Clusterknoten __ed5b45376fbd79168296d04c985624d0__/__64e0138a05e89db498f91b40e1a12a70__ verbunden, damit bei einem Ausfall keine Verkabelung geändert werden muss. Die bisher &amp;quot;mittlere&amp;quot; als Switch eingesetzte __71b16169f263b517525fdccec68f8283__!Box entfällt und wird nun für das Gast-WLAN verwendet<br/>\\n- Komplette Überarbeitung der __f8e6060c563f9451856cda0e108bd27e___firewall.sh:<br/>\\nHier wurden unter anderem zwei Variablen USE_BOTH_INET_CONNECTIONS und PRIMARY_INET_CONNECTION eingefügt über die sich der Weg füf die Pakete schalten lässt und im Failoverfall über ein &amp;quot;PRIMARY_INET_CONNECTION=EXT_DEV2&amp;quot; und &amp;quot;rcpffirewall restart&amp;quot; der gesamte Traffic über die Unitymedialeitung schieben lässt<br/>\\n- Neuaufbau des Gast-WLAN:<br/>\\nHierfür wird nun eine __71b16169f263b517525fdccec68f8283__!Box verwendet die autark mit einem Ethernetkabel am aktiven __ed5b45376fbd79168296d04c985624d0__/__64e0138a05e89db498f91b40e1a12a70__ Knoten hängt. Im Failoverfall (Clusterschwenk) muss diese händisch umgehängt werden.<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__>",
+		"tstimeline_tsticket_id": "521735"
+	},
+	{
+		"tstimeline_author": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_createtime": "2014-05-30 17:45:35.544038+02",
+		"tstimeline_creator": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "700018",
+		"tstimeline_modtime": "2014-05-30 17:45:35.544038+02",
+		"tstimeline_origid": "38978",
+		"tstimeline_text": "<__93861dcecbb31fbdb04e58cf443384a4__>Durch zwei Variablen in der __f8e6060c563f9451856cda0e108bd27e___firewall.sh kann nun gesteuert werden, welche Internetleitung benutzt wird.<br/>\\nUSE_BOTH_INET_CONNECTIONS kann auf yes/no gesetzt werden und steuert ob Pakete markiert werden (http, __e87833d1b5db40b1b52c6b4cda211ab6__ etc.) um über die Unitymedialeitung mit mehr Bandbreite geschickt zu werden.<br/>\\nPRIMARY_INET_CONNECTION kann auf EXT_DEV/EXT_DEV2 gesetzt werden um jeglichen Traffic über die entsprechend angeschlossene Internetleitung zu leiten. Dies ist vor allem für Failover Situationen (Ausfall der Telekomleitung) interessant.<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__>",
+		"tstimeline_tsticket_id": "521735"
+	},
+	{
+		"tstimeline_author": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_createtime": "2014-05-28 12:59:17.630588+02",
+		"tstimeline_creator": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "700019",
+		"tstimeline_modtime": "2014-05-28 12:59:17.630588+02",
+		"tstimeline_origid": "38913",
+		"tstimeline_text": "<__93861dcecbb31fbdb04e58cf443384a4__>Tätigkeit: Firewallanpassung<br/>\\nServer:<br/>\\nstrolcha/__64e0138a05e89db498f91b40e1a12a70__<br/>\\nZweck:<br/>\\nSpezielle Behandlung von Paketen  für __e87833d1b5db40b1b52c6b4cda211ab6__/HTTP etc. Diese werden markiert und speziell geroutet.<br/>\\nGastlan wird über die Telekomleitung geroutet.<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__>",
+		"tstimeline_tsticket_id": "521735"
+	},
+	{
+		"tstimeline_author": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_createtime": "2014-05-06 16:28:49.009138+02",
+		"tstimeline_creator": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "700020",
+		"tstimeline_modtime": "2014-05-06 16:28:49.009138+02",
+		"tstimeline_origid": "35429",
+		"tstimeline_text": "<__93861dcecbb31fbdb04e58cf443384a4__>Verkabelung der &amp;quot;Modem&amp;quot;-__71b16169f263b517525fdccec68f8283__!Boxen ist erfolgt.<br/>\\nNach einigen Problemen mit MASQUERADing und einer neuen Chain für die externe __5adfecb8455ef9374b9be2ec30142d0e__-Leitung ist es nun möglich den Traffic wieder zu splitten.<br/>\\nDurch setzen einer Variable in der __f8e6060c563f9451856cda0e108bd27e___firewall.sh ist es nun möglich, den kompletten Traffic entweder über die Telekomleitung zu schicken oder einen Teil (http/__e87833d1b5db40b1b52c6b4cda211ab6__) über die Unitymedialeitung zu senden.<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__>",
+		"tstimeline_tsticket_id": "521735"
+	},
+	{
+		"tstimeline_author": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_createtime": "2014-05-02 08:07:30.956466+02",
+		"tstimeline_creator": "__92f0680278d44d2c420b884ba14b476c__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "700021",
+		"tstimeline_modtime": "2014-05-02 08:07:30.956466+02",
+		"tstimeline_origid": "35092",
+		"tstimeline_text": "<__93861dcecbb31fbdb04e58cf443384a4__>Geplantes Ziellayout:<br/>\\n- Direkte Verbindung von __ed5b45376fbd79168296d04c985624d0__/__64e0138a05e89db498f91b40e1a12a70__ zu den __71b16169f263b517525fdccec68f8283__!Boxen<br/>\\n- offizielle IP von __5adfecb8455ef9374b9be2ec30142d0e__ auf neues __92b568de2cd02f9c1677f623a7022ce6__ an __ed5b45376fbd79168296d04c985624d0__/__64e0138a05e89db498f91b40e1a12a70__ umziehen<br/>\\n- Routing anpassen auf __ed5b45376fbd79168296d04c985624d0__/__64e0138a05e89db498f91b40e1a12a70__<br/>\\n- Anpassung der FW auf __ed5b45376fbd79168296d04c985624d0__/__64e0138a05e89db498f91b40e1a12a70__<br/>\\n- dritte __71b16169f263b517525fdccec68f8283__!Box aus der Mitte nur noch als reinen AP für GastWLAN und/oder DECT-Repeater verwenden<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__>",
+		"tstimeline_tsticket_id": "521735"
+	}]
+},
+{
+	"tsticket_author": "__b6cf103ad17ffafc4ae56714c2c8971d__",
+	"tsticket_createtime": "2014-04-07 08:09:54.592596+02",
+	"tsticket_creator": "__b6cf103ad17ffafc4ae56714c2c8971d__",
+	"tsticket_custvisible": "t",
+	"tsticket_due": "\\N",
+	"tsticket_estimatedhours": "\\N",
+	"tsticket_feedbackdue": "\\N",
+	"tsticket_id": "521733",
+	"tsticket_modtime": "2014-04-07 08:56:15.645628+02",
+	"tsticket_origid": "33746",
+	"tsticket_owner_tsuser_id": "73",
+	"tsticket_qualified_tscategory_id": "\\N",
+	"tsticket_reported_tscategory_id": "22",
+	"tsticket_subject": "Antivirenfilter für Postfix scheint noch nicht aktiv zu sein.\\r\\nAuszug aus /var/log/postfix/__735ab768f704da0f1aedaf1f34547784__.log\\r",
+	"tsticket_text": "<__93861dcecbb31fbdb04e58cf443384a4__><__64e0138a05e89db498f91b40e1a12a70__>Problembeschreibung</__64e0138a05e89db498f91b40e1a12a70__><br/>\\nClamav konnte keine Virencheck für Amavis durchführen, da es Berechtigungsprobleme beim Verzeichnis /var/lib/amavis/tmp gibt.<br/>\\n<__64e0138a05e89db498f91b40e1a12a70__>Maßnahme</__64e0138a05e89db498f91b40e1a12a70__><br/>\\nClamav der __7c7a6e6ea6c17beb5b7567285e8d6ac3__ Amavis hinzugefügt.<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__> ",
+	"tsticket_tspool_id": "\\N",
+	"tsticket_tsprio_id": "3",
+	"tsticket_tssubjectmatter_id": "7924",
+	"tsticket_tsticketlc_id": "3",
+	"tstimeline": [{
+		"tstimeline_author": "__b6cf103ad17ffafc4ae56714c2c8971d__",
+		"tstimeline_createtime": "2014-04-07 08:09:54.592596+02",
+		"tstimeline_creator": "__b6cf103ad17ffafc4ae56714c2c8971d__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "651667",
+		"tstimeline_modtime": "2014-04-07 08:56:15.645628+02",
+		"tstimeline_origid": "33746",
+		"tstimeline_text": "<__93861dcecbb31fbdb04e58cf443384a4__>Antivirenfilter für Postfix scheint noch nicht aktiv zu sein.<br/>\\nAuszug aus /var/log/postfix/__735ab768f704da0f1aedaf1f34547784__.log<br/>\\n&amp;quot;Apr  7 08:09:05 __ed5b45376fbd79168296d04c985624d0__ amavis[6790]: (06790-14) (!)run_av (ClamAV-clamd) FAILED - unexpected , output=&amp;quot;/var/lib/amavis/tmp/amavis-20140407__d82636230fa17f3e6480e3a17709f542__075617-06790/parts: lstat() failed: Permission denied. ERROR\\\\__0ab1efc9852ad5bfa7825f13ad9d718c__&amp;quot;<br/>\\nApr  7 08:09:05 __ed5b45376fbd79168296d04c985624d0__ amavis[6790]: (06790-14) (!)ClamAV-clamd av-__e040ee966b5b51f1665e3b46c482aac3__ FAILED: CODE(0x83__81b6f0bcb2e056d02f1cbe9ba402c31a__4afc) unexpected , output=&amp;quot;/var/lib/amavis/tmp/amavis-20140407__d82636230fa17f3e6480e3a17709f542__075617-06790/parts: lstat() failed: Permission denied. ERROR\\\\__0ab1efc9852ad5bfa7825f13ad9d718c__&amp;quot; __48656c2bfeb7a02b91ac1ab6d00ef9c0__ (eval 100) line 596.<br/>\\nApr  7 08:09:05 __ed5b45376fbd79168296d04c985624d0__ amavis[6790]: (06790-14) (!!)WARN: all primary virus scanners failed, considering backups&amp;quot;<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__>",
+		"tstimeline_tsticket_id": "521733"
+	},
+	{
+		"tstimeline_author": "__b6cf103ad17ffafc4ae56714c2c8971d__",
+		"tstimeline_createtime": "2014-04-07 08:56:15.645628+02",
+		"tstimeline_creator": "__b6cf103ad17ffafc4ae56714c2c8971d__",
+		"tstimeline_custvisible": "t",
+		"tstimeline_id": "700023",
+		"tstimeline_modtime": "2014-04-07 08:56:15.645628+02",
+		"tstimeline_origid": "33754",
+		"tstimeline_text": "<__93861dcecbb31fbdb04e58cf443384a4__><__64e0138a05e89db498f91b40e1a12a70__>Problembeschreibung</__64e0138a05e89db498f91b40e1a12a70__><br/>\\nClamav konnte keine Virencheck für Amavis durchführen, da es Berechtigungsprobleme beim Verzeichnis /var/lib/amavis/tmp gibt.<br/>\\n<__64e0138a05e89db498f91b40e1a12a70__>Maßnahme</__64e0138a05e89db498f91b40e1a12a70__><br/>\\nClamav der __7c7a6e6ea6c17beb5b7567285e8d6ac3__ Amavis hinzugefügt.<br/>\\n</__93861dcecbb31fbdb04e58cf443384a4__>",
+		"tstimeline_tsticket_id": "521733"
+	}]
+}]

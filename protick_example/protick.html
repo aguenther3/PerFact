@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ticket API example</title>
+
+    <!-- Bootstrap -->
+  <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+
+  <script src="../bootstrap-3.3.7-dist/jquery/jquery-3.1.1.js"></script>
+  <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+  </head>
+  <body>
+    <h1>Ticket API example</h1>
+
+	<ul id="ticketlist" class="list-group container-fluid col-md-10 col-md-offset-1">
+	</ul>
+	
+	<script type="text/javascript">
+	
+	var ProTick = (function ProTick() {
+		var endpoint = 'https://pfact.markovchain.de/';
+		var modelID = 'testmodel-002';
+		// https://pfact.markovchain.de/content/testmodel-002/499455
+		
+		var noErrorCallback = function noErrorCallback(cb) {
+			return function(data) {
+				cb(null, data);
+			};
+		};
+		
+		// helper function to retrieve ticket text from JSON object
+		this.ticketText = function ticketText(ticketData) {
+			var text = '';
+			
+			if ('tsticket_text' in ticketData) {
+				text = ticketData['tsticket_text'];
+			}
+			if (text === null) { text = ''; }
+			text = text.replace(/^\s+|\ s+$/g, ""); // trim
+			if (text === '' && 'tstimeline' in ticketData) {
+				for (var timelineIdx = 0; timelineIdx < ticketData['tstimeline'].length; timelineIdx++) {
+					text += ticketData['tstimeline'][timelineIdx]['tstimeline_text'];
+					text += ' ';
+				}
+			}
+			
+			text = text.replace(/^\s+|\ s+$/g, "");
+			if ('' === text) { return '[no_text]'; }
+			
+			return text;
+		};
+		
+		this.similar = function similar(ticketData, callback) {
+			console && console.log('Retrieving similar tickets');
+			return $.ajax({
+					type: 'post',
+					url: endpoint + 'service?model=' + modelID,
+					data: JSON.stringify(ticketData),
+					dataType: 'json',
+					headers: {
+						'Content-Type': 'application/json;charset=utf-8'
+					},
+					success: noErrorCallback(callback),
+					failure: callback
+			});
+		};
+		
+		this.getTicket = function getTicket(ticketID, callback) {
+			console && console.log('Retrieving ticket ' + ticketID);
+			return $.ajax({
+					url: endpoint + 'content/' + modelID + '/' + ticketID,
+					dataType: 'json',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					success: noErrorCallback(callback),
+					failure: callback
+				});
+		};
+		
+		return this;
+	})();
+	
+	var executeExample = function executeExample() {
+		console.log('initializing');
+		
+		var apiUsername = 'double';
+		var apiPassword = 'cl2p3qv7Q';
+		
+		// add authentication header to all API requests (for the test endpoint, not necessary if working on localhost)
+		$.ajaxSetup({
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader("Authorization", "Basic " + btoa(apiUsername + ":" + apiPassword));
+			}
+		});
+		
+		// global AJAX error handler
+		$(document).ajaxError(function errHandler(event, xhr, ajaxOptions, thrownError) {
+		  console.log('ajaxError triggered', event, thrownError);
+		});
+		
+		// retrieve data on a single ticket
+		// ProTick.getTicket('499455', function(err, ticketData) {
+		//  if (err) { console.log(err); return; }
+		// 	console.log('ticket', ticketData);
+		// });
+		
+		// retrieve and render a list of example tickets
+		var exampleTickets = ['499455', '502190', '521735', '516967', '521733', '547070'];
+		
+		var $targetList = $('#ticketlist');
+		
+		var renderTicket = function renderTicket(err, ticketData) {
+			if (err) {
+				console.log('error', err);
+				return;
+			}
+			if (!ticketData) { return; }
+			console.log(JSON.stringify(ticketData));
+			// add ticket metadata and timeline to the DOM
+			var $containerItem = $('<li class="list-group-item">');
+			
+			$containerItem.append('<h3>Ticket #' + ticketData['tsticket_id'] + ' &quot;' + ticketData['tsticket_subject'] + '&quot;</h3>');
+			$containerItem.append('<br />');
+			
+			$containerItem.append('<strong>Ticket author: ' + ticketData['tsticket_author'] + ' | created: ' + ticketData['tsticket_createtime'] + '</strong><br />');
+			// $containerItem.append('Ticket text: <div>' + ticketData['tsticket_text'].split('\\n').join('') + '</div>');
+			
+			$targetList.append($containerItem);
+			
+			// render ticket timeline (if available)
+			var $timelineList = $('<ul class="list-group">');
+			$containerItem.append('<h4>Timeline</h4>');
+			$containerItem.append($timelineList);
+			
+			ticketData['tstimeline'].forEach(function(timelineEntry) {
+				var $timelineEntryLI = $('<li class="list-group-item well well-sm">');
+				$timelineEntryLI.html('<strong>Author: ' + timelineEntry['tstimeline_author'] + ' (created: ' + timelineEntry['tstimeline_createtime'] + ')</strong> <div>' + timelineEntry['tstimeline_text'].split('\\n').join('') + '</div>');
+				
+				$timelineList.append($timelineEntryLI);
+				
+			});
+			
+			// retrieve similar tickets
+			
+			ProTick.similar(ticketData, function(sErr, similarTicketList) {
+				if (sErr || !similarTicketList) {
+					console.log('Failed to retrieve similar tickets to ' + ticketData['tsticket_id'], serr);
+					return;
+				}
+				
+				var $similarList = $('<ul>');
+				$containerItem.append('<h4>Similar Tickets</h4>');
+				$containerItem.append($similarList);
+				
+				console.log('similar tickets: ', similarTicketList);
+				
+				similarTicketList.forEach(function(slEntry, ticketIdx) {
+					var slEntry = similarTicketList[ticketIdx];
+					var domID = 'st-' + ticketData['tsticket_id'] + '-' + ticketIdx;
+					
+					// output similar ticket ID and confidence
+					$similarList.append('<li id="' + domID + '">#' + slEntry[0] + ' (' + slEntry[1] + ') <span class="ticket_details"></span></li>');
+					
+					if (ticketIdx < 3) {
+						// load summary info for the top 3 similar tickets
+						ProTick.getTicket(slEntry[0], function(tErr, simTicketData) {
+							if (tErr) { console.log('error', tErr); return; }
+							
+							console.log($('#' + domID + ' > span.ticket_details'), simTicketData);
+							$('#' + domID + ' > span.ticket_details').html('<strong>' + simTicketData['tsticket_subject'] + '</strong> ');
+						});
+					}
+				});
+			});
+			
+			
+		}
+		
+		var retrieveTicket = function retrieveTicket(ticketID) {
+			if (!ticketID) { return; }
+			ProTick.getTicket(ticketID, renderTicket);
+		}
+		
+		exampleTickets.forEach(retrieveTicket);
+	};
+	
+	$(document).ready(executeExample);
+	</script>
+  </body>
+</html>
