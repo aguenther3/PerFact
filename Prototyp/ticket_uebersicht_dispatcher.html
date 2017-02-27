@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+	<script src="bootstrap-3.3.7-dist/jquery/jquery-3.1.1.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<style type="text/css">
+		.table-borderless td,
+.table-borderless th {
+    border: 0;
+}
+	</style>
+</head>
+
+<body>
+
+	<div>
+		<div>
+			<img src="header.png"\>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">
+				<div class="img">
+					<img src="sidebar.png"\>
+				</div>
+			</div>
+			<div class="col-xs-9" style="margin-left: -130px">
+				<div style="margin-top: 20px">
+
+					<!-- Nav-Bar top -->
+					<nav class="navbar navbar-default">
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<p class="navbar-text" style="margin-right: 5px">
+									Ticket
+								</p>
+							</li>
+							<li style="margin-right: 25px">
+								<div class="btn-group" role="group" id="inlineFormCustomSelect">
+									<div class="btn-group" role="group">
+										<button type="button" class="btn btn-default btn-xs navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											T123
+											<span class="caret">
+											</span>
+										</button>
+										<ul class="dropdown-menu">
+											<li>
+												<a href="#">
+													T456
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													T789
+												</a>
+											</li>
+										</ul>
+									</div>
+									<button type="button" class="btn btn-default btn-xs navbar-btn" aria-label="Left Align">
+										<span class="glyphicon glyphicon-search" aria-hidden="true">
+										</span>
+									</button>
+								</div>
+							</li>
+							<li>
+								<a href="">
+									<span class="glyphicon glyphicon-list" aria-hidden="true">
+									</span>
+									<span>
+										Ticketliste
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="glyphicon glyphicon-log-in" aria-hidden="true">
+									</span>
+									<span style="margin-right: 20px">
+										neues Ticket
+									</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+
+					<!-- Ticket -->
+					<div>
+						<div style="margin-top: 20px">
+							<div class="panel panel-default" >
+
+								<!-- Ticket-Head -->
+								<div style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #e5e5e5;">
+									<div class="panel-body" 
+									<!--     style="background-color: #E3E2DE -->
+									">
+									<div class="pull-right" style="margin-bottom:30"> 
+										Status: 
+										<span class="inline" style="font-weight: bold; color: orange">
+											<span id="tsticket_status"></span>
+										</span>
+									</div>
+									<div style="margin-bottom:40px">
+										<h3 id="">
+											#T<span id="tsticket_id">
+											</span>
+											-
+											<span id="tsticket_subject">
+											</span>
+										</h3>
+									</div>
+									<div class="row">
+										<div class="col-xs-7">
+											<b>
+												Ger&auml;t:
+											</b>
+											<span id="tsticket_geraet">
+											</span>
+										</div>
+										<div class="col-xs-5">
+											<div class="pull-right">
+												<div>
+													erstellt
+													<span id="tsticket_createtime">
+													</span>
+													von
+													<span id="tsticket_creator">
+													</span>
+												</div>
+												<div>
+													ge&auml;ndert
+													<span id="tsticket_modtime">
+													</span>
+													von
+													<span id="tsticket_author">
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Ticket-Body -->
+							<div class="panel-body">
+								<ul class="nav nav-tabs nav-justified">
+									<li class="active">
+										<a href="#tab1" data-toggle="tab">
+											<span class="glyphicon glyphicon-credit-card">
+											</span> 
+											&Uuml;bersicht
+										</a>
+									</li>
+									<li>
+										<a href="#tab2" data-toggle="tab">
+											<span class="glyphicon glyphicon-comment">
+											</span> 
+											Chronik
+										</a>
+									</li>
+									<li>
+										<a href="#tab3" data-toggle="tab">
+											<span class="glyphicon glyphicon-bullhorn">
+											</span>
+											Report
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="panel-body">
+								<div class="tab-content">
+
+									<!-- Tab1 -->
+									<div class="panel-body tab-pane active" id="tab1">
+										<div>   
+											<div class="no-wrap-subtext">
+												<h4>
+													<a role="button" data-toggle="collapse" href="#checkPersonalData_content" aria-expanded="true" aria-controls="checkPersonalData_content">
+														<span class=" glyphicon glyphicon-menu-down"> 
+														</span>
+														<span> 
+															Kontakt
+														</span>
+													</a>
+												</h4>
+											</div>
+										</div>
+										<div id="checkPersonalData_content" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkPersonalData_content">
+											<div class="panel panel-default">
+												<section class="panel-body" style="background-color: #F8F8F7">
+													<div class="row">
+														<div class="col-sm-3">
+															<b>Anrede:</b><br>
+															<b>Vorname:</b><br>
+															<b>Nachname:</b><br>
+														</div>
+														<div class="col-sm-9">
+															Herr <br>
+															Max <br>
+															Mustermann <br>
+														</div>
+													</section>
+												</div>
+											</div> 
+											<div>   
+												<div class="no-wrap-subtext">
+													<h4>
+														<a role="button" data-toggle="collapse" href="#checkPersonalData_content1" aria-expanded="true" aria-controls="checkPersonalData_content">
+															<span class=" glyphicon glyphicon-menu-down"> 
+															</span>
+															<span> 
+																Spezifizierung
+															</span>
+														</a>
+													</h4>
+												</div>
+											</div>
+											<div id="checkPersonalData_content1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="checkPersonalData_content">
+												<div class="panel panel-default">
+													<section class="panel-body" style="background-color: #F8F8F7">
+														<div class="row">
+															<div class="col-sm-3">
+															</div>
+															<div class="col-sm-9">
+															</div>
+														</section>
+													</div>
+												</div>
+												<div>   
+													<div class="no-wrap-subtext">
+														<h4>
+															<a role="button" data-toggle="collapse" href="#checkPersonalData_content2" aria-expanded="true" aria-controls="checkPersonalData_content">
+																<span class=" glyphicon glyphicon-menu-down"> 
+																</span>
+																<span> 
+																	Personal
+																</span>
+															</a>
+														</h4>
+													</div>
+												</div>
+												<div id="checkPersonalData_content2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="checkPersonalData_content">
+													<div class="panel panel-default">
+														<section class="panel-body" style="background-color: #F8F8F7">
+															<div class="row">
+																<div class="col-sm-3">
+																</div>
+																<div class="col-sm-9">
+																</div>
+															</section>
+														</div>
+													</div>
+													<div>   
+														<div class="no-wrap-subtext">
+															<h4>
+																<a role="button" data-toggle="collapse" href="#checkPersonalData_content3" aria-expanded="true" aria-controls="checkPersonalData_content">
+																	<span class=" glyphicon glyphicon-menu-down"> 
+																	</span>
+																	<span> 
+																		Verweise
+																	</span>
+																</a>
+															</h4>
+														</div>
+													</div>
+													<div id="checkPersonalData_content3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="checkPersonalData_content">
+														<div class="panel panel-default">
+															<section class="panel-body" style="background-color: #F8F8F7">
+																<div class="row">
+																	<div class="col-sm-3">
+																	</div>
+																	<div class="col-sm-9">
+																	</div>
+																</section>
+															</div>
+														</div>
+														<div style="margin-top: 60px">
+															<button class="btn btn-default pull-right" data-toggle="modal" data-target="#modal">
+																<span class="glyphicon glyphicon-pencil" aria-hidden="true">
+																</span>
+																<span>
+																	Details bearbeiten
+																</span>
+															</button>
+														</div>
+													</div>
+
+													<!-- Tab2 -->
+													<div class="panel-body tab-pane" id="tab2">
+														<div>
+															<img src="chronik.png"\>
+														</div>
+													</div>
+
+													<!-- Tab3 -->
+													<div class="panel-body tab-pane" id="tab3">
+														<div class="alert alert-info show">
+															Es wurde noch kein Bericht eingereicht.
+														</div>
+														<button class=" btn btn-default btn-block pull-center" type="button" aria-hidden="true">
+															<span class="glyphicon glyphicon-plus">
+															</span>
+															<span>
+																Bericht hinzufügen
+															</span>
+														</button>
+													</div>
+												</div>
+											</div>
+
+											<!-- Modal -->               
+											<div id="modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
+												<div class="modal-dialog modal-lg">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h3 class="modal-title" id="exampleModalLabel">
+																Ticket #T123 bearbeiten
+															</h3>
+														</div>
+														<div class="modal-body">
+
+
+															<div>   
+																<div class="no-wrap-subtext">
+																	<h4>
+																		<a role="button" data-toggle="collapse" href="#checkPersonalData_content9" aria-expanded="true" aria-controls="checkPersonalData_content">
+																			<span class=" glyphicon glyphicon-menu-down"> 
+																			</span>
+																			<span> 
+																				Anliegen
+																			</span>
+																		</a>
+																	</h4>
+																</div>
+															</div>
+															<div id="checkPersonalData_content9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="checkPersonalData_content">
+																<div class="panel panel-default">
+																	<section class="panel-body" style="background-color: #F8F8F7">
+																		<div class="row">
+																			<div class="col-sm-3">
+																			</div>
+																			<div class="col-sm-9">
+																			</div>
+																		</section>
+																	</div>
+																</div> 
+
+
+																<div>   
+																	<div class="no-wrap-subtext">
+																		<h4>
+																			<a role="button" data-toggle="collapse" href="#checkPersonalData_content7" aria-expanded="true" aria-controls="checkPersonalData_content">
+																				<span class=" glyphicon glyphicon-menu-down"> 
+																				</span>
+																				<span> 
+																					Kontakt
+																				</span>
+																			</a>
+																		</h4>
+																	</div>
+																</div>
+																<div id="checkPersonalData_content7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="checkPersonalData_content">
+																	<div class="panel panel-default">
+																		<section class="panel-body" style="background-color: #F8F8F7">
+																			<div class="row">
+																				<div class="col-sm-3">
+																				</div>
+																				<div class="col-sm-9">
+																				</div>
+																			</section>
+																		</div>
+																	</div> 
+
+																	<div>   
+																		<div class="no-wrap-subtext">
+																			<h4>
+																				<a role="button" data-toggle="collapse" href="#checkPersonalData_content4" aria-expanded="true" aria-controls="checkPersonalData_content">
+																					<span class=" glyphicon glyphicon-menu-down"> 
+																					</span>
+																					<span> 
+																						Spezifizierung
+																					</span>
+																				</a>
+																			</h4>
+																		</div>
+																	</div>
+																	<div id="checkPersonalData_content4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="checkPersonalData_content">
+																		<div class="panel panel-default">
+																			<section class="panel-body" style="background-color: #F8F8F7">
+																				<div class="row">
+																					<div class="col-sm-3">
+																					</div>
+																					<div class="col-sm-9">
+																					</div>
+																				</section>
+																			</div>
+																		</div>
+
+																		<div>   
+																			<div class="no-wrap-subtext">
+																				<h4>
+																					<a role="button" data-toggle="collapse" href="#checkPersonalData_content5" aria-expanded="true" aria-controls="checkPersonalData_content">
+																						<span class=" glyphicon glyphicon-menu-down"> 
+																						</span>
+																						<span> 
+																							Personal
+																						</span>
+																					</a>
+																				</h4>
+																			</div>
+																		</div>
+																		<div id="checkPersonalData_content5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="checkPersonalData_content">
+																			<div class="panel panel-default">
+																				<section class="panel-body" style="background-color: #F8F8F7 ">
+																					<div class="row">
+																						<div class="col-sm-3">
+																						</div>
+																						<div class="col-sm-9">
+																						</div>
+																					</section>
+																				</div>
+																			</div>
+
+																			<div>   
+																				<div class="no-wrap-subtext">
+																					<h4>
+																						<a role="button" data-toggle="collapse" href="#checkPersonalData_content6" aria-expanded="true" aria-controls="checkPersonalData_content">
+																							<span class=" glyphicon glyphicon-menu-down"> 
+																							</span>
+																							<span> 
+																								Verweise
+																							</span>
+																						</a>
+																					</h4>
+																				</div>
+																			</div>
+																			<div id="checkPersonalData_content6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="checkPersonalData_content">
+																				<div class="panel panel-default">
+																					<section class="panel-body" style="background-color: #F8F8F7">
+																						<div class="row">
+																							<div class="col-sm-3">
+																							</div>
+																							<div class="col-sm-9">
+																							</div>
+																						</section>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="modal-footer">
+																				<button class="btn" aria-expanded="false"  class="close" data-dismiss="modal" aria-label="Close">
+																					<span class="glyphicon glyphicon-remove" aria-hidden="true">
+																					</span>
+																					<span>
+																						Abbrechen
+																					</span>
+																				</button>
+																				<button class="btn btn-primary" aria-expanded="false">
+																					<span class="glyphicon glyphicon-ok" aria-hidden="true">
+																					</span>
+																					<span>
+																						&Auml;nderungen speichern
+																					</span>
+																				</button>
+																			</div>    
+																		</div>
+																	</div>
+																</div>
+
+																<!-- Ticket-Buttons -->
+																<div class="panel-body" style="border-top-style: solid;border-top-width: 1px;border-top-color: #e5e5e5;
+																<!--    background-color: #E3E2DE -->
+																">
+																<div class="pull-right">
+																	<section class="row text-right">
+																		<div class="col-xs-12 spacer-small">
+																			<div>
+																				<button class="btn" aria-expanded="false">
+																					<span class="glyphicon glyphicon-remove" aria-hidden="true">
+																					</span>
+																					<span>
+																						Schliessen
+																					</span>
+																				</button>
+																				<button class="btn" aria-expanded="false">
+																					<span class="glyphicon glyphicon-duplicate" aria-hidden="true">
+																					</span>
+																					<span>
+																						Kopieren
+																					</span>
+																				</button>
+																				<button class="btn" aria-expanded="false">
+																					<span class="glyphicon glyphicon-trash" aria-hidden="true">
+																					</span>
+																					<span>
+																						L&ouml;schen
+																					</span>
+																				</button>
+																				<button class="btn btn-primary" aria-expanded="false">
+																					<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+																					</span>
+																					<span>
+																						Ticket an xy weitergeben
+																					</span>
+																				</button>
+																			</div>
+																		</div>
+																	</section>
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+
+												<!-- Ticket-Similar -->
+												<div style="margin-top: 20px">
+													<div class="panel panel-default" >
+														<div class="panel-body">
+															<b>
+																&Auml;hnliche Tickets:
+															</b> 
+															<br> #T345 Text Text Text
+															<br> #T789 Text Text Text Text Text
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+							</body>
+
+							</html>
+
+
+<script type="text/javascript">
+//for loading local json file
+function readTextFile(file, callback) {
+	var rawFile = new XMLHttpRequest();
+	rawFile.overrideMimeType("application/json");
+	rawFile.open("GET", file, true);
+	rawFile.onreadystatechange = function() {
+		if (rawFile.readyState === 4 && rawFile.status == "200") {
+			callback(rawFile.responseText);
+		}
+	}
+	rawFile.send(null);
+}
+
+
+readTextFile("test.json", function(text){
+
+	//json-File as JS-obj
+	var data = JSON.parse(text);
+
+    //load vars from json in textelements/inputs etc
+    $("#tsticket_subject").text(data.tsticket_subject);
+    $("#tsticket_id").text(data.tsticket_id);
+
+    $("#tsticket_status").text(data.tsticket_status);
+    $("#tsticket_author").text(data.tsticket_author);
+    $("#tsticket_creator").text(data.tsticket_creator);
+    $("#tsticket_createtime").text(data.tsticket_createtime);
+    $("#tsticket_modtime").text(data.tsticket_modtime);
+
+    $("#tsticket_geraet").text(data.tsticket_geraet);
+    
+
+    
+});
+
+// $('a').length
+</script>
+
+

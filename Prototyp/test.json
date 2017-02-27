@@ -1,0 +1,62 @@
+{
+	"tsticket_creator": "Max Mustermann",
+	"tsticket_createtime": "07.06.11 12:19", 
+	"tsticket_author": "Max Mustermann",
+	"tsticket_modtime": "07.06.11 12:21", 
+	"tsticket_status": "Dispatching",
+	"tsticket_id": "123", 
+
+	"tsticket_subject": "Defekte Waschmaschine",
+	"tsticket_geraet": "Kaffemaschine",
+
+	"contact": [
+		{
+		"tstimeline_anrede": "Herr",
+		"tstimeline_vorname": "Max",
+		"tstimeline_nachname": "Mustermann",
+		"tstimeline_telefon": "01769999904",
+		"tstimeline_email": "max@mustermann.de",
+		"tstimeline_wishes_emails": "true"
+	    },
+	    {
+		"tstimeline_anrede": "Frau",
+		"tstimeline_vorname": "Maxine",
+		"tstimeline_nachname": "Mustermann",
+		"tstimeline_telefon": "01769999904",
+		"tstimeline_email": "maxine@mustermann.de",
+		"tstimeline_wishes_emails": "true"
+	    }
+	],
+
+	"tsticket_custvisible": "true",
+	"tsticket_due": "2011-07-11",
+	"tsticket_estimatedhours": "3",
+	"tsticket_qualified_tscategory_id": "Reperatur",
+	"tsticket_tsprio_id": "hoch", 
+	"tstimeline_abteilung": "Reperatur-Menschen",
+	"tstimeline_verantwortlicher": "Mr Reperateur",
+
+	"tsticket_feedbackdue": "2011-07-20", 
+	"tsticket_reporttext": "y",
+	"tsticket_reported_tscategory_id": "Ersetzung",
+	
+	"tstimeline": [
+		{
+		"tstimeline_author": "Max Mustermann",
+		"tstimeline_createtime": "07.06.11 12",
+		"tstimeline_creator": "Max Mustermann",
+		"tstimeline_custvisible": "true",
+		"tstimeline_modtime": "07.06.11 12:21",
+		"tstimeline_text": ":("
+	    },
+	    {
+		"tstimeline_author": "Ticket M",
+		"tstimeline_createtime": "07.06.11 12:19",
+		"tstimeline_creator": "Ticket M",
+		"tstimeline_custvisible": "true",
+		"tstimeline_modtime": "07.06.11 12:21",
+		"tstimeline_text": "ok"
+	    }
+    ]
+
+}
