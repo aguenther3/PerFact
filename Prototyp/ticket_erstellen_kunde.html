@@ -23,18 +23,26 @@
 
 	<style type="text/css">
 
+	  	select:-moz-focusring { color: transparent;
+                        text-shadow: 0 0 0 #000; }
+
 		a:active,
 		a:hover, 
 		a:focus{
 			outline-style: none;
 		}
 
+
 		.form-control:focus {
 			border-color: seablue;
-			border-width: 2px
+			border-width: 2px;
 			outline: 0;
 			-webkit-box-shadow: none;
 			box-shadow: none;
+		}
+
+		.form-horizontal .control-label{
+			text-align:left;
 		}
 
 		.input-group{
@@ -119,7 +127,7 @@
 			font-weight: bold;
 			font-size: 15px;
 			padding-top: 12px;
-    padding-bottom: 12px;
+			padding-bottom: 12px;
 		}
 
 		.nav-pills.nav-steps > li:not(.active):not(.disabled):not(.finished) > a {
@@ -219,7 +227,7 @@
 
 
 					<!-- Nav-Bar top -->
-					<nav class="navbar navbar-default">
+					<nav class="navbar navbar-default" style="border-width: 2px">
 						<ul class="nav navbar-nav navbar-right">
 							<li>
 								<p class="navbar-text" style="margin-right: 5px">
@@ -279,11 +287,11 @@
 					<!-- Ticket -->
 					<div>
 						<div style="margin-top: 20px">
-							<div class="panel panel-default" >
+							<div class="panel panel-default" style="border-width: 2px">
 
 
 								<!-- Ticket-Head -->
-								<div style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #e5e5e5;">
+								<div style="border-bottom-style: solid;border-bottom-width: 2px;border-bottom-color: #e5e5e5;">
 									<div class="panel-body"">
 										<div style="margin-bottom:30px">
 											<h3>
@@ -301,8 +309,8 @@
 								<!-- Ticket-Body -->
 								<div class="panel-body">
 									<ul class="nav nav-pills nav-steps nav-justified" id="navTabBar">
-										<li class="active">
-											<a href="#tab1" data-toggle="tab" class="tab-link">
+										<li class="active disabled">
+											<a href="#tab1" class="tab-link">
 												<span class="badge">
 													1
 												</span>
@@ -313,7 +321,7 @@
 											</a>
 										</li>
 										<li>
-											<a href="#tab2" data-toggle="tab" class="tab-link">
+											<a href="#tab2" class="tab-link">
 												<span class="badge">
 													2
 												</span>
@@ -324,7 +332,7 @@
 											</a>
 										</li>
 										<li>
-											<a href="#tab3" data-toggle="tab" class="tab-link">
+											<a href="#tab3" class="tab-link">
 												<span class="badge">
 													3
 												</span>
@@ -335,7 +343,7 @@
 											</a>
 										</li>
 										<li>
-											<a href="#check" data-toggle="tab" class="tab-link">
+											<a href="#check" class="tab-link">
 												<span class="badge">
 													4
 												</span>
@@ -352,164 +360,192 @@
 
 										<!-- Tab1 -->
 										<div class="panel-body tab-pane active" id="tab1">
-											<div class="input-group">
-												<label class="input-group-addon" for"subject">
+											<div class="form-group">
+												<label for"subject">
 													Betreff *
 												</label>
 												<input id="subject_input" class="form-control checkedInput" type="text">
 											</div>
-											<div class="input-group">
-												<label class="input-group-addon" for"subject">
+											<div class="form-group">
+												<label for"subject">
 													Ger&auml;t *
 												</label>
-												<select class="custom-select mb-12 form-control" id="gereat_input">
-													<option selected>--</option>
+												<select class="custom-select form-control" id="gereat_input">
+													<option selected></option>
 													<option value="Kaffeemaschine">Kaffeemaschine</option>
 													<option value="Waschmaschine">Waschmaschine</option>
 													<option value="Fernseher">Fernseher</option>
 												</select>
 											</div>
-											<div class="input-group">
-												<label class="input-group-addon" for"mceu_13">
+											<div class="form-group">
+												<label for"mceu_13">
 													Beschreibung
 												</label>
 												<input id="mytextarea" >
 											</div>
-											<button type="button" class="btn btn-default navTabsNext pull-right" style="margin-top: 15px">
-												<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
-												</span>
-												<span>
-													weiter
-												</span>
-											</button>
+											<div class="panel-body" style="padding-bottom: 0px; margin-top: 45px;">
+												<div class="pull-right">
+													<div class="row text-right">
+														<div class="col-xs-12 spacer-small">
+															<div>
+																<button type="button" class="btn btn-primary navTabsNext pull-right" style="margin-top: 15px">
+																	<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+																	</span>
+																	<span>
+																		weiter
+																	</span>
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
 
 										<!-- Tab2 -->
 										<div class="panel-body tab-pane" id="tab2">
 											<div>
 												<div id="contacts">
-													<div id="contact_person" class="panel panel-default">
+													<div id="contact_person" class="panel panel-default" style="border-width: 2px">
 														<div class="panel-body">
-															<div> 
-																<button class="close" id="deleteContact" title="Kontakt entfernen">x</button>
+															<div class="row"> 
+																<button class="close" style="padding-right: 15px" id="deleteContact" title="Kontakt entfernen">x</button>
 															</div>
-															<div class="input-group form-check form-check-inline">
-																<label class="input-group-addon" for"anrede">
-																	Anrede
-																</label>
-																<div class="form-check form-check-inline">
-																	<label class="custom-control custom-radio">
-																		<input id="radio1" name="anrede_input"  value="Herr" type="radio" class="custom-control-input">
-																		<span class="custom-control-indicator"></span>
-																		<span class="custom-control-description">Herr</span>
-																	</label>
-																	<label class="custom-control custom-radio">
-																		<input id="radio2" name="anrede_input" type="radio" value="Frau" class="custom-control-input">
-																		<span class="custom-control-indicator"></span>
-																		<span class="custom-control-description">Frau</span>
-																	</label>
+															<form class="">
+																<div>
+																	<div class="col-md-2 form-group">
+																		<label for"anrede">
+																			Anrede
+																		</label>
+																		<select class="custom-select mb-2 form-control" id="anrede_input">
+																			<option selected></option>
+																			<option value="Herr">Herr</option>
+																			<option value="Frau">Frau</option>
+																		</select>
+
+																	</div>
+																	<div class="col-md-5 form-group">
+																		<label for"vorname">
+																			Vorname
+																		</label>
+																		<input id="vorname_input" class="form-control" type="text">
+																	</div>
+																	<div class="col-md-5 form-group">
+																		<label for"nachname">
+																			Nachname
+																		</label>
+																		<input id="nachname_input" class="form-control" type="text">
+																	</div>
 																</div>
-																
-															</div>
-															<div class="input-group">
-																<label class="input-group-addon" for"vorname">
-																	Vorname
-																</label>
-																<input id="vorname_input" class="form-control checkedInput" type="text">
-															</div>
-															<div class="input-group">
-																<label class="input-group-addon" for"nachname">
-																	Nachname
-																</label>
-																<input id="nachname_input" class="form-control checkedInput" type="text">
-															</div>
-															<div class="input-group">
-																<label class="input-group-addon" for"telefon">
-																	Telefon
-																</label>
-																<input id="telefon_input" class="form-control checkedInput" type="text">
-															</div>
-															<div class="input-group">
-																<label class="input-group-addon" for"email">
-																	eMail
-																</label>
-																<input id="email_input" class="form-control checkedInput" type="text">
-															</div>
-															<div class="input-group">
-																<label class="input-group-addon" for"wishesmails">
-																	eMails an Kontakt senden
-																</label>
-																<input id="wishesmails_input" class="form-control checkedInput" type="checkbox">
+																<div class="form-group col-md-12">
+																	<label for"telefon">
+																		Telefon
+																	</label>
+																	<input id="telefon_input" class="form-control" type="text">
+																</div>
+																<div class="form-group col-md-9">
+																	<label for"email">
+																		eMail
+																	</label>
+																	<input id="email_input" class="form-control" type="text">
+																</div>
+																<div class="input-group col-md-3 pull-right">
+																	<label for"wishesmails">
+																		eMails an Kontakt senden
+																	</label>
+																	<input id="wishesmails_input" class="form-control checkedInput" type="checkbox">
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+												<div>
+													<button class="btn btn-default panel-heading-btn btn-block pull-left" type="button" aria-hidden="true" style="margin-bottom: 15px; margin-top: 15px" id="addcontact">
+														<span class="glyphicon glyphicon-plus">
+														</span>
+														<span>
+															weiteren Kontakt hinzuf&uuml;gen
+														</span>
+													</button>
+												</div>
+												<div class="panel-body" style="padding-bottom: 0px; margin-top: 110px;">
+													<div class="pull-right">
+														<div class="row text-right">
+															<div class="col-xs-12 spacer-small">
+																<div>
+																	<button type="button" class="btn btn-primary navTabsNext pull-right" style="margin-top: 15px">
+																		<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+																		</span>
+																		<span>
+																			weiter
+																		</span>
+																	</button>
+																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-												<button class="btn btn-default panel-heading-btn btn-block pull-left" type="button" aria-hidden="true" style="margin-bottom: 15px; margin-top: 15px" id="addcontact">
-													<span class="glyphicon glyphicon-plus">
-													</span>
-													<span>
-														weiteren Kontakt hinzuf&uuml;gen
-													</span>
-												</button>
-												<button type="button" class="btn btn-default navTabsNext pull-right" style="margin-top: 15px">
-													<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
-													</span>
-													<span>
-														weiter
-													</span>
-												</button>
 											</div>
 										</div>
 
 										<!-- Tab3 -->
 										<div class="panel-body tab-pane" id="tab3">
 											<div>
-												<div class="input-group">
-													<label class="input-group-addon" for"kategorie">
+												<div class="form-group">
+													<label for"kategorie">
 														Ticket-Kategorie
 													</label>
 													<select class="custom-select mb-12 form-control" id="kategorie_input">
-														<option selected>--</option>
+														<option selected></option>
 														<option value="Reperatur">Reperatur</option>
 														<option value="Ersaztteil bestellen">Ersaztteil bestellen</option>
 														<option value="Ger&auml;t ersetzen">Ger&auml;t ersetzen</option>
 													</select>
 												</div>
-												<div class="input-group">
-													<label class="input-group-addon" for"prioritaet">
+												<div class="form-group">
+													<label for"prioritaet">
 														Ticket-Priorit&auml;t
 													</label>
 													<select class="custom-select mb-12 form-control" id="prioritaet_input">
-														<option selected>--</option>
+														<option selected></option>
 														<option value="hoch">hoch</option>
 														<option value="niedrig">niedrig</option>
 													</select>
 												</div>
-												<div class="input-group form-check form-check-inline">
-													<label class="input-group-addon" for"kundensichtbar">
+												<div class="form-group">
+													<label for"kundensichtbar">
 														Ticket kundensichtbar
 													</label>
 													<div class="form-check form-check-inline">
-														<label class="custom-control custom-radio">
+														<label class="custom-control custom-radio" style="font-weight: normal">
 															<input id="radio1" name="kundensichtbar_input"  value="ja" type="radio" class="custom-control-input">
 															<span class="custom-control-indicator"></span>
 															<span class="custom-control-description">ja</span>
 														</label>
-														<label class="custom-control custom-radio">
+														<label class="custom-control custom-radio" style="font-weight: normal">
 															<input id="radio2" name="kundensichtbar_input" type="radio" value="nein" class="custom-control-input">
 															<span class="custom-control-indicator"></span>
 															<span class="custom-control-description">nein</span>
 														</label>
 													</div>
 												</div>
-
-												<button type="button" class="btn btn-default navTabsNext pull-right" style="margin-top: 15px" id="continueToCheck">
-													<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
-													</span>
-													<span>
-														weiter
-													</span>
-												</button>
+												<div class="panel-body" style="padding-bottom: 0px; margin-top: 20px;">
+													<div class="pull-right">
+														<div class="row text-right">
+															<div class="col-xs-12 spacer-small">
+																<div>												
+																	<button type="button" class="btn btn-primary navTabsNext pull-right" style="margin-top: 15px" id="continueToCheck">
+																		<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+																		</span>
+																		<span>
+																			weiter
+																		</span>
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 
@@ -531,24 +567,30 @@
 												</div>
 												<div id="checkPersonalData_content" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkPersonalData_content">
 													<div class="panel panel-default">
-														<div class="panel-body" style="background-color: #F8F8F7">
-															<table class="table" id="o_subject">
-																<tbody>
-																	<tr>
-																		<th>Betreff:</th>
-																		<td id="subject" class="output"></td>
-																	</tr>
-																	<tr>
-																		<th>Ger&auml;t:</th>
-																		<td id="gereat" class="output" 
-																		></td>
-																	</tr>
-																	<tr>
-																		<th>Beschreibung:</th>
-																		<td><div id="description" ></div></td>
-																	</tr>
-																</tbody>
-															</table>
+														<div class="panel-body" style="border-width: 2px">
+															<form class="form-horizontal">
+																<div class="form-group">
+																	<label for"subject" class="col-sm-2 control-label">
+																		Betreff:
+																	</label>
+																	<div id="subject" class="form-control-static output col-sm-10" type="text">
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label for"gereat" class="col-sm-2 control-label">
+																		Ger&auml;t:
+																	</label>
+																	<div class="form-control-static output col-sm-10" id="gereat">
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label for"description" class="col-sm-2 control-label">
+																		Beschreibung:
+																	</label>
+																	<div class="form-control-static output col-sm-10" id="description">
+																	</div>
+																</div>
+															</form>
 														</div>
 													</div>
 												</div> 
@@ -568,40 +610,43 @@
 												<div id="checkPersonalData_content4" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkPersonalData_content">
 													<div class="panel panel-default" id="check_contact">
 														<div class="panel-body" id="check_contact_person" style="background-color: #F8F8F7">
+															<form class="form-horizontal">
+																<div class="form-group">
+																	<label for"anrede" class="col-sm-2 control-label">
+																		Ansprechpartner:
+																	</label>
+																	<div class="col-sm-10 form-control-static">
+																		<div id="anrede" class="output" style="display: inline-block;" type="text">
+																		</div>																
+																		<div class=" output inline" style="display: inline-block;" id="vorname">
+																		</div>
+																		<div class="output inline" style="display: inline-block;" id="nachname">
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label for"telefon" class="col-sm-2 control-label">
+																		Telefon:
+																	</label>
+																	<div class="form-control-static output col-sm-10" id="telefon">
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label for"email" class="col-sm-2 control-label">
+																		eMail:
+																	</label>
+																	<div class="form-control-static output col-sm-10" id="email">
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label for"wishesmails" class="col-sm-2 control-label">
+																		eMails an Kontakt senden:
+																	</label>
+																	<div class="form-control-static output col-sm-10" id="wishesmails">
+																	</div>
+																</div>
+															</form>
 
-															<table class="table">
-																<tbody>
-																	<tr>
-																		<th>Anrede:</th>
-																		<td id="anrede" class="output"></td>
-																	</tr>
-																	<tr>
-																		<th>Vorname:</th>
-																		<td id="vorname" class="output" 
-																		></td>
-																	</tr>
-																	<tr>
-																		<th>Nachname:</th>
-																		<td id="nachname" class="output" 
-																		></td>
-																	</tr>
-																	<tr>
-																		<th>Telefon:</th>
-																		<td id="telefon" class="output" 
-																		></td>
-																	</tr>
-																	<tr>
-																		<th>eMail:</th>
-																		<td id="email" class="output" 
-																		></td>
-																	</tr>
-																	<tr>
-																		<th>Mails an Kontakt:</th>
-																		<td id="wishesmails" class="output" 
-																		></td>
-																	</tr>
-																</tbody>
-															</table>
 														</div>
 													</div> 
 												</div>
@@ -621,29 +666,32 @@
 												<div id="checkPersonalData_content2" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkPersonalData_content">
 													<div class="panel panel-default">
 														<div class="panel-body" style="background-color: #F8F8F7">
+															<form class="form-horizontal">
+																<div class="form-group">
+																	<label for"kategorie" class="col-sm-2 control-label">
+																		Ticket-Kategorie:
+																	</label>
+																	<div class="form-control-static output col-sm-10" id="kategorie">
 
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label for"prioritaet" class="col-sm-2 control-label">
+																		Ticket-Priorit&auml;t:
+																	</label>
+																	<div class="form-control-static output col-sm-10" id="prioritaet">
 
-															<table class="table">
-																<tbody>
-																	<tr>
-																		<th>Ticket-Kategorie:</th>
-																		<td id="kategorie" class="output"></td>
-																	</tr>
-																	<tr>
-																		<th>Ticket-Priorit&auml;t:</th>
-																		<td id="prioritaet" class="output" 
-																		></td>
-																	</tr>
-																	<tr>
-																		<th>Ticket kundensichtbar:</th>
-																		<td id="kundensichtbar" class="output" 
-																		></td>
-																	</tr>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label for"kundensichtbar" class="col-sm-2 control-label">
+																		Ticket kundensichtbar:
+																	</label>
+																	<div class="form-control-static output col-sm-10" id="kundensichtbar">
 
-																</tbody>
-															</table>
-
-
+																	</div>
+																</div>
+															</form>
 														</div>
 													</div> 
 												</div>
@@ -652,9 +700,9 @@
 
 
 												<!-- Ticket-Buttons -->
-												<div class="panel-body" style="border-top-style: solid;border-top-width: 1px;border-top-color: #e5e5e5; padding-bottom: 0px; margin-top: 45px;">
+												<div class="panel-body" style="padding-bottom: 0px; margin-top: 45px;">
 													<div class="pull-right">
-														<div class="row text-right">
+														<div class="row text-right" style="margin-top: 15px">
 															<div class="col-xs-12 spacer-small">
 																<div>
 																	<button class="btn" aria-expanded="false">
@@ -708,7 +756,7 @@
 	$(document).ready(function () {
 
 		/*disable non active tabs*/
-		$('.nav.nav-steps li').not('.active').addClass('disabled');
+		$('.nav.nav-steps li').addClass('disabled');
 		$('.nav.nav-steps li').not('.active').find('a').removeAttr("data-toggle");
 
 
@@ -716,25 +764,23 @@
 		$('.navTabsNext').click(function () {
 
 			$('#navTabBar li.active').addClass('finished');
-			$('#navTabBar li.active').addClass('disabled');
-			$('#navTabBar li.active').find('a').removeAttr("data-toggle");
-			$('#navTabBar li.active').next('li').removeClass('disabled');
+			//$('#navTabBar li.active').addClass('disabled');
+			//$('#navTabBar li.active').find('a').removeAttr("data-toggle");
+			//$('#navTabBar li.active').next('li').removeClass('disabled');
 			$('#navTabBar li.active').next('li').find('a').attr('data-toggle','tab');
-
 			$('#navTabBar li.active').next().find('a').trigger("click");
 
 			//falls check-tab erreicht, alle tabs anwaehlbar
 			if($('#navTabBar li.active').find('a').attr("href")=='#check'){
+				if($('.nav.nav-steps li:first').hasClass('disabled')){
 				$('.nav.nav-steps li').removeClass('disabled');
 				$('.nav.nav-steps li').find('a').attr('data-toggle','tab');
+				$('.nav.nav-steps li:not(:last)').find('a').append('<span style="padding-left:5px;" class="glyphicon glyphicon-pencil"></span>');
 			};
-			
+			};
+			window.scrollTo(0, 400);
 		});
 		
-	
-		
-
-
 
 		//loescht Kontaktperson
 		$('#deleteContact').click(function () {
@@ -746,7 +792,6 @@
 			}
 
 		});
-
 
 
 		//Aktualisieren der Textfelder im Uebersicht-Tab
@@ -762,15 +807,19 @@
 			//fuellt alle vorhandenen Textfelder mit eingegebenen Input
 			$('.output').each(function(){
 				if ($('#'+this.id+'_input').val()=="") {
-					$(this).text("--");
+					$(this).text("");
 				}
 				else {
-					$(this).text($('#'+this.id+'_input').val())
+					$(this).text($('#'+this.id+'_input').val());
 				}
 			});
-			$('#anrede').text($( "input[type=radio][name=anrede_input]:checked").val());
 			$('#kundensichtbar').text($( "input[type=radio][name=kundensichtbar_input]:checked").val());
-
+			if($('#wishesmails_input').is(':checked')){
+				$('#wishesmails').text("ja");
+			} 
+			else {
+				$('#wishesmails').text("nein");
+			};
 			//Inhalt tinyMCE
 			$('#description').html(tinyMCE.activeEditor.getContent({format : 'raw'}));
 
@@ -779,8 +828,8 @@
             	$('#contacts').children(':gt(0)').each(function() {
             		$('#checkPersonalData_content4').children(':first').clone().appendTo($('#checkPersonalData_content4'));
             		fill_contact_checks(this);
-            	});
 
+            	});
             };
         });
 
@@ -789,9 +838,6 @@
         	$('#contact_person').clone(':first').appendTo($('#contacts'));	
         	$('#contacts').children(':last').find(':input').val('');
         });
-
-
-
     });
 
 	function fill_contact_checks(elem_with_inputs){
@@ -803,6 +849,13 @@
 				$(this).text($(elem_with_inputs).find('#'+this.id+'_input').val())
 			}
 		});
+		//alert($(elem_with_inputs).find('#wishesmails_input').is(':checked'));
+		if($(elem_with_inputs).find('#wishesmails_input').is(':checked')){
+				$('#checkPersonalData_content4').children(':last').find('#wishesmails').text("ja");
+			} 
+			else {
+				$('#checkPersonalData_content4').children(':last').find('#wishesmails').text("nein");
+			};
 
 	};
 
