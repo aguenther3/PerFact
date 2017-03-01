@@ -6,11 +6,7 @@
 	"tsticket_status": "Dispatching",
 	"tsticket_id": "123", 
 
-<<<<<<< HEAD
 	"tsticket_subject": "Defekte Waschmaschine",
-=======
-	"tsticket_subject": "Defekte Kaffemaschine",
->>>>>>> 6eaf402b630d8d255a23f7f9ca2c57ffe9978f69
 	"tsticket_geraet": "Kaffemaschine",
 
 	"contact": [
