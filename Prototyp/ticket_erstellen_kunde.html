@@ -23,189 +23,202 @@
 
 	<style type="text/css">
 
-	  	select:-moz-focusring { color: transparent;
-                        text-shadow: 0 0 0 #000; }
+		select:-moz-focusring { color: transparent;
+			text-shadow: 0 0 0 #000; }
 
-		a:active,
-		a:hover, 
-		a:focus{
-			outline-style: none;
-		}
+			a:active,
+			a:hover, 
+			a:focus{
+				outline-style: none;
+				outline: 0;
+				text-decoration: none;
+			}
 
+     
 
-		.form-control:focus {
-			border-color: seablue;
-			border-width: 2px;
-			outline: 0;
-			-webkit-box-shadow: none;
-			box-shadow: none;
-		}
+			.form-control:focus {
+				border-color: seablue;
+				border-width: 2px;
+				outline: 0;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
 
-		.form-horizontal .control-label{
-			text-align:left;
-		}
+			.form-horizontal .control-label{
+				text-align:left;
+			}
 
-		.input-group{
-			margin-bottom: 10px;
-		}  	
-		.glyphicon {
-			top:2px;
-		}
-		.nav-tabs.nav-steps > li > a > .badge {
-			margin-right: 3px;
-			vertical-align: top;
-			padding: 4px 7px 3px;
-			border-style: solid;
-			border-width: 1px;
-			background-color: white;
-			color: #337ab7;
-		}
-		.nav-pills.nav-steps > li.active > a> .badge {
-			border-color: #3CBC3C;
-			border-width: 1px;
-			color: #3CBC3C;
-		}
-		.nav.nav-steps > li.finished:not(.active) > a:hover >.badge{
-			border-color: #aaa;
-			color: #aaa;
-		}
-		
-		
-
-
-		.nav.nav-steps > li.finished:not(.active) > a> .badge {
-			border-color: #8cdb8c;
-			border-width: 1px;
-			color: #8cdb8c;
-			background-color: white;
-		}
-		
+			.input-group{
+				margin-bottom: 10px;
+			}  	
+			.glyphicon {
+				top:2px;
+			}
+			.nav-tabs.nav-steps > li > a > .badge {
+				margin-right: 3px;
+				vertical-align: top;
+				padding: 4px 7px 3px;
+				border-style: solid;
+				border-width: 1px;
+				background-color: white;
+				color: #337ab7;
+			}
+			.nav-pills.nav-steps > li.active > a> .badge {
+				border-color: #3CBC3C;
+				border-width: 1px;
+				color: #3CBC3C;
+			}
+			.nav.nav-steps > li.finished:not(.active) > a:hover >.badge{
+				border-color: #aaa;
+				color: #aaa;
+			}
 
 
 
 
-
-		p {
-			margin: 0px 0px 0px 0px;
-		}
-
-
-
-		.table {
-			margin-bottom: 0px;
-		}
-
-		.table > tbody > tr > th, .table > tbody > tr > td {
-			border-width: 0px;
-			padding: 3px;
-		}
-
-		.nav-pills.nav-steps > li {
-			position: relative;
-			overflow: visible;
-			border-right: 15px solid transparent;
-			border-left: 15px solid transparent;
-		}
-		.nav-pills.nav-steps > li + li {
-			margin-left: 0;
-		}
-		.nav-pills.nav-steps > li:first-child {
-			border-left: 0;
-		}
-		.nav-pills.nav-steps > li:first-child a {
-			border-radius: 5px 0 0 5px;
-		}
-		.nav-pills.nav-steps > li:last-child {
-			border-right: 0;
-		}
-		.nav-pills.nav-steps > li:last-child a {
-			border-radius: 0 5px 5px 0;
-		}
-		.nav-pills.nav-steps > li > a {
-			border-radius: 1px;
-			background-color: #eee;
-			font-weight: bold;
-			font-size: 15px;
-			padding-top: 12px;
-			padding-bottom: 12px;
-		}
-
-		.nav-pills.nav-steps > li:not(.active):not(.disabled):not(.finished) > a {
-			color: #777;
-		}
+			.nav.nav-steps > li.finished:not(.active) > a> .badge {
+				border-color: #8cdb8c;
+				border-width: 1px;
+				color: #8cdb8c;
+				background-color: white;
+			}
 
 
-		.nav-pills.nav-steps > li:not(:last-child) a:after {
-			position: absolute;
-			content: "";
-			top: 0px;
-			right: -20px;
-			width: 0px;
-			height: 0px;
-			border-style: solid;
-			border-width: 23px 0 23px 20px;
-			border-color: transparent transparent transparent #eee;
-			z-index: 150;
-		}
-		.nav-pills.nav-steps > li:not(:first-child) a:before {
-			position: absolute;
-			content: "";
-			top: 0px;
-			left: -20px;
-			width: 0px;
-			height: 0px;
-			border-style: solid;
-			border-width: 23px 0 23px 20px;
-			border-color: #eee #eee #eee transparent;
-			z-index: 150;
-		}
-		.nav-pills.nav-steps > li:hover:not(:last-child):not(.active) a:after {
-			border-color: transparent transparent transparent #aaa;
-		}
-		.nav-pills.nav-steps > li:hover:not(:first-child):not(.active) a:before {
-			border-color: #aaa #aaa #aaa transparent;
-		}
-		.nav-pills.nav-steps > li:hover:not(.active) > a {
-			background-color: #aaa;
-			color: #fff;
-		}
-		.nav-pills.nav-steps > li:hover:not(.active) > a >.badge{
-			border-color: #aaa;
-			color: #aaa;
-		}
-
-		.nav-pills.nav-steps > li.finished > a:after {
-			border-color: transparent transparent transparent #8cdb8c;
-		}
-		.nav-pills.nav-steps > li.finished> a:before {
-			border-color: #8cdb8c #8cdb8c #8cdb8c transparent;
-		}
-		.nav-pills.nav-steps > li.finished > a {
-			background-color: #8cdb8c;
-			color: #fff;
-		}
 
 
-		.disabled{
-			pointer-events: none;
+
+
+			p {
+				margin: 0px 0px 0px 0px;
+			}
+
+
+
+			.table {
+				margin-bottom: 0px;
+			}
+
+			.table > tbody > tr > th, .table > tbody > tr > td {
+				border-width: 0px;
+				padding: 3px;
+			}
+
+			.nav-pills.nav-steps > li {
+				position: relative;
+				overflow: visible;
+				border-right: 15px solid transparent;
+				border-left: 15px solid transparent;
+			}
+			.nav-pills.nav-steps > li + li {
+				margin-left: 0;
+			}
+			.nav-pills.nav-steps > li:first-child {
+				border-left: 0;
+			}
+			.nav-pills.nav-steps > li:first-child a {
+				border-radius: 5px 0 0 5px;
+			}
+			.nav-pills.nav-steps > li:last-child {
+				border-right: 0;
+			}
+			.nav-pills.nav-steps > li:last-child a {
+				border-radius: 0 5px 5px 0;
+			}
+			.nav-pills.nav-steps > li > a {
+				border-radius: 1px;
+				background-color: #eee;
+				font-weight: bold;
+				font-size: 15px;
+				padding-top: 12px;
+				padding-bottom: 12px;
+			}
+
+			.nav-pills.nav-steps > li:not(.active):not(.disabled):not(.finished) > a {
+				color: #777;
+			}
+
+
+			.nav-pills.nav-steps > li:not(:last-child) a:after {
+				position: absolute;
+				content: "";
+				top: 0px;
+				right: -20px;
+				width: 0px;
+				height: 0px;
+				border-style: solid;
+				border-width: 23px 0 23px 20px;
+				border-color: transparent transparent transparent #eee;
+				z-index: 150;
+			}
+			.nav-pills.nav-steps > li:not(:first-child) a:before {
+				position: absolute;
+				content: "";
+				top: 0px;
+				left: -20px;
+				width: 0px;
+				height: 0px;
+				border-style: solid;
+				border-width: 23px 0 23px 20px;
+				border-color: #eee #eee #eee transparent;
+				z-index: 150;
+			}
+			.nav-pills.nav-steps > li:hover:not(:last-child):not(.active) a:after {
+				border-color: transparent transparent transparent #aaa;
+			}
+			.nav-pills.nav-steps > li:hover:not(:first-child):not(.active) a:before {
+				border-color: #aaa #aaa #aaa transparent;
+			}
+			.nav-pills.nav-steps > li:hover:not(.active) > a {
+				background-color: #aaa;
+				color: #fff;
+			}
+			.nav-pills.nav-steps > li:hover:not(.active) > a >.badge{
+				border-color: #aaa;
+				color: #aaa;
+			}
+
+			.nav-pills.nav-steps > li.finished > a:after {
+				border-color: transparent transparent transparent #8cdb8c;
+			}
+			.nav-pills.nav-steps > li.finished> a:before {
+				border-color: #8cdb8c #8cdb8c #8cdb8c transparent;
+			}
+			.nav-pills.nav-steps > li.finished > a {
+				background-color: #8cdb8c;
+				color: #fff;
+			}
+
+
+			.disabled{
+				pointer-events: none;
+			}
+
+
+			.nav-pills.nav-steps > li.active:not(:last-child) a:after {
+				border-color: transparent transparent transparent #3CBC3C;
+			}
+			.nav-pills.nav-steps > li.active:not(:first-child) a:before {
+				border-color: #3CBC3C #3CBC3C #3CBC3C transparent;
+			}
+			.nav-pills.nav-steps > li.active > a {
+				background-color: #3CBC3C;
+			}
+
+			.check-panel, .check-panel > div.panel-heading, div.panel-body {
+				border-color: #f2f2f2;
+				border-width: 2px
+			}
+
+			.check-panel .panel-title {
+				margin: 10px 0px;
+			}
+
+
+
 		}
 
-		
-		.nav-pills.nav-steps > li.active:not(:last-child) a:after {
-			border-color: transparent transparent transparent #3CBC3C;
-		}
-		.nav-pills.nav-steps > li.active:not(:first-child) a:before {
-			border-color: #3CBC3C #3CBC3C #3CBC3C transparent;
-		}
-		.nav-pills.nav-steps > li.active > a {
-			background-color: #3CBC3C;
-		}
 
-
-	}
-
-
-</style>
+	</style>
 
 </head>
 
@@ -406,13 +419,14 @@
 										<div class="panel-body tab-pane" id="tab2">
 											<div>
 												<div id="contacts">
-													<div id="contact_person" class="panel panel-default" style="border-width: 2px">
-														<div class="panel-body">
-															<div class="row"> 
+													<div id="contact_person" class="" style="margin-bottom: 35px">
+														<div class="">
+															<div class="row" style="padding-bottom: 15px"> 
+																<label class="col-sm-3 pull-left">Ansprechpartner 1</label>
 																<button class="close" style="padding-right: 15px" id="deleteContact" title="Kontakt entfernen">x</button>
 															</div>
 															<form class="">
-																<div>
+																<div class="row">
 																	<div class="col-md-2 form-group">
 																		<label for"anrede">
 																			Anrede
@@ -437,12 +451,15 @@
 																		<input id="nachname_input" class="form-control" type="text">
 																	</div>
 																</div>
+																<div class="row">
 																<div class="form-group col-md-12">
 																	<label for"telefon">
 																		Telefon
 																	</label>
 																	<input id="telefon_input" class="form-control" type="text">
 																</div>
+																</div>
+																<div class="row">
 																<div class="form-group col-md-9">
 																	<label for"email">
 																		eMail
@@ -454,6 +471,7 @@
 																		eMails an Kontakt senden
 																	</label>
 																	<input id="wishesmails_input" class="form-control checkedInput" type="checkbox">
+																</div>
 																</div>
 															</form>
 														</div>
@@ -552,11 +570,13 @@
 										<!-- Tab4 -->
 										<div class="panel-body tab-pane" id="check">
 											<div id="check_content">
-												<div>   
-													<div class="no-wrap-subtext">
-														<h4>
-															<a role="button" data-toggle="collapse" href="#checkPersonalData_content" aria-expanded="true" aria-controls="checkPersonalData_content">
-																<span class=" glyphicon glyphicon-menu-down"> 
+
+
+												<div class="panel panel-default check-panel">   
+													<div class="check-heading panel-heading clearfix">
+														<h4 class="panel-title">
+															<a role="button" data-toggle="collapse" href="#checkAnliegen" aria-expanded="true" aria-controls="checkAnliegen">
+																<span class="glyphicon glyphicon-menu-down"> 
 																</span>
 																<span> 
 																	Anliegen
@@ -564,9 +584,7 @@
 															</a>
 														</h4>
 													</div>
-												</div>
-												<div id="checkPersonalData_content" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkPersonalData_content">
-													<div class="panel panel-default">
+													<div id="checkAnliegen" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkAnliegen">
 														<div class="panel-body" style="border-width: 2px">
 															<form class="form-horizontal">
 																<div class="form-group">
@@ -593,12 +611,21 @@
 															</form>
 														</div>
 													</div>
-												</div> 
-												<div> 
-													<div class="no-wrap-subtext">
-														<h4>
-															<a role="button" data-toggle="collapse" href="#checkPersonalData_content4" aria-expanded="true" aria-controls="checkPersonalData_content">
-																<span class=" glyphicon glyphicon-menu-down"> 
+												</div>
+
+
+
+
+
+
+
+
+
+												<div class="panel panel-default check-panel">   
+													<div class="check-heading panel-heading clearfix">
+														<h4 class="panel-title">
+															<a role="button" data-toggle="collapse" href="#checkKontakt" aria-expanded="true" aria-controls="checKontakt">
+																<span class="glyphicon glyphicon-menu-down"> 
 																</span>
 																<span> 
 																	Kontakt
@@ -606,55 +633,56 @@
 															</a>
 														</h4>
 													</div>
-												</div>
-												<div id="checkPersonalData_content4" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkPersonalData_content">
-													<div class="panel panel-default" id="check_contact">
-														<div class="panel-body" id="check_contact_person" style="background-color: #F8F8F7">
-															<form class="form-horizontal">
-																<div class="form-group">
-																	<label for"anrede" class="col-sm-2 control-label">
-																		Ansprechpartner:
-																	</label>
-																	<div class="col-sm-10 form-control-static">
-																		<div id="anrede" class="output" style="display: inline-block;" type="text">
-																		</div>																
-																		<div class=" output inline" style="display: inline-block;" id="vorname">
+													<div id="checkKontakt" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkKontakt">
+														<div id="check_contact">
+														<div class="panel-body" id="check_contact_person" style="border-width: 2px; border-top-style: solid;">
+																<form class="form-horizontal">
+																	<div class="form-group">
+																		<label for"anrede" class="col-sm-2 control-label">
+																			Ansprechpartner:
+																		</label>
+																		<div class="col-sm-10 form-control-static">
+																			<div id="anrede" class="output" style="display: inline-block;" type="text">
+																			</div>																
+																			<div class=" output inline" style="display: inline-block;" id="vorname">
+																			</div>
+																			<div class="output inline" style="display: inline-block;" id="nachname">
+																			</div>
 																		</div>
-																		<div class="output inline" style="display: inline-block;" id="nachname">
+																	</div>
+																	<div class="form-group">
+																		<label for"telefon" class="col-sm-2 control-label">
+																			Telefon:
+																		</label>
+																		<div class="form-control-static output col-sm-10" id="telefon">
 																		</div>
 																	</div>
-																</div>
-																<div class="form-group">
-																	<label for"telefon" class="col-sm-2 control-label">
-																		Telefon:
-																	</label>
-																	<div class="form-control-static output col-sm-10" id="telefon">
+																	<div class="form-group">
+																		<label for"email" class="col-sm-2 control-label">
+																			eMail:
+																		</label>
+																		<div class="form-control-static output col-sm-10" id="email">
+																		</div>
 																	</div>
-																</div>
-																<div class="form-group">
-																	<label for"email" class="col-sm-2 control-label">
-																		eMail:
-																	</label>
-																	<div class="form-control-static output col-sm-10" id="email">
+																	<div class="form-group">
+																		<label for"wishesmails" class="col-sm-2 control-label">
+																			eMails an Kontakt senden:
+																		</label>
+																		<div class="form-control-static output col-sm-10" id="wishesmails">
+																		</div>
 																	</div>
-																</div>
-																<div class="form-group">
-																	<label for"wishesmails" class="col-sm-2 control-label">
-																		eMails an Kontakt senden:
-																	</label>
-																	<div class="form-control-static output col-sm-10" id="wishesmails">
-																	</div>
-																</div>
-															</form>
+																</form>
 
-														</div>
-													</div> 
+															</div>
+														</div> 
+													</div>
 												</div>
-												<div> 
-													<div class="no-wrap-subtext">
-														<h4>
-															<a role="button" data-toggle="collapse" href="#checkPersonalData_content2" aria-expanded="true" aria-controls="checkPersonalData_content">
-																<span class=" glyphicon glyphicon-menu-down"> 
+
+												<div class="panel panel-default check-panel">   
+													<div class="check-heading panel-heading clearfix">
+														<h4 class="panel-title">
+															<a role="button" data-toggle="collapse" href="#checkSpezi" aria-expanded="true" aria-controls="checkSpezi">
+																<span class="glyphicon glyphicon-menu-down"> 
 																</span>
 																<span> 
 																	Spezifikation
@@ -662,10 +690,8 @@
 															</a>
 														</h4>
 													</div>
-												</div>
-												<div id="checkPersonalData_content2" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkPersonalData_content">
-													<div class="panel panel-default">
-														<div class="panel-body" style="background-color: #F8F8F7">
+													<div id="checkSpezi" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkSpezi">
+														<div class="panel-body" style="border-width: 2px">
 															<form class="form-horizontal">
 																<div class="form-group">
 																	<label for"kategorie" class="col-sm-2 control-label">
@@ -773,10 +799,10 @@
 			//falls check-tab erreicht, alle tabs anwaehlbar
 			if($('#navTabBar li.active').find('a').attr("href")=='#check'){
 				if($('.nav.nav-steps li:first').hasClass('disabled')){
-				$('.nav.nav-steps li').removeClass('disabled');
-				$('.nav.nav-steps li').find('a').attr('data-toggle','tab');
-				$('.nav.nav-steps li:not(:last)').find('a').append('<span style="padding-left:5px;" class="glyphicon glyphicon-pencil"></span>');
-			};
+					$('.nav.nav-steps li').removeClass('disabled');
+					$('.nav.nav-steps li').find('a').attr('data-toggle','tab');
+					$('.nav.nav-steps li:not(:last)').find('a').append('<span style="padding-left:5px;" class="glyphicon glyphicon-pencil"></span>');
+				};
 			};
 			window.scrollTo(0, 400);
 		});
@@ -798,10 +824,10 @@
 		$('a[href="#check"]').click(function () {
 
 			//Anzahl Kontakte zuruecksetzen
-			$('#checkPersonalData_content4').children(':first').find('.output').each(function(){
+			$('#check_contact').children(':first').find('.output').each(function(){
 				$(this).text("");
 			});
-			$('#checkPersonalData_content4').children(':gt(0)').remove();
+			$('#check_contact').children(':gt(0)').remove();
 
 
 			//fuellt alle vorhandenen Textfelder mit eingegebenen Input
@@ -826,7 +852,7 @@
             //Felder fuer mehrere Kontakte hinzufuegen + fuellen
             if ($('#contacts').children().length>1) {
             	$('#contacts').children(':gt(0)').each(function() {
-            		$('#checkPersonalData_content4').children(':first').clone().appendTo($('#checkPersonalData_content4'));
+            		$('#check_contact').children(':first').clone().appendTo($('#check_contact'));
             		fill_contact_checks(this);
 
             	});
@@ -841,9 +867,9 @@
     });
 
 	function fill_contact_checks(elem_with_inputs){
-		$('#checkPersonalData_content4').children(':last').find('.output').each(function(){
+		$('#check_contact').children(':last').find('.output').each(function(){
 			if ($(elem_with_inputs).find('#'+this.id+'_input').val()=="") {
-				$(this).text("--");
+				$(this).text("");
 			}
 			else {
 				$(this).text($(elem_with_inputs).find('#'+this.id+'_input').val())
@@ -851,11 +877,11 @@
 		});
 		//alert($(elem_with_inputs).find('#wishesmails_input').is(':checked'));
 		if($(elem_with_inputs).find('#wishesmails_input').is(':checked')){
-				$('#checkPersonalData_content4').children(':last').find('#wishesmails').text("ja");
-			} 
-			else {
-				$('#checkPersonalData_content4').children(':last').find('#wishesmails').text("nein");
-			};
+			$('#check_contact').children(':last').find('#wishesmails').text("ja");
+		} 
+		else {
+			$('#check_contact').children(':last').find('#wishesmails').text("nein");
+		};
 
 	};
 
