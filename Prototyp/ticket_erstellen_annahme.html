@@ -3,13 +3,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
+
 <head>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+
 	<script src="bootstrap-3.3.7-dist/jquery/jquery-3.1.1.js"></script>
+	<script src="bootstrap-3.3.7-dist/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
 	<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 
 	<script src="tinymce/js/tinymce/tinymce.min.js"></script>
 	<script src="tinymce/js/tinymce/jquery.tinymce.min.js"></script>
+
 
 	<script>
 		tinymce.init({
@@ -23,192 +29,203 @@
 
 	<style type="text/css">
 
-		select:-moz-focusring { color: transparent;
-			text-shadow: 0 0 0 #000; }
+		select:-moz-focusring { 
+			color: transparent;
+			text-shadow: 0 0 0 #000; 
+		}
 
-			a:active,
-			a:hover, 
-			a:focus{
-				outline-style: none;
-				outline: 0;
-				text-decoration: none;
-			}
+		a:active,
+		a:hover, 
+		a:focus{
+			outline-style: none;
+			outline: 0;
+			text-decoration: none;
+		}
 
-			.form-control:focus {
-				border-color: seablue;
-				border-width: 2px;
-				outline: 0;
-				-webkit-box-shadow: none;
-				box-shadow: none;
-			}
+		.form-control:focus {
+			border-color: seablue;
+			border-width: 2px;
+			outline: 0;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+		.has-error .form-control:focus {
+			border-width: 2px;
+			outline: 0;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
 
-			.form-horizontal .control-label{
-				text-align:left;
-			}
+		.form-horizontal .control-label{
+			text-align:left;
+		}
 
-			.input-group{
-				margin-bottom: 10px;
-			}  	
-			.glyphicon {
-				top:2px;
-			}
-			.nav-tabs.nav-steps > li > a > .badge {
-				margin-right: 3px;
-				vertical-align: top;
-				padding: 4px 7px 3px;
-				border-style: solid;
-				border-width: 1px;
-				background-color: white;
-				color: #337ab7;
-			}
-			.nav-pills.nav-steps > li.active > a> .badge {
-				border-color: #3CBC3C;
-				border-width: 1px;
-				color: #3CBC3C;
-			}
-			.nav.nav-steps > li.finished:not(.active) > a:hover >.badge{
-				border-color: #aaa;
-				color: #aaa;
-			}
-
-
-			.nav.nav-steps > li.finished:not(.active) > a> .badge {
-				border-color: #8cdb8c;
-				border-width: 1px;
-				color: #8cdb8c;
-				background-color: white;
-			}
-
-
-			p {
-				margin: 0px 0px 0px 0px;
-			}
-
-			.table {
-				margin-bottom: 0px;
-			}
-
-			.table > tbody > tr > th, .table > tbody > tr > td {
-				border-width: 0px;
-				padding: 3px;
-			}
-
-			.nav-pills.nav-steps > li {
-				position: relative;
-				overflow: visible;
-				border-right: 15px solid transparent;
-				border-left: 15px solid transparent;
-			}
-			.nav-pills.nav-steps > li + li {
-				margin-left: 0;
-			}
-			.nav-pills.nav-steps > li:first-child {
-				border-left: 0;
-			}
-			.nav-pills.nav-steps > li:first-child a {
-				border-radius: 5px 0 0 5px;
-			}
-			.nav-pills.nav-steps > li:last-child {
-				border-right: 0;
-			}
-			.nav-pills.nav-steps > li:last-child a {
-				border-radius: 0 5px 5px 0;
-			}
-			.nav-pills.nav-steps > li > a {
-				border-radius: 1px;
-				background-color: #eee;
-				font-weight: bold;
-				font-size: 15px;
-				padding-top: 12px;
-				padding-bottom: 12px;
-			}
-
-			.nav-pills.nav-steps > li:not(.active):not(.disabled):not(.finished) > a {
-				color: #777;
-			}
-
-
-			.nav-pills.nav-steps > li:not(:last-child) a:after {
-				position: absolute;
-				content: "";
-				top: 0px;
-				right: -20px;
-				width: 0px;
-				height: 0px;
-				border-style: solid;
-				border-width: 23px 0 23px 20px;
-				border-color: transparent transparent transparent #eee;
-				z-index: 150;
-			}
-			.nav-pills.nav-steps > li:not(:first-child) a:before {
-				position: absolute;
-				content: "";
-				top: 0px;
-				left: -20px;
-				width: 0px;
-				height: 0px;
-				border-style: solid;
-				border-width: 23px 0 23px 20px;
-				border-color: #eee #eee #eee transparent;
-				z-index: 150;
-			}
-			.nav-pills.nav-steps > li:hover:not(:last-child):not(.active) a:after {
-				border-color: transparent transparent transparent #aaa;
-			}
-			.nav-pills.nav-steps > li:hover:not(:first-child):not(.active) a:before {
-				border-color: #aaa #aaa #aaa transparent;
-			}
-			.nav-pills.nav-steps > li:hover:not(.active) > a {
-				background-color: #aaa;
-				color: #fff;
-			}
-			.nav-pills.nav-steps > li:hover:not(.active) > a >.badge{
-				border-color: #aaa;
-				color: #aaa;
-			}
-
-			.nav-pills.nav-steps > li.finished > a:after {
-				border-color: transparent transparent transparent #8cdb8c;
-			}
-			.nav-pills.nav-steps > li.finished> a:before {
-				border-color: #8cdb8c #8cdb8c #8cdb8c transparent;
-			}
-			.nav-pills.nav-steps > li.finished > a {
-				background-color: #8cdb8c;
-				color: #fff;
-			}
-
-
-			.disabled{
-				pointer-events: none;
-			}
-
-
-			.nav-pills.nav-steps > li.active:not(:last-child) a:after {
-				border-color: transparent transparent transparent #3CBC3C;
-			}
-			.nav-pills.nav-steps > li.active:not(:first-child) a:before {
-				border-color: #3CBC3C #3CBC3C #3CBC3C transparent;
-			}
-			.nav-pills.nav-steps > li.active > a {
-				background-color: #3CBC3C;
-			}
-
-			.check-panel, .check-panel > div.panel-heading, div.panel-body {
-				border-color: #f2f2f2;
-				border-width: 2px
-			}
-
-			.check-panel .panel-title {
-				margin: 10px 0px;
-			}
-
-
-
+		.input-group{
+			margin-bottom: 10px;
+		}  	
+		.glyphicon {
+			top:2px;
+		}
+		.nav-tabs.nav-steps > li > a > .badge {
+			margin-right: 3px;
+			vertical-align: top;
+			padding: 4px 7px 3px;
+			border-style: solid;
+			border-width: 1px;
+			background-color: white;
+			color: #337ab7;
+		}
+		.nav-pills.nav-steps > li.active > a> .badge {
+			border-color: #3CBC3C;
+			border-width: 1px;
+			color: #3CBC3C;
+		}
+		.nav.nav-steps > li.finished:not(.active) > a:hover >.badge{
+			border-color: #aaa;
+			color: #aaa;
 		}
 
 
-	</style>
+		.nav.nav-steps > li.finished:not(.active) > a> .badge {
+			border-color: #8cdb8c;
+			border-width: 1px;
+			color: #8cdb8c;
+			background-color: white;
+		}
+
+
+		p {
+			margin: 0px 0px 0px 0px;
+		}
+
+		.table {
+			margin-bottom: 0px;
+		}
+
+		.table > tbody > tr > th, .table > tbody > tr > td {
+			border-width: 0px;
+			padding: 3px;
+		}
+
+		.nav-pills.nav-steps > li {
+			position: relative;
+			overflow: visible;
+			border-right: 15px solid transparent;
+			border-left: 15px solid transparent;
+		}
+		.nav-pills.nav-steps > li + li {
+			margin-left: 0;
+		}
+		.nav-pills.nav-steps > li:first-child {
+			border-left: 0;
+		}
+		.nav-pills.nav-steps > li:first-child a {
+			border-radius: 5px 0 0 5px;
+		}
+		.nav-pills.nav-steps > li:last-child {
+			border-right: 0;
+		}
+		.nav-pills.nav-steps > li:last-child a {
+			border-radius: 0 5px 5px 0;
+		}
+		.nav-pills.nav-steps > li > a {
+			border-radius: 1px;
+			background-color: #eee;
+			font-weight: bold;
+			font-size: 15px;
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+
+		.nav-pills.nav-steps > li:not(.active):not(.disabled):not(.finished) > a {
+			color: #777;
+		}
+
+
+		.nav-pills.nav-steps > li:not(:last-child) a:after {
+			position: absolute;
+			content: "";
+			top: 0px;
+			right: -20px;
+			width: 0px;
+			height: 0px;
+			border-style: solid;
+			border-width: 23px 0 23px 20px;
+			border-color: transparent transparent transparent #eee;
+			z-index: 150;
+		}
+		.nav-pills.nav-steps > li:not(:first-child) a:before {
+			position: absolute;
+			content: "";
+			top: 0px;
+			left: -20px;
+			width: 0px;
+			height: 0px;
+			border-style: solid;
+			border-width: 23px 0 23px 20px;
+			border-color: #eee #eee #eee transparent;
+			z-index: 150;
+		}
+		.nav-pills.nav-steps > li:hover:not(:last-child):not(.active) a:after {
+			border-color: transparent transparent transparent #aaa;
+		}
+		.nav-pills.nav-steps > li:hover:not(:first-child):not(.active) a:before {
+			border-color: #aaa #aaa #aaa transparent;
+		}
+		.nav-pills.nav-steps > li:hover:not(.active) > a {
+			background-color: #aaa;
+			color: #fff;
+		}
+		.nav-pills.nav-steps > li:hover:not(.active) > a >.badge{
+			border-color: #aaa;
+			color: #aaa;
+		}
+
+		.nav-pills.nav-steps > li.finished > a:after {
+			border-color: transparent transparent transparent #8cdb8c;
+		}
+		.nav-pills.nav-steps > li.finished> a:before {
+			border-color: #8cdb8c #8cdb8c #8cdb8c transparent;
+		}
+		.nav-pills.nav-steps > li.finished > a {
+			background-color: #8cdb8c;
+			color: #fff;
+		}
+
+
+		.disabled{
+			pointer-events: none;
+		}
+
+
+		.nav-pills.nav-steps > li.active:not(:last-child) a:after {
+			border-color: transparent transparent transparent #3CBC3C;
+		}
+		.nav-pills.nav-steps > li.active:not(:first-child) a:before {
+			border-color: #3CBC3C #3CBC3C #3CBC3C transparent;
+		}
+		.nav-pills.nav-steps > li.active > a {
+			background-color: #3CBC3C;
+		}
+
+		.check-panel, .check-panel > div.panel-heading, div.panel-body {
+			border-color: #f2f2f2;
+			border-width: 2px
+		}
+
+		.check-panel .panel-title {
+			margin: 10px 0px;
+		}
+
+		.help-block { display: none; }
+		.form-group.has-error .help-block { display: block; }
+
+
+
+	}
+
+
+</style>
 
 </head>
 
@@ -364,25 +381,27 @@
 										<!-- Tab1 -->
 										<div class="panel-body tab-pane active" id="tab1">
 											<div class="form-group">
-												<label for"subject">
+												<label for"subject_input" class="control-label">
 													Betreff *
 												</label>
-												<input id="subject_input" class="form-control checkedInput" type="text">
+												<input id="subject_input" class="form-control required" type="text">
+												<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
 											</div>
 											<div class="form-group">
-												<label for"subject">
+												<label for"geraet_input" class="control-label">
 													Ger&auml;t *
 												</label>
-												<select class="custom-select form-control" id="gereat_input">
+												<select class="form-control required" id="gereat_input">
 													<option selected></option>
 													<option value="Kaffeemaschine">Kaffeemaschine</option>
 													<option value="Waschmaschine">Waschmaschine</option>
 													<option value="Fernseher">Fernseher</option>
 												</select>
+												<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
 											</div>
 											<div class="form-group">
-												<label for"mceu_13">
-													Beschreibung
+												<label for"mceu_13" class="control-label">
+													Beschreibung / initialer Chronik-Eintrag
 												</label>
 												<input id="mytextarea" >
 											</div>
@@ -415,13 +434,13 @@
 																<label class="col-sm-3 pull-left">Ansprechpartner 1</label>
 																<button class="close" style="padding-right: 15px" id="deleteContact" title="Kontakt entfernen">x</button>
 															</div>
-															<form class="">
+															<form cass="">
 																<div class="row">
 																	<div class="col-md-2 form-group">
-																		<label for"anrede">
+																		<label for"anrede_input" class="control-label">
 																			Anrede
 																		</label>
-																		<select class="custom-select mb-2 form-control" id="anrede_input">
+																		<select class="mb-2 form-control" id="anrede_input">
 																			<option selected></option>
 																			<option value="Herr">Herr</option>
 																			<option value="Frau">Frau</option>
@@ -429,39 +448,41 @@
 
 																	</div>
 																	<div class="col-md-5 form-group">
-																		<label for"vorname">
+																		<label for"vorname_input" class="control-label">
 																			Vorname *
 																		</label>
-																		<input id="vorname_input" class="form-control" type="text">
+																		<input id="vorname_input" class="form-control required" type="text">
+																		<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
 																	</div>
 																	<div class="col-md-5 form-group">
-																		<label for"nachname">
+																		<label for"nachname_input" class="control-label">
 																			Nachname *
 																		</label>
-																		<input id="nachname_input" class="form-control" type="text">
+																		<input id="nachname_input" class="form-control required" type="text">
+																		<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
 																	</div>
 																</div>
 																<div class="row">
-																<div class="form-group col-md-12">
-																	<label for"telefon">
-																		Telefon
-																	</label>
-																	<input id="telefon_input" class="form-control" type="text">
-																</div>
+																	<div class="form-group col-md-12">
+																		<label for"telefon_input" class="control-label">
+																			Telefon
+																		</label>
+																		<input id="telefon_input" class="form-control" type="text">
+																	</div>
 																</div>
 																<div class="row">
-																<div class="form-group col-md-9">
-																	<label for"email">
-																		eMail
-																	</label>
-																	<input id="email_input" class="form-control" type="text">
-																</div>
-																<div class="input-group col-md-3 pull-right">
-																	<label for"wishesmails">
-																		eMails an Kontakt senden
-																	</label>
-																	<input id="wishesmails_input" class="form-control checkedInput" type="checkbox">
-																</div>
+																	<div class="form-group col-md-9">
+																		<label for"email_input" class="control-label">
+																			eMail
+																		</label>
+																		<input id="email_input" class="form-control" type="text">
+																	</div>
+																	<div class="input-group col-md-3 pull-right">
+																		<label for"wishesmails_input" class="control-label">
+																			eMails an Kontakt senden
+																		</label>
+																		<input id="wishesmails_input" class="form-control" type="checkbox">
+																	</div>
 																</div>
 															</form>
 														</div>
@@ -499,20 +520,21 @@
 										<!-- Tab3 -->
 										<div class="panel-body tab-pane" id="tab3">
 											<div>
-											    <div class="form-group">
-													<label for"abteilung">
+												<div class="form-group">
+													<label for"abteilung_input" class="control-label">
 														Abteilung *
 													</label>
-													<select class="custom-select mb-12 form-control" id="abteilung_input">
+													<select class="mb-12 form-control required" id="abteilung_input">
 														<option selected></option>
 														<option value="Service/Reperatur">Service/Reperatur</option>
 													</select>
+													<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
 												</div>
 												<div class="form-group">
-													<label for"kategorie">
+													<label for"kategorie_input" class="control-label">
 														Ticket-Kategorie
 													</label>
-													<select class="custom-select mb-12 form-control" id="kategorie_input">
+													<select class="mb-12 form-control" id="kategorie_input">
 														<option selected></option>
 														<option value="Reperatur">Reperatur</option>
 														<option value="Ersaztteil bestellen">Ersaztteil bestellen</option>
@@ -520,10 +542,10 @@
 													</select>
 												</div>
 												<div class="form-group">
-													<label for"prioritaet">
+													<label for"prioritaet_input" class="control-label">
 														Ticket-Priorit&auml;t
 													</label>
-													<select class="custom-select mb-12 form-control" id="prioritaet_input">
+													<select class="mb-12 form-control" id="prioritaet_input">
 														<option selected></option>
 														<option value="hoch">hoch</option>
 														<option value="niedrig">niedrig</option>
@@ -531,23 +553,23 @@
 												</div>
 												<div class="form-group">
 													<div class="form-group">
-																	<label for"aufwand">
-																		gesch&auml;tzter Stundenaufwand
-																	</label>
-																	<input id="aufwand_input" class="form-control" type="text">
-																</div>
+														<label for"aufwand_input" class="control-label">
+															gesch&auml;tzter Stundenaufwand
+														</label>
+														<input id="aufwand_input" class="form-control" type="text">
+													</div>
 												</div>
 												<div class="form-group">
 													<div class="form-group">
-																	<label for"faellig">
-																		f&auml;llig bis
-																	</label>
-																	<input id="faellig_input" class="form-control" type="text">
-																</div>
+														<label for"faellig_input" class="control-label">
+															f&auml;llig bis
+														</label>
+														<input id="faellig_input" class="form-control datepicker" type="text">
+													</div>
 												</div>
 
 												<div class="form-group">
-													<label for"kundensichtbar">
+													<label for"kundensichtbar_input" class="control-label">
 														Ticket kundensichtbar
 													</label>
 													<div class="form-check form-check-inline">
@@ -642,18 +664,18 @@
 													</div>
 													<div id="checkKontakt" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkKontakt">
 														<div id="check_contact">
-														<div class="panel-body" id="check_contact_person" style="border-width: 2px; border-top-style: solid;">
+															<div class="panel-body" id="check_contact_person" style="border-width: 2px; border-top-style: solid;">
 																<form class="form-horizontal">
 																	<div class="form-group">
 																		<label for"anrede" class="col-sm-2 control-label">
 																			Ansprechpartner:
 																		</label>
 																		<div class="col-sm-10 form-control-static">
-																			<div id="anrede" class="output" style="display: inline-block;" type="text">
-																			</div>																
-																			<div class=" output inline" style="display: inline-block;" id="vorname">
-																			</div>
-																			<div class="output inline" style="display: inline-block;" id="nachname">
+																			<div id="anrede" class="output" style="display: inline-block;">
+																			</div>															
+																			<div class="output" style="display: inline-block;" id="vorname">
+																			</div>f
+																			<div class="output" style="display: inline-block;" id="nachname">
 																			</div>
 																		</div>
 																	</div>
@@ -700,7 +722,7 @@
 													<div id="checkSpezi" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkSpezi">
 														<div class="panel-body" style="border-width: 2px">
 															<form class="form-horizontal">
-															    <div class="form-group">
+																<div class="form-group">
 																	<label for"abteilung" class="col-sm-2 control-label">
 																		Abteilung:
 																	</label>
@@ -725,19 +747,19 @@
 																	</div>
 																</div>
 																<div class="form-group">
-																		<label for"aufwand" class="col-sm-2 control-label">
-																			gesch&auml;tzter Stundenaufwand:
-																		</label>
-																		<div class="form-control-static output col-sm-10" id="aufwand">
-																		</div>
+																	<label for"aufwand" class="col-sm-2 control-label">
+																		gesch&auml;tzter Stundenaufwand:
+																	</label>
+																	<div class="form-control-static output col-sm-10" id="aufwand">
 																	</div>
+																</div>
 																<div class="form-group">
-																		<label for"faellig" class="col-sm-2 control-label">
-																			f&auml;llig bis:
-																		</label>
-																		<div class="form-control-static output col-sm-10" id="faellig">
-																		</div>
+																	<label for"faellig" class="col-sm-2 control-label">
+																		f&auml;llig bis:
+																	</label>
+																	<div class="form-control-static output col-sm-10" id="faellig">
 																	</div>
+																</div>
 
 																<div class="form-group">
 																	<label for"kundensichtbar" class="col-sm-2 control-label">
@@ -816,25 +838,34 @@
 		$('.nav.nav-steps li').not('.active').find('a').removeAttr("data-toggle");
 
 
-		//Wechsel der Tabs ueber Button 'weiter'
+		//Wechsel der Tabs ueber Button 'weiter' + Validation
 		$('.navTabsNext').click(function () {
 
-			$('#navTabBar li.active').addClass('finished');
-			//$('#navTabBar li.active').addClass('disabled');
-			//$('#navTabBar li.active').find('a').removeAttr("data-toggle");
-			//$('#navTabBar li.active').next('li').removeClass('disabled');
-			$('#navTabBar li.active').next('li').find('a').attr('data-toggle','tab');
-			$('#navTabBar li.active').next().find('a').trigger("click");
+			checkRequiredForms();
 
-			//sobald check-tab erreicht, alle restlichen Tabs anwaehlbar
-			if($('#navTabBar li.active').find('a').attr("href")=='#check'){
-				if($('.nav.nav-steps li:first').hasClass('disabled')){
-					$('.nav.nav-steps li').removeClass('disabled');
-					$('.nav.nav-steps li').find('a').attr('data-toggle','tab');
-					$('.nav.nav-steps li:not(:last)').find('a').append('<span style="padding-left:5px;" class="glyphicon glyphicon-pencil"></span>');
-				};
-			};
-			window.scrollTo(0, 400);
+			//Tabwechsel nur falls keine unausgefuellten pflichtfelder
+			if ($('.tab-pane.active .has-error').length==0){ 
+
+				$('#navTabBar li.active').addClass('finished');
+				//$('#navTabBar li.active').addClass('disabled');
+				//$('#navTabBar li.active').find('a').removeAttr("data-toggle");
+				//$('#navTabBar li.active').next('li').removeClass('disabled');
+				$('#navTabBar li.active').next('li').find('a').attr('data-toggle','tab');
+				$('#navTabBar li.active').next().find('a').trigger("click");
+
+		    	//sobald check-tab erreicht, alle restlichen Tabs anwaehlbar
+		    	if($('#navTabBar li.active').find('a').attr("href")=='#check'){
+		    		if($('.nav.nav-steps li:first').hasClass('disabled')){
+		    			$('.nav.nav-steps li').removeClass('disabled');
+		    			$('.nav.nav-steps li').find('a').attr('data-toggle','tab');
+		    			$('.nav.nav-steps li:not(:last)').find('a').append('<span style="padding-left:5px;" class="glyphicon glyphicon-pencil"></span>');
+		    		};
+		    	};
+		    	$(document).scrollTop(($("#navTabBar").parent()).offset().top);
+		    } 
+		    else {
+		    	focusFirstError();
+		    };
 		});
 		
 
@@ -842,12 +873,21 @@
 		$('#deleteContact').click(function () {
 			if($('#contacts').children().length>1){
 				$(this).parents('#contact_person').remove();
+				$('#contacts').children().each(function(index){
+					$(this).find('label:first').text("Ansprechpartner "+(index+1));
+				});
 			}
 			else {
 				$(this).parents('#contact_person').find(':input').val('');
 			}
 
 		});
+
+		//Kalender Pop-Up
+		$( "#faellig_input" ).datepicker();
+
+
+
 
 
 		//Aktualisieren der Textfelder im Uebersicht-Tab
@@ -879,41 +919,86 @@
 			//Inhalt tinyMCE
 			$('#description').html(tinyMCE.activeEditor.getContent({format : 'raw'}));
 
-            //Felder fuer mehrere Kontakte hinzufuegen + fuellen
-            if ($('#contacts').children().length>1) {
-            	$('#contacts').children(':gt(0)').each(function() {
-            		$('#check_contact').children(':first').clone().appendTo($('#check_contact'));
-            		fill_contact_checks(this);
+      	    //Felder fuer mehrere Kontakte hinzufuegen + fuellen
+      	    if ($('#contacts').children().length>1) {
+      	    	$('#contacts').children(':gt(0)').each(function() {
+      	    		$('#check_contact').children(':first').clone().appendTo($('#check_contact'));
+      	    		fill_contact_checks(this);
 
-            	});
-            };
-        });
+      	    	});
+      	    };
+      	});
 
-        //Kontakt-Form um weiteren Kontakt anfuegen + Inhalt ruecksetzen
-        $('#addcontact').click(function () {
-        	$('#contact_person').clone(':first').appendTo($('#contacts'));	
-        	$('#contacts').children(':last').find(':input').val('');
-        });
-    });
+  	    //Kontakt-Form um weiteren Kontakt anfuegen + Inhalt ruecksetzen
+  	    $('#addcontact').click(function () {
+  	    	$('#contact_person').clone(':first').appendTo($('#contacts'));	
+  	    	$('#contacts').children(':last').find('label:first').text("Ansprechpartner "+$('#contacts').children().length);
+  	    	$('#contacts').children(':last').find(':input').val('');
+  	    });
 
-	function fill_contact_checks(elem_with_inputs){
-		$('#check_contact').children(':last').find('.output').each(function(){
-			if ($(elem_with_inputs).find('#'+this.id+'_input').val()=="") {
-				$(this).text("");
-			}
-			else {
-				$(this).text($(elem_with_inputs).find('#'+this.id+'_input').val())
-			}
-		});
-		//alert($(elem_with_inputs).find('#wishesmails_input').is(':checked'));
-		if($(elem_with_inputs).find('#wishesmails_input').is(':checked')){
-			$('#check_contact').children(':last').find('#wishesmails').text("ja");
-		} 
+  	    // Prueft bei Tabwechsel alle Pflichtfelder
+  	    $('#navTabBar li a').click(function (event){
+  	    	checkRequiredForms();
+			//Tabwechsel nur falls keine unausgefuellten pflichtfelder
+			if ($('.tab-pane.active .has-error').length!=0){ 
+					//alert("error"+$('.tab-pane.active .has-error').length);
+					focusFirstError();
+					event.stopPropagation();
+				};
+			});
+
+  	    $(':input').blur(function() {
+  	    	if ($(this).closest('.form-group').hasClass('has-error')){
+  	    		if($(this).val()!=""){
+  	    			$(this).closest('.form-group').removeClass('has-error');
+  	    			//alert($(this).val());
+  	    		}
+  	    	}
+
+  	    });
+
+
+
+  	});
+
+function fill_contact_checks(elem_with_inputs){
+	$('#check_contact').children(':last').find('.output').each(function(){
+		if ($(elem_with_inputs).find('#'+this.id+'_input').val()=="") {
+			$(this).text("");
+		}
 		else {
-			$('#check_contact').children(':last').find('#wishesmails').text("nein");
-		};
-
+			$(this).text($(elem_with_inputs).find('#'+this.id+'_input').val())
+		}
+	});
+	//alert($(elem_with_inputs).find('#wishesmails_input').is(':checked'));
+	if($(elem_with_inputs).find('#wishesmails_input').is(':checked')){
+		$('#check_contact').children(':last').find('#wishesmails').text("ja");
+	} 
+	else {
+		$('#check_contact').children(':last').find('#wishesmails').text("nein");
 	};
+
+};
+
+function checkRequiredForms(){
+	$('.tab-pane.active .required').each(function(){
+		if($(this).val()===""){
+			$(this).closest('.form-group').addClass('has-error');
+		}
+		else {
+			$(this).closest('.form-group').removeClass('has-error');
+		}
+	});
+
+};
+
+function focusFirstError(){
+	var firstElemWithError = $('.tab-pane.active').find('.has-error').first().find(':input');
+	firstElemWithError.focus();
+	$(document).scrollTop((firstElemWithError.parent()).offset().top);
+};
+
+
 
 
 </script>
