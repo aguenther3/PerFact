@@ -7,6 +7,7 @@
 <head>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<link rel="stylesheet" href="prototyp.css">
 
 	<script src="bootstrap-3.3.7-dist/jquery/jquery-3.1.1.js"></script>
 	<script src="bootstrap-3.3.7-dist/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
@@ -22,210 +23,15 @@
 			selector: '#mytextarea',
 			statusbar: false,
 			menubar: false,
-			height : "250"
+			height : "220"
 
 		});
 	</script>
 
 	<style type="text/css">
 
-		select:-moz-focusring { 
-			color: transparent;
-			text-shadow: 0 0 0 #000; 
-		}
 
-		a:active,
-		a:hover, 
-		a:focus{
-			outline-style: none;
-			outline: 0;
-			text-decoration: none;
-		}
-
-		.form-control:focus {
-			border-color: seablue;
-			border-width: 2px;
-			outline: 0;
-			-webkit-box-shadow: none;
-			box-shadow: none;
-		}
-		.has-error .form-control:focus {
-			border-width: 2px;
-			outline: 0;
-			-webkit-box-shadow: none;
-			box-shadow: none;
-		}
-
-		.form-horizontal .control-label{
-			text-align:left;
-		}
-
-		.input-group{
-			margin-bottom: 10px;
-		}  	
-		.glyphicon {
-			top:2px;
-		}
-		.nav-tabs.nav-steps > li > a > .badge {
-			margin-right: 3px;
-			vertical-align: top;
-			padding: 4px 7px 3px;
-			border-style: solid;
-			border-width: 1px;
-			background-color: white;
-			color: #337ab7;
-		}
-		.nav-pills.nav-steps > li.active > a> .badge {
-			border-color: #3CBC3C;
-			border-width: 1px;
-			color: #3CBC3C;
-		}
-		.nav.nav-steps > li.finished:not(.active) > a:hover >.badge{
-			border-color: #aaa;
-			color: #aaa;
-		}
-
-
-		.nav.nav-steps > li.finished:not(.active) > a> .badge {
-			border-color: #8cdb8c;
-			border-width: 1px;
-			color: #8cdb8c;
-			background-color: white;
-		}
-
-
-		p {
-			margin: 0px 0px 0px 0px;
-		}
-
-		.table {
-			margin-bottom: 0px;
-		}
-
-		.table > tbody > tr > th, .table > tbody > tr > td {
-			border-width: 0px;
-			padding: 3px;
-		}
-
-		.nav-pills.nav-steps > li {
-			position: relative;
-			overflow: visible;
-			border-right: 15px solid transparent;
-			border-left: 15px solid transparent;
-		}
-		.nav-pills.nav-steps > li + li {
-			margin-left: 0;
-		}
-		.nav-pills.nav-steps > li:first-child {
-			border-left: 0;
-		}
-		.nav-pills.nav-steps > li:first-child a {
-			border-radius: 5px 0 0 5px;
-		}
-		.nav-pills.nav-steps > li:last-child {
-			border-right: 0;
-		}
-		.nav-pills.nav-steps > li:last-child a {
-			border-radius: 0 5px 5px 0;
-		}
-		.nav-pills.nav-steps > li > a {
-			border-radius: 1px;
-			background-color: #eee;
-			font-weight: bold;
-			font-size: 15px;
-			padding-top: 12px;
-			padding-bottom: 12px;
-		}
-
-		.nav-pills.nav-steps > li:not(.active):not(.disabled):not(.finished) > a {
-			color: #777;
-		}
-
-
-		.nav-pills.nav-steps > li:not(:last-child) a:after {
-			position: absolute;
-			content: "";
-			top: 0px;
-			right: -20px;
-			width: 0px;
-			height: 0px;
-			border-style: solid;
-			border-width: 23px 0 23px 20px;
-			border-color: transparent transparent transparent #eee;
-			z-index: 150;
-		}
-		.nav-pills.nav-steps > li:not(:first-child) a:before {
-			position: absolute;
-			content: "";
-			top: 0px;
-			left: -20px;
-			width: 0px;
-			height: 0px;
-			border-style: solid;
-			border-width: 23px 0 23px 20px;
-			border-color: #eee #eee #eee transparent;
-			z-index: 150;
-		}
-		.nav-pills.nav-steps > li:hover:not(:last-child):not(.active) a:after {
-			border-color: transparent transparent transparent #aaa;
-		}
-		.nav-pills.nav-steps > li:hover:not(:first-child):not(.active) a:before {
-			border-color: #aaa #aaa #aaa transparent;
-		}
-		.nav-pills.nav-steps > li:hover:not(.active) > a {
-			background-color: #aaa;
-			color: #fff;
-		}
-		.nav-pills.nav-steps > li:hover:not(.active) > a >.badge{
-			border-color: #aaa;
-			color: #aaa;
-		}
-
-		.nav-pills.nav-steps > li.finished > a:after {
-			border-color: transparent transparent transparent #8cdb8c;
-		}
-		.nav-pills.nav-steps > li.finished> a:before {
-			border-color: #8cdb8c #8cdb8c #8cdb8c transparent;
-		}
-		.nav-pills.nav-steps > li.finished > a {
-			background-color: #8cdb8c;
-			color: #fff;
-		}
-
-
-		.disabled{
-			pointer-events: none;
-		}
-
-
-		.nav-pills.nav-steps > li.active:not(:last-child) a:after {
-			border-color: transparent transparent transparent #3CBC3C;
-		}
-		.nav-pills.nav-steps > li.active:not(:first-child) a:before {
-			border-color: #3CBC3C #3CBC3C #3CBC3C transparent;
-		}
-		.nav-pills.nav-steps > li.active > a {
-			background-color: #3CBC3C;
-		}
-
-		.check-panel, .check-panel > div.panel-heading, div.panel-body {
-			border-color: #f2f2f2;
-			border-width: 2px
-		}
-
-		.check-panel .panel-title {
-			margin: 10px 0px;
-		}
-
-		.help-block { display: none; }
-		.form-group.has-error .help-block { display: block; }
-
-
-
-	}
-
-
-</style>
+	</style>
 
 </head>
 
@@ -404,6 +210,30 @@
 													Beschreibung / initialer Chronik-Eintrag
 												</label>
 												<input id="mytextarea" >
+												<div class="row panel panel-default" style="border-color: #C0C0C0; margin-left: 0px; margin-right: 0px; border-top-width: 0px; border-radius: 0px; margin-bottom: 0px; ">
+													<div class="">
+
+
+
+														<!--<div class="col-xs-6 col-md-3">
+															<a href="#" class="thumbnail">
+																<img src="" alt="">
+															</a>
+														</div>-->
+													</div>
+												</div>
+												<div class="row panel panel-default" style="border-color: #C0C0C0; margin-left: 0px; margin-right: 0px; border-top-width: 0px; border-radius: 0px; margin-bottom: 0px; background-color: #F0F0F0;">
+													<div class="panel-body">
+														
+														
+														<div class="btn btn-default btn-file">
+															<span class="glyphicon glyphicon-paperclip"></span>
+															<span>Datei anf&uuml;gen</span> 
+															<input type="file">
+														</div>													
+													</div>
+												</div>
+
 											</div>
 											<div class="panel-body" style="padding-bottom: 0px; margin-top: 45px;">
 												<div class="pull-right">
@@ -489,7 +319,7 @@
 													</div>
 												</div>
 												<div>
-													<button class="btn btn-default panel-heading-btn btn-block pull-left" type="button" aria-hidden="true" style="margin-bottom: 15px; margin-top: 15px" id="addcontact">
+													<button class="btn panel-heading-btn btn-block pull-left" type="button" aria-hidden="true" style="margin-bottom: 15px; margin-top: 15px" id="addcontact">
 														<span class="glyphicon glyphicon-plus">
 														</span>
 														<span>
@@ -955,6 +785,12 @@
   	    		}
   	    	}
 
+  	    });
+
+
+  	    $(':file').on('fileselect', function(event, numFiles, label) {
+  	    	console.log(numFiles);
+  	    	console.log(label);
   	    });
 
 

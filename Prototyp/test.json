@@ -1,40 +1,40 @@
 {
-	"tsticket_creator": "Max Mustermann",
-	"tsticket_createtime": "07.06.11 12:19", 
-	"tsticket_author": "Max Mustermann",
-	"tsticket_modtime": "07.06.11 12:21", 
-	"tsticket_status": "Dispatching",
-	"tsticket_id": "123", 
+	"creator": "Max Mustermann",
+	"createtime": "07.06.11 12:19", 
+	"author": "Max Mustermann",
+	"modtime": "07.06.11 12:21", 
+	"status": "Dispatching",
+	"ticket_id": "123", 
 
-	"tsticket_subject": "Defekte Waschmaschine",
-	"tsticket_geraet": "Kaffemaschine",
+	"subject": "Defekte Kaffemaschine",
+	"geraet": "Kaffeemaschine",
 
 	"contact": [
 		{
-		"tstimeline_anrede": "Herr",
-		"tstimeline_vorname": "Max",
-		"tstimeline_nachname": "Mustermann",
-		"tstimeline_telefon": "01769999904",
-		"tstimeline_email": "max@mustermann.de",
-		"tstimeline_wishes_emails": "true"
+		"anrede": "Herr",
+		"vorname": "Max",
+		"nachname": "Mustermann",
+		"telefon": "0123456780",
+		"email": "max@mustermann.de",
+		"wishesemails": "true"
 	    },
 	    {
-		"tstimeline_anrede": "Frau",
-		"tstimeline_vorname": "Maxine",
-		"tstimeline_nachname": "Mustermann",
-		"tstimeline_telefon": "01769999904",
-		"tstimeline_email": "maxine@mustermann.de",
-		"tstimeline_wishes_emails": "true"
+		"anrede": "Frau",
+		"vorname": "Maxine",
+		"nachname": "Mustermann",
+		"telefon": "0123456789",
+		"email": "maxine@mustermann.de",
+		"wishesemails": "true"
 	    }
 	],
-
-	"tsticket_custvisible": "true",
-	"tsticket_due": "2011-07-11",
-	"tsticket_estimatedhours": "3",
-	"tsticket_qualified_tscategory_id": "Reperatur",
-	"tsticket_tsprio_id": "hoch", 
-	"tstimeline_abteilung": "Reperatur-Menschen",
-	"tstimeline_verantwortlicher": "Mr Reperateur",
+  
+	"kundensichtbar": "ja",
+	"faellig": "2011-07-11",
+	"aufwand": "3",
+	"kategorie": "Reperatur",
+	"prioritaet": "hoch", 
+	"abteilung": "Service/Reperatur",
+	"verantwortlicher": "",
 
 	"tsticket_feedbackdue": "2011-07-20", 
 	"tsticket_reporttext": "y",
@@ -45,7 +45,7 @@
 		"tstimeline_author": "Max Mustermann",
 		"tstimeline_createtime": "07.06.11 12",
 		"tstimeline_creator": "Max Mustermann",
-		"tstimeline_custvisible": "true",
+		"tstimeline_custvisible": "ja",
 		"tstimeline_modtime": "07.06.11 12:21",
 		"tstimeline_text": ":("
 	    },

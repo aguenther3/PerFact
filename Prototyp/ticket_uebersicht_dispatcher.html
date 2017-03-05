@@ -4,11 +4,29 @@
 
 <head>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<link rel="stylesheet" href="prototyp.css">
+
 	<script src="bootstrap-3.3.7-dist/jquery/jquery-3.1.1.js"></script>
+	<script src="bootstrap-3.3.7-dist/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
 	<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-	<style type="text/css">
-		
-	</style>
+
+	<script src="tinymce/js/tinymce/tinymce.min.js"></script>
+	<script src="tinymce/js/tinymce/jquery.tinymce.min.js"></script>
+
+
+	<script>
+		tinymce.init({
+			selector: '#mytextarea',
+			statusbar: false,
+			menubar: false,
+			height : "200"
+
+		});
+	</script>
+
+
 </head>
 
 <body>
@@ -27,7 +45,7 @@
 				<div style="margin-top: 20px">
 
 					<!-- Nav-Bar top -->
-					<nav class="navbar navbar-default">
+					<nav class="navbar navbar-default" style="border-width: 2px">
 						<ul class="nav navbar-nav navbar-right">
 							<li>
 								<p class="navbar-text" style="margin-right: 5px">
@@ -86,96 +104,516 @@
 					<!-- Ticket -->
 					<div>
 						<div style="margin-top: 20px">
-							<div class="panel panel-default" >
+							<div class="panel panel-default" style="border-width: 2px">
 
 								<!-- Ticket-Head -->
-								<div style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #e5e5e5;">
+								<div style="border-bottom-style: solid;border-bottom-width: 2px;border-bottom-color: #e5e5e5;">
 									<div class="panel-body" 
 									<!--     style="background-color: #E3E2DE -->
 									">
 									<div class="pull-right" style="margin-bottom:30"> 
 										Status: 
 										<span class="inline" style="font-weight: bold; color: orange">
-											<span id="tsticket_status"></span>
+											<span id="status"></span>
 										</span>
 									</div>
 									<div style="margin-bottom:40px">
 										<h3 id="">
-											#T<span id="tsticket_id">
-											</span>
-											-
-											<span id="tsticket_subject">
-											</span>
-										</h3>
+											#T<span id="ticket_id">
+										</span>
+										-
+										<span id="subject">
+										</span>
+									</h3>
+								</div>
+								<div class="row">
+									<div class="col-xs-7">
+										<b>
+											Ger&auml;t:
+										</b>
+										<span id="geraet">
+										</span>
 									</div>
-									<div class="row">
-										<div class="col-xs-7">
-											<b>
-												Ger&auml;t:
-											</b>
-											<span id="tsticket_geraet">
-											</span>
-										</div>
-										<div class="col-xs-5">
-											<div class="pull-right">
-												<div>
-													erstellt
-													<span id="tsticket_createtime">
-													</span>
-													von
-													<span id="tsticket_creator">
-													</span>
-												</div>
-												<div>
-													ge&auml;ndert
-													<span id="tsticket_modtime">
-													</span>
-													von
-													<span id="tsticket_author">
-													</span>
-												</div>
+									<div class="col-xs-5">
+										<div class="pull-right">
+											<div>
+												erstellt
+												<span id="createtime">
+												</span>
+												von
+												<span id="creator">
+												</span>
+											</div>
+											<div>
+												ge&auml;ndert
+												<span id="modtime">
+												</span>
+												von
+												<span id="author">
+												</span>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+						</div>
 
-							<!-- Ticket-Body -->
-							<div class="panel-body">
-								<ul class="nav nav-tabs nav-justified">
-									<li class="active">
-										<a href="#tab1" data-toggle="tab">
-											<span class="glyphicon glyphicon-credit-card">
-											</span> 
-											&Uuml;bersicht
-										</a>
-									</li>
-									<li>
-										<a href="#tab2" data-toggle="tab">
-											<span class="glyphicon glyphicon-comment">
-											</span> 
-											Chronik
-										</a>
-									</li>
-									<li>
-										<a href="#tab3" data-toggle="tab">
-											<span class="glyphicon glyphicon-bullhorn">
+						<!-- Ticket-Body -->
+						<div class="panel-body">
+							<ul class="nav nav-pills  nav-button nav-justified" id="navTabs">
+								<li class="active">
+									<a href="#tab1" data-toggle="tab">
+										<span class="glyphicon glyphicon-credit-card">
+										</span> 
+										&Uuml;bersicht
+									</a>
+								</li>
+								<li>
+									<a href="#tab2" data-toggle="tab">
+										<span class="glyphicon glyphicon-comment">
+										</span> 
+										Chronik
+									</a>
+								</li>
+								<li>
+									<a href="#tab3" data-toggle="tab">
+										<span class="glyphicon glyphicon-bullhorn">
+										</span>
+										Report
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="panel-body">
+							<div class="tab-content">
+
+								<!-- Tab1 -->
+								<div class="panel-body tab-pane active" id="tab1">
+
+									<div class="panel panel-default check-panel">   
+										<div class="check-heading panel-heading clearfix">
+											<h4 class="panel-title">
+												<a role="button" data-toggle="collapse" href="#checkKontakt" aria-expanded="true" aria-controls="checKontakt">
+													<span class="glyphicon glyphicon-menu-down"> 
+													</span>
+													<span> 
+														Kontakt
+													</span>
+												</a>
+											</h4>
+										</div>
+										<div id="checkKontakt" class="panel-collapse collapse panel-content" role="tabpanel" aria-labelledby="checkKontakt">
+											<div id="check_contact">
+												<div class="panel-body" id="check_contact_person" style="border-width: 2px; border-top-style: solid;">
+													<form class="form-horizontal">
+														<div class="form-group">
+															<label for"anrede" class="col-sm-2 control-label">
+																Ansprechpartner:
+															</label>
+															<div class="col-sm-10 form-control-static">
+																<div id="anrede" class="output" style="display: inline-block;">
+																</div>															
+																<div class="output" style="display: inline-block;" id="vorname">
+																</div>
+																<div class="output" style="display: inline-block;" id="nachname">
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label for"telefon" class="col-sm-2 control-label">
+																Telefon:
+															</label>
+															<div class="form-control-static output col-sm-10" id="telefon">
+															</div>
+														</div>
+														<div class="form-group">
+															<label for"email" class="col-sm-2 control-label">
+																eMail:
+															</label>
+															<div class="form-control-static output col-sm-10" id="email">
+															</div>
+														</div>
+														<div class="form-group">
+															<label for"wishesmails" class="col-sm-2 control-label">
+																eMails an Kontakt senden:
+															</label>
+															<div class="form-control-static output col-sm-10" id="wishesmails">
+															</div>
+														</div>
+													</form>
+
+												</div>
+											</div> 
+										</div>
+									</div>
+
+									<div class="panel panel-default check-panel">   
+										<div class="check-heading panel-heading clearfix">
+											<h4 class="panel-title">
+												<a role="button" data-toggle="collapse" href="#checkSpezi" aria-expanded="true" aria-controls="checkSpezi">
+													<span class="glyphicon glyphicon-menu-down"> 
+													</span>
+													<span> 
+														Spezifikation
+													</span>
+												</a>
+											</h4>
+										</div>
+										<div id="checkSpezi" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkSpezi">
+											<div class="panel-body" style="border-width: 2px">
+												<form class="form-horizontal">
+													<div class="form-group">
+														<label for"verantwortlicher" class="col-sm-2 control-label">
+															Ticket-Verantwortlicher:
+														</label>
+														<div class="form-control-static output col-sm-10" id="verantwortlicher">
+
+														</div>
+													</div>
+													<div class="form-group">
+														<label for"abteilung" class="col-sm-2 control-label">
+															Abteilung:
+														</label>
+														<div class="form-control-static output col-sm-10" id="abteilung">
+
+														</div>
+													</div>
+													<div class="form-group">
+														<label for"kategorie" class="col-sm-2 control-label">
+															Ticket-Kategorie:
+														</label>
+														<div class="form-control-static output col-sm-10" id="kategorie">
+
+														</div>
+													</div>
+													<div class="form-group">
+														<label for"prioritaet" class="col-sm-2 control-label">
+															Ticket-Priorit&auml;t:
+														</label>
+														<div class="form-control-static output col-sm-10" id="prioritaet">
+
+														</div>
+													</div>
+													<div class="form-group">
+														<label for"aufwand" class="col-sm-2 control-label">
+															gesch&auml;tzter Stundenaufwand:
+														</label>
+														<div class="form-control-static output col-sm-10" id="aufwand">
+														</div>
+													</div>
+													<div class="form-group">
+														<label for"faellig" class="col-sm-2 control-label">
+															f&auml;llig bis:
+														</label>
+														<div class="form-control-static output col-sm-10" id="faellig">
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label for"kundensichtbar" class="col-sm-2 control-label">
+															Ticket kundensichtbar:
+														</label>
+														<div class="form-control-static output col-sm-10" id="kundensichtbar">
+
+														</div>
+													</div>
+												</form>
+											</div>
+										</div> 
+									</div>
+									<div class="panel panel-default check-panel">   
+										<div class="check-heading panel-heading clearfix">
+											<h4 class="panel-title">
+												<a role="button" data-toggle="collapse" href="#checkPersonal" aria-expanded="true" aria-controls="checkPersonal">
+													<span class="glyphicon glyphicon-menu-down"> 
+													</span>
+													<span> 
+														Personal
+													</span>
+												</a>
+											</h4>
+										</div>
+										<div id="checkPersonal" class="panel-collapse collapse panel-content" role="tabpanel" aria-labelledby="checkPersonal">
+											<div class="panel-body" style="border-width: 2px">
+
+
+											</div>
+										</div> 
+									</div>
+
+									<div class="panel panel-default check-panel">   
+										<div class="check-heading panel-heading clearfix">
+											<h4 class="panel-title">
+												<a role="button" data-toggle="collapse" href="#checkVerweise" aria-expanded="true" aria-controls="checkVerweise">
+													<span class="glyphicon glyphicon-menu-down"> 
+													</span>
+													<span> 
+														Verweise
+													</span>
+												</a>
+											</h4>
+										</div>
+										<div id="checkVerweise" class="panel-collapse collapse panel-content" role="tabpanel" aria-labelledby="checkVerweise">
+											<div class="panel-body" style="border-width: 2px">
+
+											</div>
+										</div> 
+									</div>
+
+									<h4>
+									</h4>
+
+									<div style="margin-top: 60px">
+										<button class="btn btn-default pull-right" data-toggle="modal" data-target="#modal">
+											<span class="glyphicon glyphicon-pencil" aria-hidden="true">
 											</span>
-											Report
-										</a>
-									</li>
-								</ul>
-							</div>
-							<div class="panel-body">
-								<div class="tab-content">
+											<span>
+												Details bearbeiten
+											</span>
+										</button>
+									</div>
+								</div>
 
-									<!-- Tab1 -->
-									<div class="panel-body tab-pane active" id="tab1">
-										<div>   
-											<div class="no-wrap-subtext">
-												<h4>
-													<a role="button" data-toggle="collapse" href="#checkPersonalData_content" aria-expanded="true" aria-controls="checkPersonalData_content">
-														<span class=" glyphicon glyphicon-menu-down"> 
+								<!-- Tab2 -->
+								<div class="panel-body tab-pane" id="tab2">
+
+									<div class="panel panel-default chronik" id="chronik">
+
+										<div class="chrEntry">
+											<div id="tb-testimonial" class="testimonial testimonial-info-filled">
+												<div class="entry-text">
+													<h4>Serviceanfrage</h4>
+													<strong>Absender:</strong> Erika Musterfrau
+													<br>
+													<strong>Betreff:</strong> Kaffemaschine
+													<br><br>												Hallo, 
+													<br><br>
+													ich besitze seit einiger Zeit eine Kaffeemaschine von Ihnen (Modell KM und irgendeine Zahl...). Leider funktioniert die eingebaute Zeitschaltung nicht korrekt.
+
+													<br>
+
+													Ich habe die Kaffeemaschine in Ihrem Online-Shop gekauft und würde Sie gerne auf Garantie umtauschen oder reparieren lassen.
+
+													<br><br>
+
+													Mit freundlichen Gruessen,
+
+													<br><br>
+													Erika Musterfrau
+													
+
+													<div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
+														<span class="glyphicon glyphicon-menu-right">
+														</span> Angeh&auml;ngte Dateien: 0
+													</div>
+												</div>
+
+												<div class="entry-footer">
+													<div class="entry-author">
+
+														<div class="entry-author">
+															<h5>
+																<b  class="entry-author-name">
+																	Ticket-Annahme
+																</b> 
+																<br>
+																<small>
+																	<span class="glyphicon glyphicon-time">
+																	</span>
+																	14.01.17 21:50
+																</small>
+															</h5>
+														</div>
+
+													</div>
+												</div>
+											</div>   
+										</div>
+
+										<div class="chrEntry">
+											<div id="tb-testimonial" class="testimonial testimonial-info-filled">
+												<div class="entry-text">
+													Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+
+													<div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
+														<span class="glyphicon glyphicon-menu-right">
+														</span> Angeh&auml;ngte Dateien: 0
+													</div>
+												</div>
+												<div class="entry-footer">
+													<div class="entry-author">
+
+														<div class="entry-author">
+															<h5 class="entry-author-name">
+																<b  class="entry-author-name">
+																	Max Mustermann
+																</b> 
+																<br>
+																<small>
+																	<span class="glyphicon glyphicon-time">
+																	</span>
+																	14.01.17 21:50
+																</small>
+															</h5>
+														</div>
+
+													</div>
+												</div>
+											</div>   
+										</div>
+
+
+
+										<div class="chrEntry">
+											<div id="tb-testimonial" class="testimonial testimonial-info-filled">
+												<div class="entry-text" >
+													<div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</div>
+
+
+													<div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
+														<span class="glyphicon glyphicon-menu-right">
+														</span> Angeh&auml;ngte Dateien: 0
+													</div>
+												</div>
+
+												<div class="entry-footer">
+													<div class="entry-author">
+
+														<div class="entry-author">
+															<h5 class="entry-author-name">
+																<b  id="entry-author-name">
+																	Max Mustermann
+																</b> 
+																<br>
+																<small>
+																	<span class="glyphicon glyphicon-time">
+																	</span>
+																	14.01.17 21:50
+																</small>
+															</h5>
+														</div>
+
+													</div>
+												</div>
+											</div>   
+										</div>
+
+
+
+									</div>
+
+
+
+									<div class="form-group">
+										<label for"mceu_13" class="control-label">
+											neuer Kommentar
+										</label>
+										<input id="mytextarea" >
+										<div class="row panel panel-default" style="border-color: #C0C0C0; margin-left: 0px; margin-right: 0px; border-top-width: 0px; border-radius: 0px; margin-bottom: 0px; ">
+										</div>
+										<div class="row panel panel-default" style="border-color: #C0C0C0; margin-left: 0px; margin-right: 0px; border-top-width: 0px; border-radius: 0px; margin-bottom: 0px; background-color: #F0F0F0;">
+											<div class="panel-body" style="padding: 10px">
+
+
+														<div class="btn btn-default btn-file pull-left">
+															<span class="glyphicon glyphicon-paperclip"></span>
+															<span>Datei anf&uuml;gen</span> 
+															<input type="file">
+														</div>
+
+												<button class="btn  btn-default pull-right" type="button" aria-hidden="true" id="addComment">
+													<span class="glyphicon glyphicon-menu-right">
+													</span>
+													<span>
+														Kommentar an Chronik posten
+													</span>
+												</button>
+
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+
+
+
+								<!-- Tab3 -->
+								<div class="panel-body tab-pane" id="tab3">
+									<div class="alert alert-info show">
+										Es wurde noch kein Bericht eingereicht.
+									</div>
+									<button class=" btn btn-block pull-center" type="button" aria-hidden="true">
+										<span class="glyphicon glyphicon-plus">
+										</span>
+										<span>
+											Bericht hinzufügen
+										</span>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<!-- Modal -->               
+						<div id="modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h3 class="modal-title" id="exampleModalLabel">
+											Ticket #T123 bearbeiten
+										</h3>
+									</div>
+									<div class="modal-body">
+
+
+
+										<div class="panel panel-default check-panel">   
+											<div class="check-heading panel-heading clearfix">
+												<h4 class="panel-title">
+													<a role="button" data-toggle="collapse" href="#checkAnliegen_modal" aria-expanded="true" aria-controls="checkAnliegen_modal">
+														<span class="glyphicon glyphicon-menu-down"> 
+														</span>
+														<span> 
+															Anliegen
+														</span>
+													</a>
+												</h4>
+											</div>
+											<div id="checkAnliegen_modal" class="panel-collapse collapse panel-content" role="tabpanel" aria-labelledby="checkAnliegen_modal">
+												<div class="panel-body" style="border-width: 2px">
+
+													<div class="form-group">
+														<label for"subject_input" class="control-label">
+															Betreff *
+														</label>
+														<input id="subject_input" class="form-control required" type="text">
+														<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
+													</div>
+													<div class="form-group">
+														<label for"geraet_input" class="control-label">
+															Ger&auml;t *
+														</label>
+														<select class="form-control required" id="gereat_input">
+															<option selected></option>
+															<option value="Kaffeemaschine">Kaffeemaschine</option>
+															<option value="Waschmaschine">Waschmaschine</option>
+															<option value="Fernseher">Fernseher</option>
+														</select>
+														<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
+													</div>
+
+
+												</div>
+											</div> 
+										</div>
+
+
+										<div class="panel panel-default check-panel">   
+											<div class="check-heading panel-heading clearfix">
+												<h4 class="panel-title">
+													<a role="button" data-toggle="collapse" href="#checkKontakt_modal" aria-expanded="true" aria-controls="checKontakt_modal">
+														<span class="glyphicon glyphicon-menu-down"> 
 														</span>
 														<span> 
 															Kontakt
@@ -183,358 +621,311 @@
 													</a>
 												</h4>
 											</div>
-										</div>
-										<div id="checkPersonalData_content" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkPersonalData_content">
-											<div class="panel panel-default">
-												<section class="panel-body" style="background-color: #F8F8F7">
-													<div class="row">
-														<div class="col-sm-3">
-															<b>Anrede:</b><br>
-															<b>Vorname:</b><br>
-															<b>Nachname:</b><br>
-														</div>
-														<div class="col-sm-9">
-															Herr <br>
-															Max <br>
-															Mustermann <br>
-														</div>
-													</section>
-												</div>
-											</div> 
-											<div>   
-												<div class="no-wrap-subtext">
-													<h4>
-														<a role="button" data-toggle="collapse" href="#checkPersonalData_content1" aria-expanded="true" aria-controls="checkPersonalData_content">
-															<span class=" glyphicon glyphicon-menu-down"> 
-															</span>
-															<span> 
-																Spezifizierung
-															</span>
-														</a>
-													</h4>
-												</div>
-											</div>
-											<div id="checkPersonalData_content1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="checkPersonalData_content">
-												<div class="panel panel-default">
-													<section class="panel-body" style="background-color: #F8F8F7">
-														<div class="row">
-															<div class="col-sm-3">
-															</div>
-															<div class="col-sm-9">
-															</div>
-														</section>
-													</div>
-												</div>
-												<div>   
-													<div class="no-wrap-subtext">
-														<h4>
-															<a role="button" data-toggle="collapse" href="#checkPersonalData_content2" aria-expanded="true" aria-controls="checkPersonalData_content">
-																<span class=" glyphicon glyphicon-menu-down"> 
-																</span>
-																<span> 
-																	Personal
-																</span>
-															</a>
-														</h4>
-													</div>
-												</div>
-												<div id="checkPersonalData_content2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="checkPersonalData_content">
-													<div class="panel panel-default">
-														<section class="panel-body" style="background-color: #F8F8F7">
-															<div class="row">
-																<div class="col-sm-3">
-																</div>
-																<div class="col-sm-9">
-																</div>
-															</section>
-														</div>
-													</div>
-													<div>   
-														<div class="no-wrap-subtext">
-															<h4>
-																<a role="button" data-toggle="collapse" href="#checkPersonalData_content3" aria-expanded="true" aria-controls="checkPersonalData_content">
-																	<span class=" glyphicon glyphicon-menu-down"> 
-																	</span>
-																	<span> 
-																		Verweise
-																	</span>
-																</a>
-															</h4>
-														</div>
-													</div>
-													<div id="checkPersonalData_content3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="checkPersonalData_content">
-														<div class="panel panel-default">
-															<section class="panel-body" style="background-color: #F8F8F7">
-																<div class="row">
-																	<div class="col-sm-3">
+											<div id="checkKontakt_modal" class="panel-collapse collapse panel-content" role="tabpanel" aria-labelledby="checkKontakt_modal">
+												<div id="check_contact">
+													<div class="panel-body" id="check_contact_person" style="border-width: 2px; border-top-style: solid;">
+
+
+														<div id="contacts">
+															<div id="contact_person" class="" style="margin-bottom: 35px">
+																<div class="">
+																	<div class="row" style="padding-bottom: 15px"> 
+																		<label class="col-sm-3 pull-left">Ansprechpartner 1</label>
+																		<button class="close" style="padding-right: 15px" id="deleteContact" title="Kontakt entfernen">x</button>
 																	</div>
-																	<div class="col-sm-9">
-																	</div>
-																</section>
+																	<form cass="">
+																		<div class="row">
+																			<div class="col-md-2 form-group">
+																				<label for"anrede_input" class="control-label">
+																					Anrede
+																				</label>
+																				<select class="mb-2 form-control" id="anrede_input">
+																					<option selected></option>
+																					<option value="Herr">Herr</option>
+																					<option value="Frau">Frau</option>
+																				</select>
+
+																			</div>
+																			<div class="col-md-5 form-group">
+																				<label for"vorname_input" class="control-label">
+																					Vorname *
+																				</label>
+																				<input id="vorname_input" class="form-control required" type="text">
+																				<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
+																			</div>
+																			<div class="col-md-5 form-group">
+																				<label for"nachname_input" class="control-label">
+																					Nachname *
+																				</label>
+																				<input id="nachname_input" class="form-control required" type="text">
+																				<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="form-group col-md-12">
+																				<label for"telefon_input" class="control-label">
+																					Telefon
+																				</label>
+																				<input id="telefon_input" class="form-control" type="text">
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="form-group col-md-9">
+																				<label for"email_input" class="control-label">
+																					eMail
+																				</label>
+																				<input id="email_input" class="form-control" type="text">
+																			</div>
+																			<div class="input-group col-md-3 pull-right">
+																				<label for"wishesmails_input" class="control-label">
+																					eMails an Kontakt senden
+																				</label>
+																				<input id="wishesmails_input" class="form-control" type="checkbox">
+																			</div>
+																		</div>
+																	</form>
+																</div>
 															</div>
 														</div>
-														<div style="margin-top: 60px">
-															<button class="btn btn-default pull-right" data-toggle="modal" data-target="#modal">
-																<span class="glyphicon glyphicon-pencil" aria-hidden="true">
+														<div>
+															<button class="btn panel-heading-btn btn-block pull-left" type="button" aria-hidden="true" style="margin-bottom: 15px; margin-top: 15px" id="addcontact">
+																<span class="glyphicon glyphicon-plus">
 																</span>
 																<span>
-																	Details bearbeiten
+																	weiteren Kontakt hinzuf&uuml;gen
 																</span>
 															</button>
 														</div>
+
+
+
 													</div>
-
-													<!-- Tab2 -->
-													<div class="panel-body tab-pane" id="tab2">
-														<div>
-															<img src="chronik.png"\>
-														</div>
-													</div>
-
-													<!-- Tab3 -->
-													<div class="panel-body tab-pane" id="tab3">
-														<div class="alert alert-info show">
-															Es wurde noch kein Bericht eingereicht.
-														</div>
-														<button class=" btn btn-default btn-block pull-center" type="button" aria-hidden="true">
-															<span class="glyphicon glyphicon-plus">
-															</span>
-															<span>
-																Bericht hinzufügen
-															</span>
-														</button>
-													</div>
-												</div>
-											</div>
-
-											<!-- Modal -->               
-											<div id="modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
-												<div class="modal-dialog modal-lg">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h3 class="modal-title" id="exampleModalLabel">
-																Ticket #T123 bearbeiten
-															</h3>
-														</div>
-														<div class="modal-body">
-
-
-															<div>   
-																<div class="no-wrap-subtext">
-																	<h4>
-																		<a role="button" data-toggle="collapse" href="#checkPersonalData_content9" aria-expanded="true" aria-controls="checkPersonalData_content">
-																			<span class=" glyphicon glyphicon-menu-down"> 
-																			</span>
-																			<span> 
-																				Anliegen
-																			</span>
-																		</a>
-																	</h4>
-																</div>
-															</div>
-															<div id="checkPersonalData_content9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="checkPersonalData_content">
-																<div class="panel panel-default">
-																	<section class="panel-body" style="background-color: #F8F8F7">
-																		<div class="row">
-																			<div class="col-sm-3">
-																			</div>
-																			<div class="col-sm-9">
-																			</div>
-																		</section>
-																	</div>
-																</div> 
-
-
-																<div>   
-																	<div class="no-wrap-subtext">
-																		<h4>
-																			<a role="button" data-toggle="collapse" href="#checkPersonalData_content7" aria-expanded="true" aria-controls="checkPersonalData_content">
-																				<span class=" glyphicon glyphicon-menu-down"> 
-																				</span>
-																				<span> 
-																					Kontakt
-																				</span>
-																			</a>
-																		</h4>
-																	</div>
-																</div>
-																<div id="checkPersonalData_content7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="checkPersonalData_content">
-																	<div class="panel panel-default">
-																		<section class="panel-body" style="background-color: #F8F8F7">
-																			<div class="row">
-																				<div class="col-sm-3">
-																				</div>
-																				<div class="col-sm-9">
-																				</div>
-																			</section>
-																		</div>
-																	</div> 
-
-																	<div>   
-																		<div class="no-wrap-subtext">
-																			<h4>
-																				<a role="button" data-toggle="collapse" href="#checkPersonalData_content4" aria-expanded="true" aria-controls="checkPersonalData_content">
-																					<span class=" glyphicon glyphicon-menu-down"> 
-																					</span>
-																					<span> 
-																						Spezifizierung
-																					</span>
-																				</a>
-																			</h4>
-																		</div>
-																	</div>
-																	<div id="checkPersonalData_content4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="checkPersonalData_content">
-																		<div class="panel panel-default">
-																			<section class="panel-body" style="background-color: #F8F8F7">
-																				<div class="row">
-																					<div class="col-sm-3">
-																					</div>
-																					<div class="col-sm-9">
-																					</div>
-																				</section>
-																			</div>
-																		</div>
-
-																		<div>   
-																			<div class="no-wrap-subtext">
-																				<h4>
-																					<a role="button" data-toggle="collapse" href="#checkPersonalData_content5" aria-expanded="true" aria-controls="checkPersonalData_content">
-																						<span class=" glyphicon glyphicon-menu-down"> 
-																						</span>
-																						<span> 
-																							Personal
-																						</span>
-																					</a>
-																				</h4>
-																			</div>
-																		</div>
-																		<div id="checkPersonalData_content5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="checkPersonalData_content">
-																			<div class="panel panel-default">
-																				<section class="panel-body" style="background-color: #F8F8F7 ">
-																					<div class="row">
-																						<div class="col-sm-3">
-																						</div>
-																						<div class="col-sm-9">
-																						</div>
-																					</section>
-																				</div>
-																			</div>
-
-																			<div>   
-																				<div class="no-wrap-subtext">
-																					<h4>
-																						<a role="button" data-toggle="collapse" href="#checkPersonalData_content6" aria-expanded="true" aria-controls="checkPersonalData_content">
-																							<span class=" glyphicon glyphicon-menu-down"> 
-																							</span>
-																							<span> 
-																								Verweise
-																							</span>
-																						</a>
-																					</h4>
-																				</div>
-																			</div>
-																			<div id="checkPersonalData_content6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="checkPersonalData_content">
-																				<div class="panel panel-default">
-																					<section class="panel-body" style="background-color: #F8F8F7">
-																						<div class="row">
-																							<div class="col-sm-3">
-																							</div>
-																							<div class="col-sm-9">
-																							</div>
-																						</section>
-																					</div>
-																				</div>
-																			</div>
-																			<div class="modal-footer">
-																				<button class="btn" aria-expanded="false"  class="close" data-dismiss="modal" aria-label="Close">
-																					<span class="glyphicon glyphicon-remove" aria-hidden="true">
-																					</span>
-																					<span>
-																						Abbrechen
-																					</span>
-																				</button>
-																				<button class="btn btn-primary" aria-expanded="false">
-																					<span class="glyphicon glyphicon-ok" aria-hidden="true">
-																					</span>
-																					<span>
-																						&Auml;nderungen speichern
-																					</span>
-																				</button>
-																			</div>    
-																		</div>
-																	</div>
-																</div>
-
-																<!-- Ticket-Buttons -->
-																<div class="panel-body" style="border-top-style: solid;border-top-width: 1px;border-top-color: #e5e5e5;
-																<!--    background-color: #E3E2DE -->
-																">
-																<div class="pull-right">
-																	<section class="row text-right">
-																		<div class="col-xs-12 spacer-small">
-																			<div>
-																				<button class="btn" aria-expanded="false">
-																					<span class="glyphicon glyphicon-remove" aria-hidden="true">
-																					</span>
-																					<span>
-																						Schliessen
-																					</span>
-																				</button>
-																				<button class="btn" aria-expanded="false">
-																					<span class="glyphicon glyphicon-duplicate" aria-hidden="true">
-																					</span>
-																					<span>
-																						Kopieren
-																					</span>
-																				</button>
-																				<button class="btn" aria-expanded="false">
-																					<span class="glyphicon glyphicon-trash" aria-hidden="true">
-																					</span>
-																					<span>
-																						L&ouml;schen
-																					</span>
-																				</button>
-																				<button class="btn btn-primary" aria-expanded="false">
-																					<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
-																					</span>
-																					<span>
-																						Ticket an xy weitergeben
-																					</span>
-																				</button>
-																			</div>
-																		</div>
-																	</section>
-																</div>
-															</div>
-
-														</div>
-													</div>
-												</div>
-
-												<!-- Ticket-Similar -->
-												<div style="margin-top: 20px">
-													<div class="panel panel-default" >
-														<div class="panel-body">
-															<b>
-																&Auml;hnliche Tickets:
-															</b> 
-															<br> #T345 Text Text Text
-															<br> #T789 Text Text Text Text Text
-														</div>
-													</div>
-												</div>
-
+												</div> 
 											</div>
 										</div>
+
+										<div class="panel panel-default check-panel">   
+											<div class="check-heading panel-heading clearfix">
+												<h4 class="panel-title">
+													<a role="button" data-toggle="collapse" href="#checkSpezi_modal" aria-expanded="true" aria-controls="checkSpezi_modal">
+														<span class="glyphicon glyphicon-menu-down"> 
+														</span>
+														<span> 
+															Spezifikation
+														</span>
+													</a>
+												</h4>
+											</div>
+											<div id="checkSpezi_modal" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkSpezi_modal">
+												<div class="panel-body" style="border-width: 2px">
+
+													<div class="form-group">
+														<label for"verantwortlicher_input" class="control-label">
+															Ticket-Verantwortlicher *
+														</label>
+														<input id="verantwortlicher_input" class="form-control required" type="text">
+														<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
+													</div>
+
+													<div class="form-group">
+														<label for"abteilung_input" class="control-label">
+															Abteilung *
+														</label>
+														<select class="mb-12 form-control required" id="abteilung_input">
+															<option selected></option>
+															<option value="Service/Reperatur">Service/Reperatur</option>
+														</select>
+														<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
+													</div>
+
+													<div class="form-group">
+														<label for"kategorie_input" class="control-label">
+															Ticket-Kategorie
+														</label>
+														<select class="mb-12 form-control" id="kategorie_input">
+															<option selected></option>
+															<option value="Reperatur">Reperatur</option>
+															<option value="Ersaztteil bestellen">Ersaztteil bestellen</option>
+															<option value="Ger&auml;t ersetzen">Ger&auml;t ersetzen</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<label for"prioritaet_input" class="control-label">
+															Ticket-Priorit&auml;t
+														</label>
+														<select class="mb-12 form-control" id="prioritaet_input">
+															<option selected></option>
+															<option value="hoch">hoch</option>
+															<option value="niedrig">niedrig</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<div class="form-group">
+															<label for"aufwand_input" class="control-label">
+																gesch&auml;tzter Stundenaufwand
+															</label>
+															<input id="aufwand_input" class="form-control" type="text">
+														</div>
+													</div>
+													<div class="form-group">
+														<div class="form-group">
+															<label for"faellig_input" class="control-label">
+																f&auml;llig bis
+															</label>
+															<input id="faellig_input" class="form-control datepicker" type="text">
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label for"kundensichtbar_input" class="control-label">
+															Ticket kundensichtbar
+														</label>
+														<div class="form-check form-check-inline">
+															<label class="custom-control custom-radio" style="font-weight: normal">
+																<input id="radio1" name="kundensichtbar_input"  value="ja" type="radio" class="custom-control-input">
+																<span class="custom-control-indicator"></span>
+																<span class="custom-control-description">ja</span>
+															</label>
+															<label class="custom-control custom-radio" style="font-weight: normal">
+																<input id="radio2" name="kundensichtbar_input" type="radio" value="nein" class="custom-control-input">
+																<span class="custom-control-indicator"></span>
+																<span class="custom-control-description">nein</span>
+															</label>
+														</div>
+													</div>
+												</div>
+											</div> 
+										</div>
+										<div class="panel panel-default check-panel">   
+											<div class="check-heading panel-heading clearfix">
+												<h4 class="panel-title">
+													<a role="button" data-toggle="collapse" href="#checkPersonal_modal" aria-expanded="true" aria-controls="checkPersonal_modal">
+														<span class="glyphicon glyphicon-menu-down"> 
+														</span>
+														<span> 
+															Personal
+														</span>
+													</a>
+												</h4>
+											</div>
+											<div id="checkPersonal_modal" class="panel-collapse collapse panel-content" role="tabpanel" aria-labelledby="checkPersonal_modal">
+												<div class="panel-body" style="border-width: 2px">
+
+
+												</div>
+											</div> 
+										</div>
+
+										<div class="panel panel-default check-panel">   
+											<div class="check-heading panel-heading clearfix">
+												<h4 class="panel-title">
+													<a role="button" data-toggle="collapse" href="#checkVerweise_modal" aria-expanded="true" aria-controls="checkVerweise_modal">
+														<span class="glyphicon glyphicon-menu-down"> 
+														</span>
+														<span> 
+															Verweise
+														</span>
+													</a>
+												</h4>
+											</div>
+											<div id="checkVerweise_modal" class="panel-collapse collapse panel-content" role="tabpanel" aria-labelledby="checkVerweise_modal">
+												<div class="panel-body" style="border-width: 2px">
+
+												</div>
+											</div> 
+										</div>
+									</div>
+
+									<div class="modal-footer">
+										<button class="btn" aria-expanded="false"  class="close" data-dismiss="modal" aria-label="Close">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true">
+											</span>
+											<span>
+												Abbrechen
+											</span>
+										</button>
+										<button class="btn btn-primary" aria-expanded="false">
+											<span class="glyphicon glyphicon-ok" aria-hidden="true">
+											</span>
+											<span>
+												&Auml;nderungen speichern
+											</span>
+										</button>
+									</div>    
+								</div>
+							</div>
+						</div>
+
+						<!-- Ticket-Buttons -->
+						<div class="panel-body" style="border-top-style: solid;border-top-width: 2px;border-top-color: #e5e5e5;
+						<!--    background-color: #E3E2DE -->
+						">
+						<div class="pull-right">
+							<section class="row text-right">
+								<div class="col-xs-12 spacer-small">
+									<div>
+										<button class="btn" aria-expanded="false">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true">
+											</span>
+											<span>
+												Schliessen
+											</span>
+										</button>
+										<button class="btn" aria-expanded="false">
+											<span class="glyphicon glyphicon-duplicate" aria-hidden="true">
+											</span>
+											<span>
+												Kopieren
+											</span>
+										</button>
+										<button class="btn" aria-expanded="false">
+											<span class="glyphicon glyphicon-trash" aria-hidden="true">
+											</span>
+											<span>
+												L&ouml;schen
+											</span>
+										</button>
+										<button class="btn btn-primary" aria-expanded="false">
+											<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+											</span>
+											<span>
+												Ticket an Bearbeiter weitergeben
+											</span>
+										</button>
 									</div>
 								</div>
+							</section>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Ticket-Similar -->
+		<div style="margin-top: 20px">
+			<div class="panel panel-default" >
+				<div class="panel-body">
+					<b>
+						&Auml;hnliche Tickets:
+					</b> 
+					<br> #T345 Text Text Text
+					<br> #T789 Text Text Text Text Text
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+</div>
+</div>
 
 
 
 
-							</body>
+</body>
 
-							</html>
+</html>
 
 
 <script type="text/javascript">
@@ -558,22 +949,233 @@ readTextFile("test.json", function(text){
 	var data = JSON.parse(text);
 
     //load vars from json in textelements/inputs etc
-    $("#tsticket_subject").text(data.tsticket_subject);
-    $("#tsticket_id").text(data.tsticket_id);
+    $("#ticket_id").text(data.ticket_id);
+    $("#subject").text(data.subject);
+    $("#subject_input").val(data.subject);
+    $("#geraet").text(data.geraet);
+    $("#gereat_input").val(data.geraet).change();
 
-    $("#tsticket_status").text(data.tsticket_status);
-    $("#tsticket_author").text(data.tsticket_author);
-    $("#tsticket_creator").text(data.tsticket_creator);
-    $("#tsticket_createtime").text(data.tsticket_createtime);
-    $("#tsticket_modtime").text(data.tsticket_modtime);
+    $("#status").text(data.status);
+    $("#author").text(data.author);
+    $("#creator").text(data.creator);
+    $("#createtime").text(data.createtime);
+    $("#modtime").text(data.modtime);
 
-    $("#tsticket_geraet").text(data.tsticket_geraet);
+    $("#kundensichtbar").text(data.kundensichtbar);
+    $("#kundensichtbar_input").val([data.kundensichtbar]).change();
+    $("#faellig").text(data.faellig);
+    $("#faellig_input").val(data.faellig);
+    $("#kategorie").text(data.kategorie);
+    $("#kategorie_input").val(data.kategorie).change();
+    $("#prioritaet").text(data.prioritaet);
+    $("#prioritaet_input").val(data.prioritaet).change();
+    $("#abteilung").text(data.abteilung);
+    $("#abteilung_input").val(data.abteilung).change();
+    $("#verantwortlicher").text(data.verantwortlicher);
+    $("#verantwortlicher_input").val(data.verantwortlicher);
+    $("#aufwand").text(data.aufwand);
+    $("#aufwand_input").val(data.aufwand);
+
+
     
 
     
 });
 
-// $('a').length
-</script>
+$(document).ready(function () {
 
+ $("#chronik").animate({ scrollTop: $("#chronik")[0].scrollHeight}, 1000);
+
+});
+
+//neuen Kommentar in Chronik anzeigen
+$('#addComment').click(function () {
+
+		var new_entry = $('#chronik').children(':last').clone();
+		new_entry.find('#message').html(tinyMCE.activeEditor.getContent({format : 'raw'}));
+		new_entry.find('#entry-author-name').text("Dispatcher");
+		$('#chronik').append(new_entry);
+		//$('#chronik').scrollTop(($('#chronik').children(':last')).offset().top);
+		$("#chronik").animate({ scrollTop: $("#chronik")[0].scrollHeight}, 1000);
+		tinyMCE.activeEditor.setContent("");
+	});
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//to-do: form-val Modal
+$(document).ready(function () {
+
+
+
+
+		//Wechsel der Tabs ueber Button 'weiter' + Validation
+		$('.navTabsNext').click(function () {
+
+			checkRequiredForms();
+
+			//Tabwechsel nur falls keine unausgefuellten pflichtfelder
+			if ($('.tab-pane.active .has-error').length==0){ 
+
+				$('#navTabBar li.active').addClass('finished');
+				//$('#navTabBar li.active').addClass('disabled');
+				//$('#navTabBar li.active').find('a').removeAttr("data-toggle");
+				//$('#navTabBar li.active').next('li').removeClass('disabled');
+				$('#navTabBar li.active').next('li').find('a').attr('data-toggle','tab');
+				$('#navTabBar li.active').next().find('a').trigger("click");
+
+		    	//sobald check-tab erreicht, alle restlichen Tabs anwaehlbar
+		    	if($('#navTabBar li.active').find('a').attr("href")=='#check'){
+		    		if($('.nav.nav-steps li:first').hasClass('disabled')){
+		    			$('.nav.nav-steps li').removeClass('disabled');
+		    			$('.nav.nav-steps li').find('a').attr('data-toggle','tab');
+		    			$('.nav.nav-steps li:not(:last)').find('a').append('<span style="padding-left:5px;" class="glyphicon glyphicon-pencil"></span>');
+		    		};
+		    	};
+		    	$(document).scrollTop(($("#navTabBar").parent()).offset().top);
+		    } 
+		    else {
+		    	focusFirstError();
+		    };
+		});
+		
+
+		//loescht Kontaktperson
+		$('#deleteContact').click(function () {
+			if($('#contacts').children().length>1){
+				$(this).parents('#contact_person').remove();
+				$('#contacts').children().each(function(index){
+					$(this).find('label:first').text("Ansprechpartner "+(index+1));
+				});
+			}
+			else {
+				$(this).parents('#contact_person').find(':input').val('');
+			}
+
+		});
+
+		//Kalender Pop-Up
+		$( "#faellig_input" ).datepicker();
+
+
+
+
+
+		//Aktualisieren der Textfelder im Uebersicht-Tab
+		$('a[href="#check"]').click(function () {
+
+			//Anzahl Kontakte zuruecksetzen
+			$('#check_contact').children(':first').find('.output').each(function(){
+				$(this).text("");
+			});
+			$('#check_contact').children(':gt(0)').remove();
+
+
+			//fuellt alle vorhandenen Textfelder mit eingegebenen Input
+			$('.output').each(function(){
+				if ($('#'+this.id+'_input').val()=="") {
+					$(this).text("");
+				}
+				else {
+					$(this).text($('#'+this.id+'_input').val());
+				}
+			});
+			$('#kundensichtbar').text($( "input[type=radio][name=kundensichtbar_input]:checked").val());
+			if($('#wishesmails_input').is(':checked')){
+				$('#wishesmails').text("ja");
+			} 
+			else {
+				$('#wishesmails').text("nein");
+			};
+			//Inhalt tinyMCE
+			$('#description').html(tinyMCE.activeEditor.getContent({format : 'raw'}));
+
+      	    //Felder fuer mehrere Kontakte hinzufuegen + fuellen
+      	    if ($('#contacts').children().length>1) {
+      	    	$('#contacts').children(':gt(0)').each(function() {
+      	    		$('#check_contact').children(':first').clone().appendTo($('#check_contact'));
+      	    		fill_contact_checks(this);
+
+      	    	});
+      	    };
+      	});
+
+  	    //Kontakt-Form um weiteren Kontakt anfuegen + Inhalt ruecksetzen
+  	    $('#addcontact').click(function () {
+  	    	$('#contact_person').clone(':first').appendTo($('#contacts'));	
+  	    	$('#contacts').children(':last').find('label:first').text("Ansprechpartner "+$('#contacts').children().length);
+  	    	$('#contacts').children(':last').find(':input').val('');
+  	    });
+
+  	    // Prueft bei Tabwechsel alle Pflichtfelder
+  	    $('#navTabBar li a').click(function (event){
+  	    	checkRequiredForms();
+			//Tabwechsel nur falls keine unausgefuellten pflichtfelder
+			if ($('.tab-pane.active .has-error').length!=0){ 
+					//alert("error"+$('.tab-pane.active .has-error').length);
+					focusFirstError();
+					event.stopPropagation();
+				};
+			});
+
+  	    $(':input').blur(function() {
+  	    	if ($(this).closest('.form-group').hasClass('has-error')){
+  	    		if($(this).val()!=""){
+  	    			$(this).closest('.form-group').removeClass('has-error');
+  	    			//alert($(this).val());
+  	    		}
+  	    	}
+
+  	    });
+
+
+  	    $(':file').on('fileselect', function(event, numFiles, label) {
+  	    	console.log(numFiles);
+  	    	console.log(label);
+  	    });
+
+
+
+  	});
+
+function fill_contact_checks(elem_with_inputs){
+	$('#check_contact').children(':last').find('.output').each(function(){
+		if ($(elem_with_inputs).find('#'+this.id+'_input').val()=="") {
+			$(this).text("");
+		}
+		else {
+			$(this).text($(elem_with_inputs).find('#'+this.id+'_input').val())
+		}
+	});
+	//alert($(elem_with_inputs).find('#wishesmails_input').is(':checked'));
+	if($(elem_with_inputs).find('#wishesmails_input').is(':checked')){
+		$('#check_contact').children(':last').find('#wishesmails').text("ja");
+	} 
+	else {
+		$('#check_contact').children(':last').find('#wishesmails').text("nein");
+	};
+
+};
+
+function checkRequiredForms(){
+	$('.tab-pane.active .required').each(function(){
+		if($(this).val()===""){
+			$(this).closest('.form-group').addClass('has-error');
+		}
+		else {
+			$(this).closest('.form-group').removeClass('has-error');
+		}
+	});
+
+};
+
+function focusFirstError(){
+	var firstElemWithError = $('.tab-pane.active').find('.has-error').first().find(':input');
+	firstElemWithError.focus();
+	$(document).scrollTop((firstElemWithError.parent()).offset().top);
+};
+
+
+
+
+</script>
 

@@ -1,0 +1,377 @@
+
+select:-moz-focusring { 
+	color: transparent;
+	text-shadow: 0 0 0 #000; 
+}
+
+a:active,
+a:hover, 
+a:focus{
+	outline-style: none;
+	outline: 0;
+	text-decoration: none;
+}
+
+p {
+	margin: 0px 0px 0px 0px;
+}
+
+.form-control:focus {
+	border-color: seablue;
+	border-width: 2px;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.has-error .form-control:focus {
+	border-width: 2px;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.form-horizontal .control-label{
+	text-align:left;
+}
+
+.input-group{
+	margin-bottom: 10px;
+}  	
+#navTabs.nav-pills.nav-button > li > a > .glyphicon {
+	top:4px;
+}
+
+.nav-tabs.nav-steps > li > a > .badge {
+	margin-right: 3px;
+	vertical-align: top;
+	padding: 4px 7px 3px;
+	border-style: solid;
+	border-width: 1px;
+	background-color: white;
+	color: #337ab7;
+}
+.nav-pills.nav-steps > li.active > a> .badge {
+	border-color: #3CBC3C;
+	border-width: 1px;
+	color: #3CBC3C;
+}
+.nav.nav-steps > li.finished:not(.active) > a:hover >.badge{
+	border-color: #aaa;
+	color: #aaa;
+}
+
+
+.nav.nav-steps > li.finished:not(.active) > a> .badge {
+	border-color: #8cdb8c;
+	border-width: 1px;
+	color: #8cdb8c;
+	background-color: white;
+}
+
+
+.nav-pills.nav-steps > li {
+	position: relative;
+	overflow: visible;
+	border-right: 15px solid transparent;
+	border-left: 15px solid transparent;
+}
+.nav-pills.nav-steps > li + li {
+	margin-left: 0;
+}
+.nav-pills.nav-steps > li:first-child {
+	border-left: 0;
+}
+.nav-pills.nav-steps > li:first-child a {
+	border-radius: 5px 0 0 5px;
+}
+.nav-pills.nav-steps > li:last-child {
+	border-right: 0;
+}
+.nav-pills.nav-steps > li:last-child a {
+	border-radius: 0 5px 5px 0;
+}
+.nav-pills.nav-steps > li > a {
+	border-radius: 1px;
+	background-color: #eee;
+	font-weight: bold;
+	font-size: 15px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.nav-pills.nav-steps > li:not(.active):not(.disabled):not(.finished) > a {
+	color: #777;
+}
+
+
+.nav-pills.nav-steps > li:not(:last-child) a:after {
+	position: absolute;
+	content: "";
+	top: 0px;
+	right: -20px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 23px 0 23px 20px;
+	border-color: transparent transparent transparent #eee;
+	z-index: 150;
+}
+.nav-pills.nav-steps > li:not(:first-child) a:before {
+	position: absolute;
+	content: "";
+	top: 0px;
+	left: -20px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 23px 0 23px 20px;
+	border-color: #eee #eee #eee transparent;
+	z-index: 150;
+}
+.nav-pills.nav-steps > li:hover:not(:last-child):not(.active) a:after {
+	border-color: transparent transparent transparent #aaa;
+}
+.nav-pills.nav-steps > li:hover:not(:first-child):not(.active) a:before {
+	border-color: #aaa #aaa #aaa transparent;
+}
+.nav-pills.nav-steps > li:hover:not(.active) > a {
+	background-color: #aaa;
+	color: #fff;
+}
+.nav-pills.nav-steps > li:hover:not(.active) > a >.badge{
+	border-color: #aaa;
+	color: #aaa;
+}
+
+.nav-pills.nav-steps > li.finished > a:after {
+	border-color: transparent transparent transparent #8cdb8c;
+}
+.nav-pills.nav-steps > li.finished> a:before {
+	border-color: #8cdb8c #8cdb8c #8cdb8c transparent;
+}
+.nav-pills.nav-steps > li.finished > a {
+	background-color: #8cdb8c;
+	color: #fff;
+}
+
+
+.disabled{
+	pointer-events: none;
+}
+
+
+.nav-pills.nav-steps > li.active:not(:last-child) a:after {
+	border-color: transparent transparent transparent #3CBC3C;
+}
+.nav-pills.nav-steps > li.active:not(:first-child) a:before {
+	border-color: #3CBC3C #3CBC3C #3CBC3C transparent;
+}
+.nav-pills.nav-steps > li.active > a {
+	background-color: #3CBC3C;
+}
+
+.check-panel, .check-panel > div.panel-heading, div.panel-body {
+	border-color: #f2f2f2;
+	border-width: 2px;
+}
+
+.check-panel .panel-title {
+	margin: 10px 0px;
+}
+
+.help-block { 
+	display: none; 
+}
+.form-group.has-error .help-block { 
+	display: block; 
+}
+
+.thumbnail{
+	margin-top: 20px;
+}
+
+.chronik{
+
+	height: 400px;
+	overflow: auto;
+	border-width: 1px;
+
+	padding: 30px;
+
+}
+
+.chronik-entries{
+
+	height: 500px;
+	overflow: auto;
+	border-width: 2px;
+	padding: 20px
+
+}
+
+
+
+.nav-pills.nav-button > li {
+	position: relative;
+	overflow: visible;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+}
+.nav-pills.nav-button > li + li {
+	mar
+}
+
+.nav-pills.nav-button > li > a {
+	border-radius: 10px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	background-color: #eee;
+	font-weight: bold;
+	font-size: 15px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.nav-pills.nav-button > li > a {
+	color: #777;	
+
+
+}
+
+
+.nav-pills.nav-button > li:hover:not(.active) > a {
+	background-color: #aaa;
+	color: #fff;
+}
+
+
+.nav-pills.nav-button > li.active > a {
+	background-color: #3C9CBC;
+	color: #fff;
+}
+
+.nav-pills.nav-button > li > a > .glyphicon {
+	font-size: 18px;
+	margin-right: 5px;
+}
+
+.nav-pills.nav-button > li + li {
+	margin-left: 0;
+}
+.nav-pills.nav-button > li:first-child {
+	border-left: 0px;
+}
+.nav-pills.nav-button > li:last-child {
+	border-right: 0px;
+}
+
+#navTabs {
+	border-bottom: 1px solid;
+	border-bottom-color: #dddddd;
+}
+
+
+.modal.lg{
+	width: 10000px;
+}
+
+#modal > .modal-body{
+	margin: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chrEntry:not(:last-child) {
+	
+	margin-bottom: 50px;
+}
+
+.chrEntry:last-child {
+	
+	margin-bottom: 30px;
+}
+
+.testimonial{
+	
+}
+
+.entry-text {
+	padding: 15px;
+	-webkit-border-radius: 5px;
+	position: relative;
+
+}
+.entry-text:after {
+	top: 100%;
+	left: 50px;
+	border: solid transparent;
+	content: " ";
+	position: absolute;
+	border-top-color: #fff;
+	border-width: 15px;
+	margin-left: -15px;
+}
+
+.entry-footer {
+	margin-top: 20px;
+}
+
+
+.entry-author{
+	padding-left: 10px;
+}
+
+
+
+.testimonial.testimonial-info-filled{
+
+}
+.testimonial.testimonial-info-filled .entry-text{
+	color: #fff;
+	background-color: #5bc0de;
+	border-color: #46b8da;
+}
+
+.testimonial.testimonial-info-filled .entry-text:after{
+	border-top-color: #5BC0DE;
+}
+
+.testimonial.testimonial-info-filled .entry-footer{
+
+}
+
+
+
+.testimonial.testimonial-info-filled .entry-author-name{
+	color: #5BC0DE;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
