@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+
+	<script src="bootstrap-3.3.7-dist/jquery/jquery-3.1.1.js"></script>
+
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+</head>
+
+
+<style type="text/css">
+	#messages{
+
+		height: 300px;
+		overflow: auto;
+		border-width: 1px;
+
+	}
+</style>
+
+
+<body>	
+
+	<ul class="nav nav-pills" id="navTabs">
+		<li class="active">
+			<a href="#tab1" data-toggle="tab">
+				Tab 1
+			</a>
+		</li>
+		<li>
+			<a href="#tab2" data-toggle="tab">
+				Tab 2
+			</a>
+		</li>
+	</ul>
+
+	<div class="tab-content">
+
+		<!-- Tab1 -->
+		<div class="panel-body tab-pane active" id="tab1">
+		</div>
+
+		<!-- Tab2 -->
+		<div class="panel-body tab-pane" id="tab2">
+
+			<div class="panel panel-default" id="messages">
+
+				<div class="panel panel-body">
+					Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+				</div>
+
+				<div class="panel panel-body">
+					Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+				</div>
+				<div class="panel panel-body">
+					Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+
+				</div>
+				<div class="panel panel-body">
+					Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+				</div>
+
+			</div>   
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+
+		$('a[href="#tab2"]').on('shown.bs.tab', function (e) {
+ var elem = document.getElementById('messages');
+  elem.scrollTop = elem.scrollHeight;
+});
+
+	
+});
+
+</script>
+

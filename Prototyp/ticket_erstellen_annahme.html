@@ -28,10 +28,7 @@
 		});
 	</script>
 
-	<style type="text/css">
-
-
-	</style>
+	
 
 </head>
 
@@ -88,7 +85,7 @@
 								</div>
 							</li>
 							<li>
-								<a href="">
+								<a href="ticket_liste_annahme.html">
 									<span class="glyphicon glyphicon-list" aria-hidden="true">
 									</span>
 									<span>
@@ -97,7 +94,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="ticket_erstellen_annahme.html">
 									<span class="glyphicon glyphicon-log-in" aria-hidden="true">
 									</span>
 									<span style="margin-right: 20px">
@@ -124,7 +121,7 @@
 												neues Ticket
 												<br>
 												<small>
-													Bitte beschreiben Sie Ihr Anliegen und hinterlegen Sie Ihre Kontaktdaten. f&uuml;r den Fall, dass SIe nicht erreichbar sein sollten, k&ouml;nnen Sie zus&auml;tztliche Kontaktpersonen angeben.
+													Bitte beschreiben Sie das Anliegen des Kunden und hinterlegen Sie die Kontaktdaten. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
 												</small>
 											</h3>
 										</div>
@@ -226,11 +223,26 @@
 													<div class="panel-body">
 														
 														
-														<div class="btn btn-default btn-file">
+														<button class="btn btn-default btn-file">
 															<span class="glyphicon glyphicon-paperclip"></span>
 															<span>Datei anf&uuml;gen</span> 
 															<input type="file">
-														</div>													
+														</button>	
+														<div class="" data-toggle="btn">
+															<button class="btn btn-default toggle-btn active">
+
+																<span class="glyphicon glyphicon-eye-open"></span>
+																<span>Eintrag kundensichtbar</span>
+																<input type="radio" name="eintrag_kundensichtbar" id="eintrag_kundensichtbar" checked>
+															</button>
+															<button class="btn btn-default toggle-btn">
+
+																<span class="glyphicon glyphicon-eye-close"></span>
+																<span>Eintrag nicht kundensichtbar</span>
+																<input type="radio" name="eintrag_kundensichtbar" id="eintrag_nichtkundensichtbar">
+															</button>   
+														</div>
+
 													</div>
 												</div>
 
@@ -608,7 +620,9 @@
 
 
 												<!-- Ticket-Buttons -->
+												
 												<div class="panel-body" style="padding-bottom: 0px; margin-top: 45px;">
+													<div id="rueckmeldung"></div>
 													<div class="pull-right">
 														<div class="row text-right" style="margin-top: 15px">
 															<div class="col-xs-12 spacer-small">
@@ -627,7 +641,7 @@
 																			als Entwurf speichern
 																		</span>
 																	</button>
-																	<button class="btn btn-primary" aria-expanded="false">
+																	<button class="btn btn-primary" aria-expanded="false" id="finishTicket">
 																		<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
 																		</span>
 																		<span>
@@ -777,6 +791,7 @@
 				};
 			});
 
+  	    //mit Error ausgefüllte Pflichtfelder bei Verlassen des Feldes von Error befreien
   	    $(':input').blur(function() {
   	    	if ($(this).closest('.form-group').hasClass('has-error')){
   	    		if($(this).val()!=""){
@@ -791,6 +806,16 @@
   	    $(':file').on('fileselect', function(event, numFiles, label) {
   	    	console.log(numFiles);
   	    	console.log(label);
+  	    });
+
+
+  	    //Ticket abschliessen mit Rueckmeldung und Weiterleitung auf Ticket-Liste
+  	    $('#finishTicket').click(function () {
+  	    	$('#rueckmeldung').html('<div class="alert alert-success" style="text-align: right;" role="alert">Ticket erfolgreich erstellt und an Dispatcher weitergegeben. <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>');
+  	    	
+  	    	setTimeout(function () {
+  	    		window.location.href = "ticket_liste_annahme.html";
+  	    	}, 2000);
   	    });
 
 
@@ -831,7 +856,7 @@ function checkRequiredForms(){
 function focusFirstError(){
 	var firstElemWithError = $('.tab-pane.active').find('.has-error').first().find(':input');
 	firstElemWithError.focus();
-	$(document).scrollTop((firstElemWithError.parent()).offset().top);
+	$(document).scrollTop((firstElemWithError.parent()).offset().top-50);
 };
 
 

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+  <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="prototyp.css">
+
+  <script src="bootstrap-3.3.7-dist/jquery/jquery-3.1.1.js"></script>
+
+  <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+
+</head>
+
+<body>
+
+  <div>
+    <div>
+      <img src="header.png"\>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <div class="img">
+          <img src="sidebar.png"\>
+        </div>
+      </div>
+      <div class="col-xs-9" style="margin-left: -130px">
+        <div style="margin-top: 20px">
+
+          <!-- Nav-Bar top -->
+          <nav class="navbar navbar-default" style="border-width: 2px">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <p class="navbar-text" style="margin-right: 5px">
+                  Ticket
+                </p>
+              </li>
+              <li style="margin-right: 25px">
+                <div class="btn-group" role="group" id="inlineFormCustomSelect">
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default btn-xs navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      --
+                      <span class="caret">
+                      </span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="#">
+                          T456
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          T789
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <button type="button" class="btn btn-default btn-xs navbar-btn" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true">
+                    </span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <a href="ticket_liste_annahme.html">
+                  <span class="glyphicon glyphicon-list" aria-hidden="true">
+                  </span>
+                  <span>
+                    Ticketliste
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="ticket_erstellen_annahme.html">
+                  <span class="glyphicon glyphicon-log-in" aria-hidden="true">
+                  </span>
+                  <span style="margin-right: 20px">
+                    neues Ticket
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="row">
+           <div class="panel-body">
+
+             <div>
+              <div class="tile-button" >
+                <a href="ticket_erstellen_annahme.html">
+                  <div class="text" style="padding: 20px; height: 100%">
+                    <div class="no-wrap-subtext">
+                      <h4>
+                        <span>Ein Kunde hat Fragen zu einem Produkt oder m&ouml;chte eine unserer Serviceleistungen in Anspruch nehmen?</span>
+                        <br>
+                        <small>Erstellen Sie hier ein neues Ticket
+                        </small>
+                      </h4>
+                    </div>
+                    <span class="glyphicon glyphicon-menu-right pull-right"
+                    aria-hidden="true"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+
+
+
+
+            <h3 class="page-header">Meine Tickets</h3>
+
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Suche">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"> <span class="glyphicon glyphicon-search"></span></button>
+              </span>
+            </div>
+
+
+            <div class="" id=ticket-list>
+
+
+
+              <div class="panel panel-default ticket-panel">  
+                <a class="panel-heading-text" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="ticket1" href="#ticket1">
+                  <div class="title"> 
+                  <div class="panel-heading clearfix">
+                      <h4 class="panel-title col-xs-10">
+                        <span class="glyphicon glyphicon-menu-right pull-left"> </span>
+                        <span style="padding-left: 15px">#T123 - Defekte Kaffeemaschine</span>
+                        <span class="pull-right" style="font-weight: bold; color: orange; font-size: 14px">
+                          <span id="status">Dispatching</span>
+                        </span>
+                      </h4>
+                      <div class="col-xs-2">
+                        <a class="glyphicon glyphicon-menu-right btn btn-default pull-right" aria-hidden="true" href="ticket_uebersicht_dispatcher.html">
+                        </a>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="panel-collapse collapse" role="tabpanel" id="ticket1">
+                  <div class="panel-body">
+                    <section class="col-xs-12 col-sm-5 col-lg-5">
+                      <form class="form-horizontal">
+                        <div class="form-group">
+                          <label for"geareat" class="col-sm-4 control-label">
+                            Ger&auml;t:
+                          </label>
+                          <div class="form-control-static output col-sm-8" id="geareat">
+                            Kaffeemaschine
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for"verantwortlicher" class="col-sm-4 control-label">
+                            Ticket-Verantwortlicher:
+                          </label>
+                          <div class="form-control-static output col-sm-8" id="verantwortlicher">
+                            Max Mustermann
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for"kategorie" class="col-sm-4 control-label">
+                            Ticket-Kategorie:
+                          </label>
+                          <div class="form-control-static output col-sm-8" id="kategorie">
+                            Reparatur
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for"prioritaet" class="col-sm-4 control-label">
+                            Ticket-Priorit&auml;t:
+                          </label>
+                          <div class="form-control-static output col-sm-8" id="prioritaet">
+                            hoch
+                          </div>
+                        </div>
+                      </form>
+
+                    </section>
+                    <section class="col-xs-12 col-sm-7 col-lg-7">
+                      <div class="form-group">
+                        <label for"last-chronik-entry" class="control-label">
+                          letzter Chronik-Eintrag:
+                        </label>
+                        <div class="form-control-static" id="last-chronik-entry">
+                          <div class="chrEntry">
+                            <div id="" class="">
+                              <div class="entry-text" >
+                                <div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</div>
+
+
+                                <div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
+                                  <span class="glyphicon glyphicon-menu-right">
+                                  </span> Angeh&auml;ngte Dateien: 0
+                                </div>
+                              </div>
+
+                              <div class="entry-footer">
+                                <div class="entry-author">
+
+                                  <div class="entry-author">
+                                    <h5 class="entry-author-name">
+                                      <b  id="entry-author-name">
+                                        Max Mustermann
+                                      </b> 
+                                      <br>
+                                      <small>
+                                        <span class="glyphicon glyphicon-time">
+                                        </span>
+                                        14.01.17 21:50
+                                      </small>
+                                    </h5>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>   
+                          </div>
+                        </div>
+                      </div>
+
+                    </section>
+                  </div>
+                  <div class="panel-footer text-right">
+                    <div class="btn-group big-btn-group" role="group">
+                      <a class="btn btn-default" type="button" aria-expanded="false">
+                       <span class="glyphicon glyphicon-duplicate" aria-hidden="true">
+                       </span>
+                       <span>
+                        Kopieren
+                      </span>
+                    </a>
+                    <a class="btn btn-default" type="button" aria-expanded="false" >
+                     <span class="glyphicon glyphicon-trash" aria-hidden="true">
+                     </span>
+                     <span>
+                      L&ouml;schen
+                    </span>
+                  </a>
+                  <a class="btn btn-primary jobdetails" type="button" aria-expanded="false" href="ticket_uebersicht_dispatcher.html">
+                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    <span>zur Detailansicht</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="panel panel-default ticket-panel">   
+            <div class="panel-heading clearfix" >
+              <div class="title col-xs-10">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" aria-expanded="false" aria-controls="ticket2" href="#ticket2">
+                    <span class="glyphicon glyphicon-menu-right pull-left"> </span>
+                    <span style="padding-left: 15px">#T789 - Ersatzteil Waschmaschine X123</span>
+                    <span class="pull-right" style="font-weight: bold; color: brown; font-size: 14px">
+                      <span id="status">in Bearbeitung</span>
+                    </span>
+                  </a>
+                </h4>
+              </div>
+              <div class="col-xs-2">
+                <a class="glyphicon glyphicon-menu-right btn btn-default pull-right" aria-hidden="true" href="ticket_uebersicht_dispatcher.html">
+                </a>
+              </div>
+            </div>
+            <div class="panel-collapse collapse" role="tabpanel" aria-labelledby="ticket2" id="ticket2">
+              <div class="panel-body">
+                <section class="col-xs-12 col-sm-6 col-lg-6">
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <label for"geareat" class="col-sm-4 control-label">
+                        Ger&auml;t:
+                      </label>
+                      <div class="form-control-static output col-sm-8" id="geareat">
+                        Kaffeemaschine
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for"verantwortlicher" class="col-sm-4 control-label">
+                        Ticket-Verantwortlicher:
+                      </label>
+                      <div class="form-control-static output col-sm-8" id="verantwortlicher">
+                        Max Mustermann
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for"kategorie" class="col-sm-4 control-label">
+                        Ticket-Kategorie:
+                      </label>
+                      <div class="form-control-static output col-sm-8" id="kategorie">
+                        Reparatur
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for"prioritaet" class="col-sm-4 control-label">
+                        Ticket-Priorit&auml;t:
+                      </label>
+                      <div class="form-control-static output col-sm-8" id="prioritaet">
+                        hoch
+                      </div>
+                    </div>
+                  </form>
+
+                </section>
+                <section class="col-xs-12 col-sm-6 col-lg-6">
+                  <div class="form-group">
+                    <label for"last-chronik-entry" class="control-label">
+                      letzter Chronik-Eintrag:
+                    </label>
+                    <div class="form-control-static" id="last-chronik-entry">
+                      <div class="chrEntry">
+                        <div id="" class="">
+                          <div class="entry-text" >
+                            <div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</div>
+
+
+                            <div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
+                              <span class="glyphicon glyphicon-menu-right">
+                              </span> Angeh&auml;ngte Dateien: 0
+                            </div>
+                          </div>
+
+                          <div class="entry-footer">
+                            <div class="entry-author">
+
+                              <div class="entry-author">
+                                <h5 class="entry-author-name">
+                                  <b  id="entry-author-name">
+                                    Max Mustermann
+                                  </b> 
+                                  <br>
+                                  <small>
+                                    <span class="glyphicon glyphicon-time">
+                                    </span>
+                                    14.01.17 21:50
+                                  </small>
+                                </h5>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>   
+                      </div>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+              <div class="panel-footer text-right">
+                <div class="btn-group big-btn-group" role="group">
+                  <a class="btn btn-default" type="button" aria-expanded="false">
+                   <span class="glyphicon glyphicon-duplicate" aria-hidden="true">
+                   </span>
+                   <span>
+                    Kopieren
+                  </span>
+                </a>
+                <a class="btn btn-default" type="button" aria-expanded="false" >
+                 <span class="glyphicon glyphicon-trash" aria-hidden="true">
+                 </span>
+                 <span>
+                  L&ouml;schen
+                </span>
+              </a>
+              <a class="btn btn-primary jobdetails" type="button" aria-expanded="false" href="ticket_uebersicht_dispatcher.html">
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                <span>zur Detailansicht</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="panel panel-default ticket-panel">   
+        <div class="panel-heading clearfix"  id="headingKDS-0130">
+          <div class="title col-xs-10">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" aria-expanded="false" aria-controls="ticket3" href="#ticket3">
+                <span class="glyphicon glyphicon-menu-right pull-left"> </span>
+                <span style="padding-left: 15px">#T745 - Einbau von Ger&auml;t xy</span>
+                <span class="pull-right" style="font-weight: bold; color: blue; font-size: 14px">
+                  <span id="status">Entwurf</span>
+                </span>
+              </a>
+            </h4>
+          </div>
+          <div class="col-xs-2">
+            <a class="glyphicon glyphicon-menu-right btn btn-default pull-right" aria-hidden="true" href="ticket_uebersicht_dispatcher.html">
+            </a>
+          </div>
+        </div>
+        <div class="panel-collapse collapse" role="tabpanel" aria-labelledby="ticket3" id="ticket3">
+          <div class="panel-body">
+            <section class="col-xs-12 col-sm-6 col-lg-6">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for"geareat" class="col-sm-4 control-label">
+                    Ger&auml;t:
+                  </label>
+                  <div class="form-control-static output col-sm-8" id="geareat">
+                    Kaffeemaschine
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for"verantwortlicher" class="col-sm-4 control-label">
+                    Ticket-Verantwortlicher:
+                  </label>
+                  <div class="form-control-static output col-sm-8" id="verantwortlicher">
+                    Max Mustermann
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for"kategorie" class="col-sm-4 control-label">
+                    Ticket-Kategorie:
+                  </label>
+                  <div class="form-control-static output col-sm-8" id="kategorie">
+                    Reparatur
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for"prioritaet" class="col-sm-4 control-label">
+                    Ticket-Priorit&auml;t:
+                  </label>
+                  <div class="form-control-static output col-sm-8" id="prioritaet">
+                    hoch
+                  </div>
+                </div>
+              </form>
+
+            </section>
+            <section class="col-xs-12 col-sm-6 col-lg-6">
+              <div class="form-group">
+                <label for"last-chronik-entry" class="control-label">
+                  letzter Chronik-Eintrag:
+                </label>
+                <div class="form-control-static" id="last-chronik-entry">
+                  <div class="chrEntry">
+                    <div id="" class="">
+                      <div class="entry-text" >
+                        <div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</div>
+
+
+                        <div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
+                          <span class="glyphicon glyphicon-menu-right">
+                          </span> Angeh&auml;ngte Dateien: 0
+                        </div>
+                      </div>
+
+                      <div class="entry-footer">
+                        <div class="entry-author">
+
+                          <div class="entry-author">
+                            <h5 class="entry-author-name">
+                              <b  id="entry-author-name">
+                                Max Mustermann
+                              </b> 
+                              <br>
+                              <small>
+                                <span class="glyphicon glyphicon-time">
+                                </span>
+                                14.01.17 21:50
+                              </small>
+                            </h5>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>   
+                  </div>
+                </div>
+              </div>
+
+            </section>
+          </div>
+          <div class="panel-footer text-right">
+            <div class="btn-group big-btn-group" role="group">
+              <a class="btn btn-default" type="button" aria-expanded="false">
+               <span class="glyphicon glyphicon-duplicate" aria-hidden="true">
+               </span>
+               <span>
+                Kopieren
+              </span>
+            </a>
+            <a class="btn btn-default" type="button" aria-expanded="false" >
+             <span class="glyphicon glyphicon-trash" aria-hidden="true">
+             </span>
+             <span>
+              L&ouml;schen
+            </span>
+          </a>
+          <a class="btn btn-primary jobdetails" type="button" aria-expanded="false" href="ticket_uebersicht_dispatcher.html">
+            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+            <span>zur Detailansicht</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+</body>
+
+</html>

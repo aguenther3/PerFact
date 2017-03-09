@@ -190,12 +190,11 @@ p {
 	margin-top: 20px;
 }
 
-.chronik{
+#chronik{
 
 	height: 400px;
-	overflow: auto;
+	overflow: scroll;
 	border-width: 1px;
-
 	padding: 30px;
 
 }
@@ -214,15 +213,15 @@ p {
 .nav-pills.nav-button > li {
 	position: relative;
 	overflow: visible;
-	border-right: 5px solid transparent;
-	border-left: 5px solid transparent;
+	border-right: 1px solid transparent;
+	border-left: 1px solid transparent;
 }
 .nav-pills.nav-button > li + li {
 	mar
 }
 
 .nav-pills.nav-button > li > a {
-	border-radius: 10px;
+	border-radius: 15px;
 	border-bottom-right-radius: 0px;
 	border-bottom-left-radius: 0px;
 	background-color: #eee;
@@ -301,14 +300,13 @@ p {
 	margin-bottom: 30px;
 }
 
-.testimonial{
-	
-}
-
 .entry-text {
 	padding: 15px;
 	-webkit-border-radius: 5px;
 	position: relative;
+	color: #fff;
+	background-color: #5bc0de;
+	border-color: #46b8da;
 
 }
 .entry-text:after {
@@ -331,28 +329,12 @@ p {
 	padding-left: 10px;
 }
 
-
-
-.testimonial.testimonial-info-filled{
-
-}
-.testimonial.testimonial-info-filled .entry-text{
-	color: #fff;
-	background-color: #5bc0de;
-	border-color: #46b8da;
-}
-
-.testimonial.testimonial-info-filled .entry-text:after{
+.entry-text:after{
 	border-top-color: #5BC0DE;
 }
 
-.testimonial.testimonial-info-filled .entry-footer{
 
-}
-
-
-
-.testimonial.testimonial-info-filled .entry-author-name{
+.entry-author-name{
 	color: #5BC0DE;
 }
 
@@ -375,3 +357,66 @@ p {
     cursor: inherit;
     display: block;
 }
+
+
+.tile-button{
+	background-color: #f8f8f8;; 
+	height: 120px;
+	border-radius: 3px;
+
+}
+
+.tile-button > a{
+	color: #3C9CBC;
+
+}
+
+.tile-button:hover {
+	background-color: #e0e0e0; 
+}
+
+.tile-button:hover > a{
+	color: #3C9CBC;
+}
+
+#ticket-list{
+	padding-top: 20px;
+	margin-top: 30px;
+
+}
+
+.ticket-panel .panel-heading, .ticket-panel .panel-footer {
+	border-color: #f2f2f2;
+	border-width: 2px;
+	background-color: #fdfdfd;
+	border-width: 1px;
+	padding: 5px 10px;
+}
+.ticket-panel .panel-heading:hover{
+	
+	background-color: #f2f2f2;
+	
+}
+
+.ticket-panel .panel-title {
+	margin: 10px 0px;
+}
+
+.ticket-panel .chrEntry:last-child {
+	margin-bottom: 0px;
+}
+
+.panel-heading-text, .panel-heading-text:hover {
+	color: #333;
+}
+
+
+
+.toggle-btn.active {                
+	display: none;		
+}
+.toggle-btn {                
+	display: inline-block;		
+}
+
+

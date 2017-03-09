@@ -6,7 +6,7 @@
 	"status": "Dispatching",
 	"ticket_id": "123", 
 
-	"subject": "Defekte Kaffemaschine",
+	"subject": "Defekte Kaffeemaschine",
 	"geraet": "Kaffeemaschine",
 
 	"contact": [
@@ -16,7 +16,7 @@
 		"nachname": "Mustermann",
 		"telefon": "0123456780",
 		"email": "max@mustermann.de",
-		"wishesemails": "true"
+		"wishesemails": "ja"
 	    },
 	    {
 		"anrede": "Frau",
@@ -24,16 +24,16 @@
 		"nachname": "Mustermann",
 		"telefon": "0123456789",
 		"email": "maxine@mustermann.de",
-		"wishesemails": "true"
+		"wishesmails": "ja"
 	    }
 	],
   
 	"kundensichtbar": "ja",
 	"faellig": "2011-07-11",
 	"aufwand": "3",
-	"kategorie": "Reperatur",
+	"kategorie": "Reparatur",
 	"prioritaet": "hoch", 
-	"abteilung": "Service/Reperatur",
+	"abteilung": "Service/Reparatur",
 	"verantwortlicher": "",
 
 	"tsticket_feedbackdue": "2011-07-20", 
@@ -47,7 +47,7 @@
 		"tstimeline_creator": "Max Mustermann",
 		"tstimeline_custvisible": "ja",
 		"tstimeline_modtime": "07.06.11 12:21",
-		"tstimeline_text": ":("
+		"tstimeline_text": ""
 	    },
 	    {
 		"tstimeline_author": "Ticket M",
@@ -55,7 +55,7 @@
 		"tstimeline_creator": "Ticket M",
 		"tstimeline_custvisible": "true",
 		"tstimeline_modtime": "07.06.11 12:21",
-		"tstimeline_text": "ok"
+		"tstimeline_text": ""
 	    }
     ]
 
