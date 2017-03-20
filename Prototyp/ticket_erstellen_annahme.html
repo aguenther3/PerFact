@@ -194,7 +194,7 @@
 												<label for"geraet_input" class="control-label">
 													Ger&auml;t *
 												</label>
-												<select class="form-control required" id="gereat_input">
+												<select class="form-control required" id="geraet_input">
 													<option selected></option>
 													<option value="Kaffeemaschine">Kaffeemaschine</option>
 													<option value="Waschmaschine">Waschmaschine</option>
@@ -475,10 +475,10 @@
 																	</div>
 																</div>
 																<div class="form-group">
-																	<label for"gereat" class="col-sm-2 control-label">
+																	<label for"geraet" class="col-sm-2 control-label">
 																		Ger&auml;t:
 																	</label>
-																	<div class="form-control-static output col-sm-10" id="gereat">
+																	<div class="form-control-static output col-sm-10" id="geraet">
 																	</div>
 																</div>
 																<div class="form-group">
@@ -641,11 +641,11 @@
 																			als Entwurf speichern
 																		</span>
 																	</button>
-																	<button class="btn btn-primary" aria-expanded="false" id="finishTicket">
+																	<button class="btn btn-primary" aria-expanded="false" id="finishTicket" data-toggle="modal" data-target="#modal_redir">
 																		<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
 																		</span>
 																		<span>
-																			Ticket an Dispatcher weitergeben
+																			Ticket fertig stellen
 																		</span>
 																	</button>
 																</div>
@@ -653,6 +653,102 @@
 														</div>
 													</div>
 												</div>
+
+
+
+
+
+												<!-- Modal -->               
+												<div id="modal_redir" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
+													<div class="modal-dialog modal-lg">
+														<div class="modal-content">
+															<div class="modal-header">
+
+																<span class="glyphicon glyphicon-ok" aria-hidden="true">
+																</span>
+																<span class="modal-title" id="exampleModalLabel">
+																	Ticket erfolgreich erstellt!
+																</span>
+															</div>
+															<div class="modal-body" style="padding: 40px 50px 20px 50px;">
+
+																<div>
+																	<button class="btn btn-success btn-block small-tile-button" id="compareTicket">
+																		
+																		
+																		
+																		
+																		<span class="glyphicon glyphicon-menu-right pull-right"
+																		aria-hidden="true">
+																		
+																	</span>
+																	<span>Ticket mit &auml;hnlichen Tickets vergleichen</span>
+																	
+
+																	
+																	
+																</button>
+															</div>
+
+															<div>
+																<button class="btn btn-primary btn-block small-tile-button">
+																	
+																	
+																	
+																	
+																	<span class="glyphicon glyphicon-menu-right pull-right"
+																	aria-hidden="true">
+																	
+																</span>
+																<span>Ticket an Dispatcher weitergeben</span>
+																
+
+																
+																
+															</button>
+														</div>
+
+														<div>
+															<button class="btn btn-default btn-block small-tile-button">
+																
+																
+																
+																
+																<span class="glyphicon glyphicon-menu-left pull-left"
+																aria-hidden="true">
+																
+															</span>
+															<span>zur&uuml;ck zur Ticketliste</span>
+															
+
+															
+															
+														</button>
+													</div>
+												</div>
+
+
+											</div>
+															<!-- <div class="modal-footer">
+																<button class="btn" aria-expanded="false"  class="close" data-dismiss="modal" aria-label="Close">
+																	<span class="glyphicon glyphicon-remove" aria-hidden="true">
+																	</span>
+																	<span>
+																		Abbrechen
+																	</span>
+																</button>
+															</div>  -->  
+														</div>
+													</div>
+												</div>
+
+
+
+
+
+
+
+
 											</div>
 										</div>
 									</div>
@@ -810,12 +906,26 @@
 
 
   	    //Ticket abschliessen mit Rueckmeldung und Weiterleitung auf Ticket-Liste
-  	    $('#finishTicket').click(function () {
-  	    	$('#rueckmeldung').html('<div class="alert alert-success" style="text-align: right;" role="alert">Ticket erfolgreich erstellt und an Dispatcher weitergegeben. <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>');
+  	    $('#compareTicket').click(function () {
+  	    	var ticket = {};
+  	    	ticket.subject = $('#subject_input').val();
+  	    	ticket.geraet = $('#geraet_input').val();
+  	    	ticket.abteilung = $('#abteilung_input').val();
+  	    	ticket.aufwand = $('#aufwand_input').val();
+  	    	ticket.kategorie = $('#kategorie_input').val();
+  	    	ticket.prioritaet = $('#prioritaet_input').val();
+  	    	ticket.faellig = $('#faellig_input').val();
+
+  	    	localStorage.setItem( 'ticket', JSON.stringify(ticket) );
+
+
+
+
+
   	    	
   	    	setTimeout(function () {
-  	    		window.location.href = "ticket_liste_annahme.html";
-  	    	}, 2000);
+  	    		window.location.href = "ticket_vergleichen.html";
+  	    	}, 1000);
   	    });
 
 
