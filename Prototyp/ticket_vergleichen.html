@@ -10,6 +10,21 @@
 
   <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 
+  <script src="tinymce/js/tinymce/tinymce.min.js"></script>
+  <script src="tinymce/js/tinymce/jquery.tinymce.min.js"></script>
+
+
+  <script>
+    tinymce.init({
+      selector: '#mytextarea',
+      statusbar: false,
+      menubar: false,
+      height : "130"
+
+    });
+  </script>
+
+
 
 </head>
 
@@ -111,7 +126,11 @@
                         
                         <br>
                         <small>
-                         Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+                         3 &auml;hnliche Tickets gefunden:
+                       </small>
+                       <br>
+                       <small>
+                         W&auml;hlen Sie das &auml;hnlichste Ticket aus und vergleichen Sie dessen Informationen mit dem aktuellen Ticket. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua.
                        </small>
                      </h3>
                    </div>
@@ -140,7 +159,7 @@
                       </span>
                       <!-- <span class="glyphicon glyphicon-credit-card"></span> -->
                       <span>
-                        Vergleichen und Abschlie&szlig;en
+                        Vergleichen und Anpassen
                       </span>
                     </a>
                   </li>
@@ -183,7 +202,7 @@
                         </div>
                         <div class="panel-collapse collapse" role="tabpanel" id="ticket1">
                           <div class="panel-body">
-                            <section class="col-xs-12 col-sm-5 col-lg-5">
+                            <section class="col-xs-12 col-sm-5 col-lg-5" style="vertical-align: center;">
                               <form class="form-horizontal">
                                 <div class="form-group">
                                   <label for"geareat" class="col-sm-4 control-label">
@@ -223,14 +242,28 @@
                             <section class="col-xs-12 col-sm-7 col-lg-7">
                               <div class="form-group">
                                 <label for"last-chronik-entry" class="control-label">
-                                  letzter Chronik-Eintrag:
+                                  Beschreibung:
                                 </label>
                                 <div class="form-control-static" id="last-chronik-entry">
                                   <div class="chrEntry">
                                     <div id="" class="">
                                       <div class="entry-text" >
-                                        <div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</div>
+                                        <h4>Serviceanfrage</h4>
+                                        <strong>Absender:</strong> Erika Musterfrau
+                                        <br>
+                                        <strong>Betreff:</strong> Kaffemaschine
+                                        <br><br>                        Hallo, 
+                                        <br>
+                                        ich besitze seit einiger Zeit eine Kaffeemaschine von Ihnen (Modell KM und irgendeine Zahl...). Leider funktioniert die eingebaute Zeitschaltung nicht korrekt.
 
+                                        
+                                        <br>
+
+                                        Mit freundlichen Gruessen,
+
+                                        <br>
+                                        Erika Musterfrau
+                                        
 
                                         <div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
                                           <span class="glyphicon glyphicon-menu-right">
@@ -269,7 +302,7 @@
 
                               <a class="btn btn-primary navTabsNext" type="button" aria-expanded="false">
                                 <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                                <span>vergleichen</span>
+                                <span>Details vergleichen</span>
                               </a>
                             </div>
                           </div>
@@ -340,7 +373,7 @@
                             <section class="col-xs-12 col-sm-6 col-lg-6">
                               <div class="form-group">
                                 <label for"last-chronik-entry" class="control-label">
-                                  letzter Chronik-Eintrag:
+                                  Beschreibung:
                                 </label>
                                 <div class="form-control-static" id="last-chronik-entry">
                                   <div class="chrEntry">
@@ -386,7 +419,7 @@
 
                               <a class="btn btn-primary navTabsNext" type="button" aria-expanded="false" href="">
                                 <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                                <span>vergleichen</span>
+                                <span>Details vergleichen</span>
                               </a>
                             </div>
                           </div>
@@ -457,7 +490,7 @@
                             <section class="col-xs-12 col-sm-6 col-lg-6">
                               <div class="form-group">
                                 <label for"last-chronik-entry" class="control-label">
-                                  letzter Chronik-Eintrag:
+                                  Beschreibung:
                                 </label>
                                 <div class="form-control-static" id="last-chronik-entry">
                                   <div class="chrEntry">
@@ -502,7 +535,7 @@
                             <div class="btn-group big-btn-group" role="group">
                               <a class="btn btn-primary navTabsNext" type="button" aria-expanded="false" href="">
                                 <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                                <span>vergleichen</span>
+                                <span>Details vergleichen</span>
                               </a>
                             </div>
                           </div>
@@ -565,6 +598,14 @@
                                         Ger&auml;t:
                                       </label>
                                       <div class="form-control-static output col-sm-12" id="gereat">Waschmaschine
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for"description" class="col-sm-12 control-label">
+                                        Beschreibung:
+                                      </label>
+                                      <div class="form-control-static output col-sm-12" id="description">
+                                        Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisici.
                                       </div>
                                     </div>
                                     
@@ -690,153 +731,213 @@
                                 </select>
                                 <div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
                               </div>
-                            </div>
-                          </div> 
-                        </div>
 
-                        <div class="panel panel-default check-panel">   
-                          <div class="check-heading panel-heading clearfix">
-                            <h4 class="panel-title">
-                              <a role="button" data-toggle="collapse" href="#checkSpezi_modal" aria-expanded="true" aria-controls="checkSpezi_modal">
-                                <span class="glyphicon glyphicon-menu-down"> 
-                                </span>
-                                <span> 
-                                  Spezifikation
-                                </span>
+
+                              <div class="form-group">
+                                <label for"mceu_13" class="control-label">
+                                  Beschreibung
+                                </label>
+                                <input id="mytextarea" >
+                                <div class="row panel panel-default" style="border-color: #C0C0C0; margin-left: 0px; margin-right: 0px; border-top-width: 0px; border-radius: 0px; margin-bottom: 0px; ">
+                                  <div class="">
+
+
+
+                            <!--<div class="col-xs-6 col-md-3">
+                              <a href="#" class="thumbnail">
+                                <img src="" alt="">
                               </a>
-                            </h4>
+                            </div>-->
                           </div>
-                          <div id="checkSpezi_modal" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkSpezi_modal">
-                            <div class="panel-body" style="border-width: 2px">
-                              <div class="form-group">
-                                <label for"abteilung_input" class="control-label">
-                                  Abteilung *
-                                </label>
-                                <select class="mb-12 form-control required" id="abteilung_input">
-                                  <option selected></option>
-                                  <option value="Service/Reparatur">Service/Reparatur</option>
-                                </select>
-                                <div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
-                              </div>
-                              <div class="form-group">
-                                <label for"kategorie_input" class="control-label">
-                                  Ticket-Kategorie
-                                </label>
-                                <select class="mb-12 form-control" id="kategorie_input">
-                                  <option selected></option>
-                                  <option value="Reparatur">Reparatur</option>
-                                  <option value="Ersaztteil bestellen">Ersaztteil bestellen</option>
-                                  <option value="Ger&auml;t ersetzen">Ger&auml;t ersetzen</option>
-                                </select>
-                              </div>
-                              <div class="form-group">
-                                <label for"prioritaet_input" class="control-label">
-                                  Ticket-Priorit&auml;t
-                                </label>
-                                <select class="mb-12 form-control" id="prioritaet_input">
-                                  <option selected></option>
-                                  <option value="hoch">hoch</option>
-                                  <option value="niedrig">niedrig</option>
-                                </select>
-                              </div>
-                              <div class="form-group">
-                                <div class="form-group">
-                                  <label for"aufwand_input" class="control-label">
-                                    gesch&auml;tzter Stundenaufwand
-                                  </label>
-                                  <input id="aufwand_input" class="form-control" type="text">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="form-group">
-                                  <label for"faellig_input" class="control-label">
-                                    f&auml;llig bis
-                                  </label>
-                                  <input id="faellig_input" class="form-control datepicker" type="text">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for"kundensichtbar_input" class="control-label">
-                                  Ticket kundensichtbar
-                                </label>
-                                <div class="form-check form-check-inline">
-                                  <label class="custom-control custom-radio" style="font-weight: normal">
-                                    <input id="radio1" name="kundensichtbar_input"  value="ja" type="radio" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">ja</span>
-                                  </label>
-                                  <label class="custom-control custom-radio" style="font-weight: normal">
-                                    <input id="radio2" name="kundensichtbar_input" type="radio" value="nein" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">nein</span>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div> 
                         </div>
+                       <!-- <div class="row panel panel-default" style="border-color: #C0C0C0; margin-left: 0px; margin-right: 0px; border-top-width: 0px; border-radius: 0px; margin-bottom: 0px; background-color: #F0F0F0;">
+                          <div class="panel-body">
+                            
+                            
+                            <!-- <button class="btn btn-default btn-file">
+                              <span class="glyphicon glyphicon-paperclip"></span>
+                              <span>Datei anf&uuml;gen</span> 
+                              <input type="file">
+                            </button> -->
+                            <!-- <div class="" data-toggle="btn">
+                              <!--<button class="btn btn-default toggle-btn active">
+
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span>Eintrag kundensichtbar</span>
+                                <input type="radio" name="eintrag_kundensichtbar" id="eintrag_kundensichtbar" checked>
+                              </button>
+                              <button class="btn btn-default toggle-btn">
+
+                                <span class="glyphicon glyphicon-eye-close"></span>
+                                <span>Eintrag nicht kundensichtbar</span>
+                                <input type="radio" name="eintrag_kundensichtbar" id="eintrag_nichtkundensichtbar">
+                              </button>   -->
+                            <!-- </div>
+
+                          </div>
+                        </div> -->
 
                       </div>
 
 
 
-
-
-
-
                     </div>
+                  </div> 
+                </div>
 
-
-                    <!-- Ticket-Buttons -->
-
-                    <div class="panel-body" style="padding-bottom: 0px; margin-top: 45px;">
-                      <div id="rueckmeldung"></div>
-                      <div class="pull-right">
-                        <div class="row text-right" style="margin-top: 15px">
-                          <div class="col-xs-12 spacer-small">
-                            <div>
-                              <button class="btn" aria-expanded="false">
-                                <span class="glyphicon glyphicon-remove" aria-hidden="true">
-                                </span>
-                                <span>
-                                  Abbrechen
-                                </span>
-                              </button>
-
-                              <button class="btn btn-primary" aria-expanded="false" id="finishTicket" data-toggle="modal" data-target="#modal_redir">
-                                <span class="glyphicon glyphicon-menu-right" aria-hidden="true">
-                                </span>
-                                <span>
-                                  Fertig stellen
-                                </span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
+                <div class="panel panel-default check-panel">   
+                  <div class="check-heading panel-heading clearfix">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" href="#checkSpezi_modal" aria-expanded="true" aria-controls="checkSpezi_modal">
+                        <span class="glyphicon glyphicon-menu-down"> 
+                        </span>
+                        <span> 
+                          Spezifikation
+                        </span>
+                      </a>
+                    </h4>
                   </div>
+                  <div id="checkSpezi_modal" class="panel-collapse collapse in panel-content" role="tabpanel" aria-labelledby="checkSpezi_modal">
+                    <div class="panel-body" style="border-width: 2px">
+                      <div class="form-group">
+                        <label for"abteilung_input" class="control-label">
+                          Abteilung *
+                        </label>
+                        <select class="mb-12 form-control required" id="abteilung_input">
+                          <option selected></option>
+                          <option value="Service/Reparatur">Service/Reparatur</option>
+                        </select>
+                        <div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
+                      </div>
+                      <div class="form-group">
+                        <label for"kategorie_input" class="control-label">
+                          Ticket-Kategorie
+                        </label>
+                        <select class="mb-12 form-control" id="kategorie_input">
+                          <option selected></option>
+                          <option value="Reparatur">Reparatur</option>
+                          <option value="Ersaztteil bestellen">Ersaztteil bestellen</option>
+                          <option value="Ger&auml;t ersetzen">Ger&auml;t ersetzen</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for"prioritaet_input" class="control-label">
+                          Ticket-Priorit&auml;t
+                        </label>
+                        <select class="mb-12 form-control" id="prioritaet_input">
+                          <option selected></option>
+                          <option value="hoch">hoch</option>
+                          <option value="niedrig">niedrig</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group">
+                          <label for"aufwand_input" class="control-label">
+                            gesch&auml;tzter Stundenaufwand
+                          </label>
+                          <input id="aufwand_input" class="form-control" type="text">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group">
+                          <label for"faellig_input" class="control-label">
+                            f&auml;llig bis
+                          </label>
+                          <input id="faellig_input" class="form-control datepicker" type="text">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for"kundensichtbar_input" class="control-label">
+                          Ticket kundensichtbar
+                        </label>
+                        <div class="form-check form-check-inline">
+                          <label class="custom-control custom-radio" style="font-weight: normal">
+                            <input id="radio1" name="kundensichtbar_input"  value="ja" type="radio" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">ja</span>
+                          </label>
+                          <label class="custom-control custom-radio" style="font-weight: normal">
+                            <input id="radio2" name="kundensichtbar_input" type="radio" value="nein" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">nein</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+              </div>
 
 
-                </section>
 
 
 
 
 
-                
+            </div>
+
+
+            <!-- Ticket-Buttons -->
+
+            <div class="panel-body" style="padding-bottom: 0px; margin-top: 45px;">
+              <div id="rueckmeldung"></div>
+              <div class="">
+                <div class="row text-right" style="margin-top: 15px">
+                  <div class="">
+                    <div>
+                      <button type="button" class="btn btn-primary navTabsBack pull-left">
+                        <span class="glyphicon glyphicon-menu-left" aria-hidden="true">
+                        </span>
+                        <span>
+                          zur&uuml;ck
+                        </span>
+                      </button>
+                      <button class="btn" aria-expanded="false">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true">
+                        </span>
+                        <span>
+                          Abbrechen
+                        </span>
+                      </button>
+
+                      <button class="btn btn-primary" aria-expanded="false" id="finishTicket" data-toggle="modal" data-target="#modal_redir">
+
+                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"> 
+                        </span>
+                        
+                        <span>
+                          &Auml;nderungen speichern 
+                        </span>
+                        
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+            
           </div>
 
 
-        </div>
+        </section>
 
+
+
+
+
+        
       </div>
-
     </div>
   </div>
+
+
+</div>
+
+</div>
+
+</div>
+</div>
 
 
 </div>
@@ -867,6 +968,7 @@
     $("#prioritaet_input").val(data.prioritaet).change();
     $("#faellig_input").val(data.faellig);
     $("#aufwand_input").val(data.aufwand);
+    //tinyMCE.activeEditor.setContent(data.description);
 
 
 
@@ -876,15 +978,15 @@
 
     /*disable non active tabs*/
     $('.nav.nav-steps li').addClass('disabled');
-    $('.nav.nav-steps li').not('.active').find('a').removeAttr("data-toggle");
+    //$('.nav.nav-steps li').not('.active').find('a').removeAttr("data-toggle");
 
 
     //Wechsel der Tabs ueber Button 'weiter' + Validation
     $('.navTabsNext').click(function () {
 
 
-      $('#navTabBar li.active').addClass('finished');
-
+      $('#navTabBar li.active').addClass('finished').find('a').attr('data-toggle','tab');;
+      $('#navTabBar li.active').removeClass('disabled');
       $('#navTabBar li.active').next('li').find('a').attr('data-toggle','tab');
       $('#navTabBar li.active').next().find('a').trigger("click");
 
@@ -892,6 +994,18 @@
       $(document).scrollTop(($("#navTabBar").parent()).offset().top);
 
     });
+
+    //Wechsel der Tabs ueber Button 'zurueck'
+    $('.navTabsBack').click(function () {
+
+      $('#navTabBar li:first').find('a').trigger("click");
+
+
+      $(document).scrollTop(($("#navTabBar").parent()).offset().top);
+
+
+    });
+
 
   });
 

@@ -248,18 +248,18 @@
 
 											</div>
 											<div class="panel-body" style="padding-bottom: 0px; margin-top: 45px;">
-												<div class="pull-right">
-													<div class="row text-right">
-														<div class="col-xs-12 spacer-small">
-															<div>
-																<button type="button" class="btn btn-primary navTabsNext pull-right" style="margin-top: 15px">
-																	<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
-																	</span>
-																	<span>
-																		weiter
-																	</span>
-																</button>
-															</div>
+												<div class="row text-right">
+													<div class="">
+														<div>
+															
+															<button type="button" class="btn btn-primary navTabsNext pull-right" style="margin-top: 15px">
+
+																<span>
+																	weiter
+																</span>
+																<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+																</span>
+															</button>
 														</div>
 													</div>
 												</div>
@@ -340,18 +340,24 @@
 													</button>
 												</div>
 												<div class="panel-body" style="padding-bottom: 0px; margin-top: 110px;">
-													<div class="pull-right">
-														<div class="row text-right">
-															<div class="col-xs-12 spacer-small">
-																<div>
-																	<button type="button" class="btn btn-primary navTabsNext pull-right" style="margin-top: 15px">
-																		<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
-																		</span>
-																		<span>
-																			weiter
-																		</span>
-																	</button>
-																</div>
+													<div class="row text-right">
+														<div class="">
+															<div>
+																<button type="button" class="btn btn-primary navTabsBack pull-left" style="margin-top: 15px">
+																	<span class="glyphicon glyphicon-menu-left" aria-hidden="true">
+																	</span>
+																	<span>
+																		zur&uuml;ck
+																	</span>
+																</button>
+																<button type="button" class="btn btn-primary navTabsNext pull-right" style="margin-top: 15px">
+
+																	<span>
+																		weiter
+																	</span>
+																	<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+																	</span>
+																</button>
 															</div>
 														</div>
 													</div>
@@ -428,18 +434,24 @@
 													</div>
 												</div>
 												<div class="panel-body" style="padding-bottom: 0px; margin-top: 20px;">
-													<div class="pull-right">
-														<div class="row text-right">
-															<div class="col-xs-12 spacer-small">
-																<div>												
-																	<button type="button" class="btn btn-primary navTabsNext pull-right" style="margin-top: 15px" id="continueToCheck">
-																		<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
-																		</span>
-																		<span>
-																			weiter
-																		</span>
-																	</button>
-																</div>
+													<div class="row text-right">
+														<div class="">
+															<div>	
+																<button type="button" class="btn btn-primary navTabsBack pull-left" style="margin-top: 15px">
+																	<span class="glyphicon glyphicon-menu-left" aria-hidden="true">
+																	</span>
+																	<span>
+																		zur&uuml;ck
+																	</span>
+																</button>											
+																<button type="button" class="btn btn-primary navTabsNext pull-right" style="margin-top: 15px" id="continueToCheck">
+																	<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+																	</span>
+																	<span>
+																		weiter
+																	</span>
+
+																</button>
 															</div>
 														</div>
 													</div>
@@ -623,33 +635,31 @@
 												
 												<div class="panel-body" style="padding-bottom: 0px; margin-top: 45px;">
 													<div id="rueckmeldung"></div>
-													<div class="pull-right">
-														<div class="row text-right" style="margin-top: 15px">
-															<div class="col-xs-12 spacer-small">
-																<div>
-																	<button class="btn" aria-expanded="false">
-																		<span class="glyphicon glyphicon-remove" aria-hidden="true">
-																		</span>
-																		<span>
-																			Verwerfen
-																		</span>
-																	</button>
-																	<button class="btn" aria-expanded="false">
-																		<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
-																		</span>
-																		<span>
-																			als Entwurf speichern
-																		</span>
-																	</button>
-																	<button class="btn btn-primary" aria-expanded="false" id="finishTicket" data-toggle="modal" data-target="#modal_redir">
-																		<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
-																		</span>
-																		<span>
-																			Ticket fertig stellen
-																		</span>
-																	</button>
-																</div>
-															</div>
+
+													<div class="row text-right" style="margin-top: 15px">
+														<div>
+															<button type="button" class="btn btn-primary navTabsBack pull-left">
+																<span class="glyphicon glyphicon-menu-left" aria-hidden="true">
+																</span>
+																<span>
+																	zur&uuml;ck
+																</span>
+															</button>
+															<button class="btn" aria-expanded="false">
+																<span class="glyphicon glyphicon-remove" aria-hidden="true">
+																</span>
+																<span>
+																	Verwerfen
+																</span>
+															</button>
+															<button class="btn btn-primary" aria-expanded="false" id="finishTicket" data-toggle="modal" data-target="#modal_redir">
+
+																<span>
+																	Ticket fertig stellen
+																</span>
+																<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+																</span>
+															</button>
 														</div>
 													</div>
 												</div>
@@ -682,7 +692,7 @@
 																		aria-hidden="true">
 																		
 																	</span>
-																	<span>Ticket mit &auml;hnlichen Tickets vergleichen</span>
+																	<span>Ticket mit &auml;hnlichen Tickets vergleichen (3 Tickets gefunden)</span>
 																	
 
 																	
@@ -787,9 +797,10 @@
 			if ($('.tab-pane.active .has-error').length==0){ 
 
 				$('#navTabBar li.active').addClass('finished');
-				//$('#navTabBar li.active').addClass('disabled');
+				$('#navTabBar li.active').addClass('finished').find('a').attr('data-toggle','tab');
+				$('#navTabBar li.active').removeClass('disabled');
 				//$('#navTabBar li.active').find('a').removeAttr("data-toggle");
-				//$('#navTabBar li.active').next('li').removeClass('disabled');
+				$('#navTabBar li.active').next('li').removeClass('disabled');
 				$('#navTabBar li.active').next('li').find('a').attr('data-toggle','tab');
 				$('#navTabBar li.active').next().find('a').trigger("click");
 
@@ -807,7 +818,31 @@
 		    	focusFirstError();
 		    };
 		});
-		
+
+		//Wechsel der Tabs ueber Button 'zurueck'
+		$('.navTabsBack').click(function () {
+
+			$('#navTabBar li.active').prev().find('a').trigger("click");
+
+
+			$(document).scrollTop(($("#navTabBar").parent()).offset().top);
+
+
+		});
+
+		 // Prueft bei Tabwechsel alle Pflichtfelder
+  	   /* $('#navTabBar li a').click(function (event){
+  	    	checkRequiredForms();
+			//Tabwechsel nur falls keine unausgefuellten pflichtfelder
+			if ($('.tab-pane.active .has-error').length!=0){ 
+					//alert("error"+$('.tab-pane.active .has-error').length);
+					focusFirstError();
+					event.stopPropagation();
+				};
+			});*/
+
+
+
 
 		//loescht Kontaktperson
 		$('#deleteContact').click(function () {
@@ -876,16 +911,7 @@
   	    	$('#contacts').children(':last').find(':input').val('');
   	    });
 
-  	    // Prueft bei Tabwechsel alle Pflichtfelder
-  	    $('#navTabBar li a').click(function (event){
-  	    	checkRequiredForms();
-			//Tabwechsel nur falls keine unausgefuellten pflichtfelder
-			if ($('.tab-pane.active .has-error').length!=0){ 
-					//alert("error"+$('.tab-pane.active .has-error').length);
-					focusFirstError();
-					event.stopPropagation();
-				};
-			});
+
 
   	    //mit Error ausgefüllte Pflichtfelder bei Verlassen des Feldes von Error befreien
   	    $(':input').blur(function() {
@@ -910,11 +936,14 @@
   	    	var ticket = {};
   	    	ticket.subject = $('#subject_input').val();
   	    	ticket.geraet = $('#geraet_input').val();
+  	    	ticket.description= tinyMCE.activeEditor.getContent({format : 'raw'});
+
   	    	ticket.abteilung = $('#abteilung_input').val();
   	    	ticket.aufwand = $('#aufwand_input').val();
   	    	ticket.kategorie = $('#kategorie_input').val();
   	    	ticket.prioritaet = $('#prioritaet_input').val();
   	    	ticket.faellig = $('#faellig_input').val();
+
 
   	    	localStorage.setItem( 'ticket', JSON.stringify(ticket) );
 

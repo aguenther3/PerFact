@@ -15,6 +15,14 @@ a:focus{
 p {
 	margin: 0px 0px 0px 0px;
 }
+select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url('https://image.flaticon.com/icons/svg/25/25224.svg') right / 20px no-repeat #fff;
+        padding-right: 20px;
+}
+
 
 .form-control:focus {
 	border-color: seablue;
@@ -452,7 +460,7 @@ p {
 
 .comp-ticket {
 	z-index: 1;
-	opacity: 0.75;
+	opacity: 0.6;
 	background-color: #f8f8f8;
 	border: 2px solid #c0c0c0;
 	border-radius: 10px;
@@ -461,6 +469,8 @@ p {
 }
 
 .new-ticket {
+	background-color: #edf3f7;
+	opacity: 0.85;
 	border: 2px solid #449bc2;
 	border-radius: 10px;
 	width: 49%;
