@@ -121,7 +121,7 @@
 												neues Ticket
 												<br>
 												<small>
-													Bitte beschreiben Sie das Anliegen des Kunden und hinterlegen Sie die Kontaktdaten. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+													Bitte beschreiben Sie das Anliegen des Kunden und hinterlegen Sie die Kontaktdaten. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of sed magna aliqua. Lorem ipsum dolor met.
 												</small>
 											</h3>
 										</div>
@@ -719,7 +719,7 @@
 														</div>
 
 														<div>
-															<button class="btn btn-default btn-block small-tile-button">
+															<button class="btn btn-default btn-block small-tile-button" id="ticket_list_btn">
 																
 																
 																
@@ -932,20 +932,13 @@
 
 
   	    //Ticket abschliessen mit Rueckmeldung und Weiterleitung auf Ticket-Liste
+
+  	     $('#finishTicket').click(function () {
+
+  	     	saveNewTicket();
+  	    });
+
   	    $('#compareTicket').click(function () {
-  	    	var ticket = {};
-  	    	ticket.subject = $('#subject_input').val();
-  	    	ticket.geraet = $('#geraet_input').val();
-  	    	ticket.description= tinyMCE.activeEditor.getContent({format : 'raw'});
-
-  	    	ticket.abteilung = $('#abteilung_input').val();
-  	    	ticket.aufwand = $('#aufwand_input').val();
-  	    	ticket.kategorie = $('#kategorie_input').val();
-  	    	ticket.prioritaet = $('#prioritaet_input').val();
-  	    	ticket.faellig = $('#faellig_input').val();
-
-
-  	    	localStorage.setItem( 'ticket', JSON.stringify(ticket) );
 
 
 
@@ -957,9 +950,47 @@
   	    	}, 1000);
   	    });
 
+  	    $('#ticket_list_btn').click(function () {
+  	    	  	    	
+  	    	setTimeout(function () {
+  	    		window.location.href = "ticket_liste_annahme.html";
+  	    	}, 1000);
+  	    });
+
+
+
 
 
   	});
+
+
+function saveNewTicket(){
+	var ticket = {};
+  	    	ticket.subject = $('#subject_input').val();
+  	    	ticket.geraet = $('#geraet_input').val();
+  	    	ticket.description= tinyMCE.activeEditor.getContent();
+
+  	    	ticket.anrede= $('#anrede').text();
+  	    	ticket.vorname = $('#vorname_input').val();
+  	    	ticket.nachname = $('#nachname_input').val();
+  	    	ticket.telefon = $('#telefon_input').val();
+  	    	ticket.email = $('#email_input').val();
+  	    	ticket.wishesmails= $('#wishesmails').text();
+
+  	    	ticket.abteilung = $('#abteilung_input').val();
+  	    	ticket.aufwand = $('#aufwand_input').val();
+  	    	ticket.kategorie = $('#kategorie_input').val();
+  	    	ticket.prioritaet = $('#prioritaet_input').val();
+  	    	ticket.faellig = $('#faellig_input').val();
+  	    	ticket.kundensichtbar = $('#kundensichtbar').text();
+  	    	
+
+  	    	localStorage.setItem( 'ticket', JSON.stringify(ticket) );
+  	    	localStorage.setItem('newticket', true);
+
+};
+
+
 
 function fill_contact_checks(elem_with_inputs){
 	$('#check_contact').children(':last').find('.output').each(function(){

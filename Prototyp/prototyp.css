@@ -15,12 +15,14 @@ a:focus{
 p {
 	margin: 0px 0px 0px 0px;
 }
-select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        background: url('https://image.flaticon.com/icons/svg/25/25224.svg') right / 20px no-repeat #fff;
-        padding-right: 20px;
+
+ .table > tbody > tr > th, .table > tbody > tr > td {
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+ .table > tbody > tr:first-child > th, .table > tbody > tr:first-child > td {
+	border-top-width: 0px;
 }
 
 
@@ -368,14 +370,14 @@ select {
 
 
 .tile-button{
-	background-color: #f8f8f8;; 
+	background-color: #0073ca; 
 	height: 120px;
 	border-radius: 3px;
 
 }
 
-.tile-button > a{
-	color: #3C9CBC;
+.tile-button small, a{
+	color: white;
 
 }
 
@@ -385,6 +387,9 @@ select {
 
 .tile-button:hover > a{
 	color: #3C9CBC;
+}
+.tile-button:hover small{
+	color: grey;
 }
 
 #ticket-list{
@@ -464,8 +469,8 @@ select {
 	background-color: #f8f8f8;
 	border: 2px solid #c0c0c0;
 	border-radius: 10px;
-	width: 49%;
-	margin: 4.8px;
+	padding: 5px;
+	margin-right: -5px;
 }
 
 .new-ticket {
@@ -473,7 +478,7 @@ select {
 	opacity: 0.85;
 	border: 2px solid #449bc2;
 	border-radius: 10px;
-	width: 49%;
-	margin: 4.7px;
 	z-index: 3;
+	padding: 5px;
+	margin-left: -5px;
 }

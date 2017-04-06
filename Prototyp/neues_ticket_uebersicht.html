@@ -372,24 +372,8 @@
 										<div class="chrEntry">
 											<div id="" class="">
 												<div class="entry-text">
-													<h4>Serviceanfrage</h4>
-													<strong>Absender:</strong> Erika Musterfrau
-													<br>
-													<strong>Betreff:</strong> Kaffemaschine
-													<br><br>												Hallo, 
-													<br><br>
-													ich besitze seit einiger Zeit eine Kaffeemaschine von Ihnen (Modell KM und irgendeine Zahl...). Leider funktioniert die eingebaute Zeitschaltung nicht korrekt.
-
-													<br>
-
-													Ich habe die Kaffeemaschine in Ihrem Online-Shop gekauft und würde Sie gerne auf Garantie umtauschen oder reparieren lassen.
-
-													<br><br>
-
-													Mit freundlichen Gruessen,
-
-													<br><br>
-													Erika Musterfrau
+													<div id="message">
+													</div>
 													
 
 													<div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
@@ -420,71 +404,8 @@
 											</div>   
 										</div>
 
-										<div class="chrEntry">
-											<div id="" class="">
-												<div class="entry-text">
-													Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of sed magna aliqua. Lorem ipsum dolor met.
 
-													<div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
-														<span class="glyphicon glyphicon-menu-right">
-														</span> Angeh&auml;ngte Dateien: 0
-													</div>
-												</div>
-												<div class="entry-footer">
-													<div class="entry-author">
-
-														<div class="entry-author">
-															<h5 class="entry-author-name">
-																<b  class="entry-author-name">
-																	Max Mustermann
-																</b> 
-																<br>
-																<small>
-																	<span class="glyphicon glyphicon-time">
-																	</span>
-																	14.01.17 21:50
-																</small>
-															</h5>
-														</div>
-
-													</div>
-												</div>
-											</div>   
-										</div>
-
-										<div class="chrEntry">
-											<div id="" class="">
-												<div class="entry-text" >
-													<div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of sed magna aliqua. Lorem ipsum dolor met.</div>
-
-
-													<div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
-														<span class="glyphicon glyphicon-menu-right">
-														</span> Angeh&auml;ngte Dateien: 0
-													</div>
-												</div>
-
-												<div class="entry-footer">
-													<div class="entry-author">
-
-														<div class="entry-author">
-															<h5 class="entry-author-name">
-																<b  id="entry-author-name">
-																	Max Mustermann
-																</b> 
-																<br>
-																<small>
-																	<span class="glyphicon glyphicon-time">
-																	</span>
-																	14.01.17 21:50
-																</small>
-															</h5>
-														</div>
-
-													</div>
-												</div>
-											</div>   
-										</div>
+										
 
 
 
@@ -845,7 +766,7 @@
 											<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
 											</span>
 											<span>
-												Ticket an Bearbeiter weitergeben
+												Ticket an Dispatcher weitergeben
 											</span>
 										</button>
 									</div>
@@ -874,37 +795,26 @@
 
 
 <script type="text/javascript">
-//for loading local json file
-function readTextFile(file, callback) {
-	var rawFile = new XMLHttpRequest();
-	rawFile.overrideMimeType("application/json");
-	rawFile.open("GET", file, true);
-	rawFile.onreadystatechange = function() {
-		if (rawFile.readyState === 4 && rawFile.status == "200") {
-			callback(rawFile.responseText);
-		}
-	}
-	rawFile.send(null);
-}
 
 
-readTextFile("test.json", function(text){
 
 	//json-File as JS-obj
-	var data = JSON.parse(text);
+	var data = JSON.parse(localStorage.getItem('ticket'));
 
     //load vars from json in textelements/inputs etc
-    $("#ticket_id").text(data.ticket_id);
+    $("#ticket_id").text("123");
     //$("#subject").text(data.subject);
     $("#subject_input").val(data.subject);
     $//("#geraet").text(data.geraet);
     $("#geraet_input").val(data.geraet).change();
+    $("#message").html(data.description);
 
-    $("#status").text(data.status);
-    $("#author").text(data.author);
-    $("#creator").text(data.creator);
-    $("#createtime").text(data.createtime);
-    $("#modtime").text(data.modtime);
+
+    $("#status").text("Entwurf");
+    $("#author").text("Max Mustermann");
+    $("#creator").text("Max Mustermann");
+    $("#createtime").text("01.01.11 14:00");
+    $("#modtime").text("01.01.11 14:00");
 
    // $("#kundensichtbar").text(data.kundensichtbar);
    $("#kundensichtbar_input").val([data.kundensichtbar]).change();
@@ -917,22 +827,22 @@ readTextFile("test.json", function(text){
     //$("#abteilung").text(data.abteilung);
     $("#abteilung_input").val(data.abteilung).change();
     //$("#verantwortlicher").text(data.verantwortlicher);
-    $("#verantwortlicher_input").val(data.verantwortlicher);
+    //$("#verantwortlicher_input").val(data.verantwortlicher);
     //$("#aufwand").text(data.aufwand);
     $("#aufwand_input").val(data.aufwand);
 
-    //$("#anrede").text(data.contact[0].anrede);
-    $("#anrede_input").val(data.contact[0].anrede).change();
-    //$("#vorname").text(data.contact[0].vorname);
-    $("#vorname_input").val(data.contact[0].vorname);
-    //$("#nachname").text(data.contact[0].nachname);
-    $("#nachname_input").val(data.contact[0].nachname);
-    //$("#telefon").text(data.contact[0].telefon);
-    $("#telefon_input").val(data.contact[0].telefon);
-    //$("#email").text(data.contact[0].email);
-    $("#email_input").val(data.contact[0].email);
+    $("#anrede").text(data.anrede);
+    $("#anrede_input").val(data.anrede).change();
+    $("#vorname").text(data.vorname);
+    $("#vorname_input").val(data.vorname);
+    $("#nachname").text(data.nachname);
+    $("#nachname_input").val(data.nachname);
+    $("#telefon").text(data.telefon);
+    $("#telefon_input").val(data.telefon);
+    $("#email").text(data.email);
+    $("#email_input").val(data.email);
     //$("#wishesmails").text(data.contact[0].wishesmails);
-    $("#wishesmails_input").val(data.contact[0].wishesmails).change();
+    $("#wishesmails_input").val(data.wishesmails).change();
 
     //fuellt alle vorhandenen Textfelder mit eingegebenen Input
     $('.output').each(function(){
@@ -965,7 +875,6 @@ readTextFile("test.json", function(text){
       	    
 
       	    
-      	});
 
 $('a[href="#tab2"]').on('shown.bs.tab', function (e) {
  // $('#chronik').scrollTop($("#chronik")[0].scrollHeight);

@@ -190,7 +190,7 @@
                           <div class="chrEntry">
                             <div id="" class="">
                               <div class="entry-text" >
-                                <div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</div>
+                                <div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of sed magna aliqua. Lorem ipsum dolor met.</div>
 
 
                                 <div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
@@ -320,7 +320,7 @@
                       <div class="chrEntry">
                         <div id="" class="">
                           <div class="entry-text" >
-                            <div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</div>
+                            <div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, sed magna aliqua. Lorem ipsum dolor met.</div>
 
 
                             <div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
@@ -390,7 +390,9 @@
             <h4 class="panel-title">
               <a role="button" data-toggle="collapse" aria-expanded="false" aria-controls="ticket3" href="#ticket3">
                 <span class="glyphicon glyphicon-menu-right pull-left"> </span>
-                <span style="padding-left: 15px">#T745 - Einbau von Ger&auml;t xy</span>
+                <span style="padding-left: 15px">#T<span id="ticket_id" class="">745
+                          </span> - <span id="subject2" class="">Einbau von Sp&uuml;lmaschine E567
+                          </span></span>
                 <span class="pull-right" style="font-weight: bold; color: blue; font-size: 14px">
                   <span id="status">Entwurf</span>
                 </span>
@@ -407,7 +409,7 @@
             <section class="col-xs-12 col-sm-6 col-lg-6">
               <form class="form-horizontal">
                 <div class="form-group">
-                  <label for"geareat" class="col-sm-4 control-label">
+                  <label for"geraet" class="col-sm-4 control-label">
                     Ger&auml;t:
                   </label>
                   <div class="form-control-static output col-sm-8" id="geareat">
@@ -450,7 +452,7 @@
                   <div class="chrEntry">
                     <div id="" class="">
                       <div class="entry-text" >
-                        <div id="message">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</div>
+                        <div id="description">Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, sed magna aliqua. Lorem ipsum dolor met.</div>
 
 
                         <div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
@@ -526,3 +528,38 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    if (localStorage.getItem('newticket')) {
+
+
+
+                var data = JSON.parse(localStorage.getItem('ticket'));
+
+                var newTicket = $('#ticket-list').children(':last').clone();
+
+                newTicket.find('a').attr("aria-controls", "ticket4");
+                newTicket.find('a').attr("href", "#ticket4");
+                newTicket.find('a.btn').attr("href", "neues_ticket_uebersicht.html");
+                 newTicket.find('div.panel-collapse').attr("id", "ticket4");
+                  newTicket.find('div.panel-collapse').attr("aria-labelledby", "ticket4");
+
+
+
+                newTicket.find('#ticket_id').text(123);
+                newTicket.find('#subject2').text(data.subject);
+                newTicket.find('#geraet').text(data.geraet);
+                newTicket.find('#kategorie').text(data.kategorie);
+                newTicket.find('#prioritaet').text(data.prioritaet);
+                newTicket.find('#description').html(data.description);
+                //newTicket.find('#description').innerHTML="";
+
+                //alert(data.description);
+                $('#ticket-list').append(newTicket);
+
+    }
+  });
+
+</script>

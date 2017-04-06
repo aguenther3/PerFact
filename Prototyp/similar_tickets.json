@@ -1,0 +1,191 @@
+[{
+	"creator": "Max Mustermann",
+	"createtime": "07.06.11 12:19", 
+	"author": "Max Mustermann",
+	"modtime": "07.06.11 12:21", 
+	"status": "Dispatching",
+	"ticket_id": "345", 
+
+	"subject": "Defekte Kaffeemaschine",
+	"geraet": "Kaffeemaschine",
+	"description": "Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisici.",
+
+	"contact": [
+		{
+		"anrede": "Herr",
+		"vorname": "Max",
+		"nachname": "Mustermann",
+		"telefon": "0123456780",
+		"email": "max@mustermann.de",
+		"wishesemails": "ja"
+	    },
+	    {
+		"anrede": "Frau",
+		"vorname": "Maxine",
+		"nachname": "Mustermann",
+		"telefon": "0123456789",
+		"email": "maxine@mustermann.de",
+		"wishesmails": "ja"
+	    }
+	],
+  
+	"kundensichtbar": "ja",
+	"faellig": "2011-07-11",
+	"aufwand": "3",
+	"kategorie": "Reparatur",
+	"prioritaet": "hoch", 
+	"abteilung": "Service/Reparatur",
+	"verantwortlicher": "",
+
+	"tsticket_feedbackdue": "2011-07-20", 
+	"tsticket_reporttext": "y",
+	"tsticket_reported_tscategory_id": "Ersetzung",
+	
+	"tstimeline": [
+		{
+		"tstimeline_author": "Max Mustermann",
+		"tstimeline_createtime": "07.06.11 12",
+		"tstimeline_creator": "Max Mustermann",
+		"tstimeline_custvisible": "ja",
+		"tstimeline_modtime": "07.06.11 12:21",
+		"tstimeline_text": ""
+	    },
+	    {
+		"tstimeline_author": "Ticket M",
+		"tstimeline_createtime": "07.06.11 12:19",
+		"tstimeline_creator": "Ticket M",
+		"tstimeline_custvisible": "true",
+		"tstimeline_modtime": "07.06.11 12:21",
+		"tstimeline_text": ""
+	    }
+    ]
+
+},
+{
+	"creator": "Max Mustermann",
+	"createtime": "07.06.11 12:19", 
+	"author": "Max Mustermann",
+	"modtime": "07.06.11 12:21", 
+	"status": "Dispatching",
+	"ticket_id": "987", 
+
+	"subject": "Ersatzteil Waschmaschine X123",
+	"geraet": "Waschmaschine",
+	"description": "Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisici.",
+
+
+	"contact": [
+		{
+		"anrede": "Herr",
+		"vorname": "Max",
+		"nachname": "Mustermann",
+		"telefon": "0123456780",
+		"email": "max@mustermann.de",
+		"wishesemails": "ja"
+	    },
+	    {
+		"anrede": "Frau",
+		"vorname": "Maxine",
+		"nachname": "Mustermann",
+		"telefon": "0123456789",
+		"email": "maxine@mustermann.de",
+		"wishesmails": "ja"
+	    }
+	],
+  
+	"kundensichtbar": "ja",
+	"faellig": "2011-07-11",
+	"aufwand": "3",
+	"kategorie": "Reparatur",
+	"prioritaet": "hoch", 
+	"abteilung": "Service/Reparatur",
+	"verantwortlicher": "",
+
+	"tsticket_feedbackdue": "2011-07-20", 
+	"tsticket_reporttext": "y",
+	"tsticket_reported_tscategory_id": "Ersetzung",
+	
+	"tstimeline": [
+		{
+		"tstimeline_author": "Max Mustermann",
+		"tstimeline_createtime": "07.06.11 12",
+		"tstimeline_creator": "Max Mustermann",
+		"tstimeline_custvisible": "ja",
+		"tstimeline_modtime": "07.06.11 12:21",
+		"tstimeline_text": ""
+	    },
+	    {
+		"tstimeline_author": "Ticket M",
+		"tstimeline_createtime": "07.06.11 12:19",
+		"tstimeline_creator": "Ticket M",
+		"tstimeline_custvisible": "true",
+		"tstimeline_modtime": "07.06.11 12:21",
+		"tstimeline_text": ""
+	    }
+    ]
+
+},
+{
+	"creator": "Max Mustermann",
+	"createtime": "07.06.11 12:19", 
+	"author": "Max Mustermann",
+	"modtime": "07.06.11 12:21", 
+	"status": "Dispatching",
+	"ticket_id": "279", 
+
+	"subject": "Reparatur von TV M45",
+	"geraet": "Fernseher",
+	"description": "Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisici.",
+
+
+	"contact": [
+		{
+		"anrede": "Herr",
+		"vorname": "Max",
+		"nachname": "Mustermann",
+		"telefon": "0123456780",
+		"email": "max@mustermann.de",
+		"wishesemails": "ja"
+	    },
+	    {
+		"anrede": "Frau",
+		"vorname": "Maxine",
+		"nachname": "Mustermann",
+		"telefon": "0123456789",
+		"email": "maxine@mustermann.de",
+		"wishesmails": "ja"
+	    }
+	],
+  
+	"kundensichtbar": "ja",
+	"faellig": "2011-07-11",
+	"aufwand": "3",
+	"kategorie": "Reparatur",
+	"prioritaet": "hoch", 
+	"abteilung": "Service/Reparatur",
+	"verantwortlicher": "",
+
+	"tsticket_feedbackdue": "2011-07-20", 
+	"tsticket_reporttext": "y",
+	"tsticket_reported_tscategory_id": "Ersetzung",
+	
+	"tstimeline": [
+		{
+		"tstimeline_author": "Max Mustermann",
+		"tstimeline_createtime": "07.06.11 12",
+		"tstimeline_creator": "Max Mustermann",
+		"tstimeline_custvisible": "ja",
+		"tstimeline_modtime": "07.06.11 12:21",
+		"tstimeline_text": ""
+	    },
+	    {
+		"tstimeline_author": "Ticket M",
+		"tstimeline_createtime": "07.06.11 12:19",
+		"tstimeline_creator": "Ticket M",
+		"tstimeline_custvisible": "true",
+		"tstimeline_modtime": "07.06.11 12:21",
+		"tstimeline_text": ""
+	    }
+    ]
+
+}]
