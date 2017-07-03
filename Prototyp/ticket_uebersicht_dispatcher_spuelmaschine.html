@@ -119,11 +119,9 @@
 									</div>
 									<div style="margin-bottom:40px">
 										<h3 id="">
-											#T<span id="ticket_id" class="output">
-										</span>
+											#T745
 										-
-										<span id="subject" class="output">
-										</span>
+										Defekte Sp&uuml;lmaschine
 									</h3>
 								</div>
 								<div class="row">
@@ -131,8 +129,7 @@
 										<b>
 											Ger&auml;t:
 										</b>
-										<span id="geraet" class="output">
-										</span>
+										Sp&uuml;lmaschine
 									</div>
 									<div class="col-xs-5">
 										<div class="pull-right">
@@ -212,9 +209,9 @@
 															<div class="col-sm-10 form-control-static">
 																<div id="anrede" class="output" style="display: inline-block;">
 																</div>															
-																<div class="output" style="display: inline-block;" id="vorname">
+																<div class="output" style="display: inline-block;">Thomas 
 																</div>
-																<div class="output" style="display: inline-block;" id="nachname">
+																<div class="output" style="display: inline-block;">Mustermann
 																</div>
 															</div>
 														</div>
@@ -222,14 +219,14 @@
 															<label for"telefon" class="col-sm-2 control-label">
 																Telefon:
 															</label>
-															<div class="form-control-static output col-sm-10" id="telefon">
+															<div class="form-control-static output col-sm-10">0521/4242667
 															</div>
 														</div>
 														<div class="form-group">
 															<label for"email" class="col-sm-2 control-label">
 																eMail:
 															</label>
-															<div class="form-control-static output col-sm-10" id="email">
+															<div class="form-control-static output col-sm-10">thomasmustermann&#64;gmx.de
 															</div>
 														</div>
 														<div class="form-group">
@@ -372,8 +369,25 @@
 										<div class="chrEntry">
 											<div id="" class="">
 												<div class="entry-text">
-													<div id="message">
-													</div>
+													<h4>Serviceanfrage</h4>
+													<strong>Absender:</strong> Thomas Mustermann
+													<br>
+													<strong>Betreff:</strong> Defekte Sp&uuml;lmaschine
+													<br><br>												Hallo, 
+													<br><br>
+													Meine Sp&uuml;lmaschine Siemens Top Line Serie IQ SN58250/09 zeigt folgendes Problem: Sie w&auml;scht einigerma&szlig;en, sp&uuml;lt wohl (meist) auch klar, trocknet aber nicht. Vielmehr "h&auml;ngt" sie sich im Trocknungsprogramm auf und bleibt dann bei einer Minute Restlaufzeit h&auml;ngen. Wenn ich sie &ouml;ffne, steht dann noch Wasser drin und aus dem unteren Sp&uuml;larm flie&szlig;t auch noch etwas Wasser. 
+
+													<br>
+
+													Wie viel w&uuml;rde mich die Reparatur ca. kosten? 
+                                                    F&uuml;r R&uuml;ckfragen erreichen Sie mich tags&uuml;ber unter der Telefonnummer 0521/4242667.
+
+													<br><br>
+
+													Mit freundlichen Grue&szlig;en,
+
+													<br><br>
+                                                    Thomas Mustermann
 													
 
 													<div style="border-top-style: solid; border-top-width: 1px; margin-top: 10px; padding-top: 10px">
@@ -404,9 +418,9 @@
 											</div>   
 										</div>
 
-
 										
 
+										
 
 
 									</div>
@@ -766,7 +780,7 @@
 											<span class="glyphicon glyphicon-menu-right" aria-hidden="true">
 											</span>
 											<span>
-												Ticket an Dispatcher weitergeben
+												Ticket an Bearbeiter weitergeben
 											</span>
 										</button>
 									</div>
@@ -795,32 +809,37 @@
 
 
 <script type="text/javascript">
+//for loading local json file
+function readTextFile(file, callback) {
+	var rawFile = new XMLHttpRequest();
+	rawFile.overrideMimeType("application/json");
+	rawFile.open("GET", file, true);
+	rawFile.onreadystatechange = function() {
+		if (rawFile.readyState === 4 && rawFile.status == "200") {
+			callback(rawFile.responseText);
+		}
+	}
+	rawFile.send(null);
+}
 
-	//$(document).ready(function () {
-		//var key = getURLParameter('key');
-		//alert(key);
-		//)};
 
-
-
+readTextFile("test.json", function(text){
 
 	//json-File as JS-obj
-	var data = JSON.parse(localStorage.getItem('ticket'+getParameter('key')));
+	var data = JSON.parse(text);
 
     //load vars from json in textelements/inputs etc
-    $("#ticket_id").text("123");
+    $("#ticket_id").text(data.ticket_id);
     //$("#subject").text(data.subject);
     $("#subject_input").val(data.subject);
     $//("#geraet").text(data.geraet);
     $("#geraet_input").val(data.geraet).change();
-    $("#message").html(data.description);
 
-
-    $("#status").text("Entwurf");
-    $("#author").text("Max Mustermann");
-    $("#creator").text("Max Mustermann");
-    $("#createtime").text("01.01.11 14:00");
-    $("#modtime").text("01.01.11 14:00");
+    $("#status").text(data.status);
+    $("#author").text(data.author);
+    $("#creator").text(data.creator);
+    $("#createtime").text(data.createtime);
+    $("#modtime").text(data.modtime);
 
    // $("#kundensichtbar").text(data.kundensichtbar);
    $("#kundensichtbar_input").val([data.kundensichtbar]).change();
@@ -833,22 +852,22 @@
     //$("#abteilung").text(data.abteilung);
     $("#abteilung_input").val(data.abteilung).change();
     //$("#verantwortlicher").text(data.verantwortlicher);
-    //$("#verantwortlicher_input").val(data.verantwortlicher);
+    $("#verantwortlicher_input").val(data.verantwortlicher);
     //$("#aufwand").text(data.aufwand);
     $("#aufwand_input").val(data.aufwand);
 
-    $("#anrede").text(data.anrede);
-    $("#anrede_input").val(data.anrede).change();
-    $("#vorname").text(data.vorname);
-    $("#vorname_input").val(data.vorname);
-    $("#nachname").text(data.nachname);
-    $("#nachname_input").val(data.nachname);
-    $("#telefon").text(data.telefon);
-    $("#telefon_input").val(data.telefon);
-    $("#email").text(data.email);
-    $("#email_input").val(data.email);
+    //$("#anrede").text(data.contact[0].anrede);
+    $("#anrede_input").val(data.contact[0].anrede).change();
+    //$("#vorname").text(data.contact[0].vorname);
+    $("#vorname_input").val(data.contact[0].vorname);
+    //$("#nachname").text(data.contact[0].nachname);
+    $("#nachname_input").val(data.contact[0].nachname);
+    //$("#telefon").text(data.contact[0].telefon);
+    $("#telefon_input").val(data.contact[0].telefon);
+    //$("#email").text(data.contact[0].email);
+    $("#email_input").val(data.contact[0].email);
     //$("#wishesmails").text(data.contact[0].wishesmails);
-    $("#wishesmails_input").val(data.wishesmails).change();
+    $("#wishesmails_input").val(data.contact[0].wishesmails).change();
 
     //fuellt alle vorhandenen Textfelder mit eingegebenen Input
     $('.output').each(function(){
@@ -881,6 +900,7 @@
       	    
 
       	    
+      	});
 
 $('a[href="#tab2"]').on('shown.bs.tab', function (e) {
  // $('#chronik').scrollTop($("#chronik")[0].scrollHeight);
@@ -1060,17 +1080,6 @@ function focusFirstError(){
 	$(document).scrollTop((firstElemWithError.parent()).offset().top);
 };
 
-function getParameter(theParameter) { 
-  var params = window.location.search.substr(1).split('&');
- 
-  for (var i = 0; i < params.length; i++) {
-    var p=params[i].split('=');
-	if (p[0] == theParameter) {
-	  return decodeURIComponent(p[1]);
-	}
-  }
-  return false;
-};
 
 
 

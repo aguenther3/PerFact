@@ -2,7 +2,7 @@
 <html lang="de">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <head>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
@@ -198,6 +198,7 @@
 													<option selected></option>
 													<option value="Kaffeemaschine">Kaffeemaschine</option>
 													<option value="Waschmaschine">Waschmaschine</option>
+                                                    <option value="Spülmaschine">Sp&uuml;lmaschine</option>
 													<option value="Fernseher">Fernseher</option>
 												</select>
 												<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
@@ -692,7 +693,8 @@
 																		aria-hidden="true">
 																		
 																	</span>
-																	<span>Ticket mit &auml;hnlichen Tickets vergleichen (3 Tickets gefunden)</span>
+																	<span>Ticket mit &auml;hnlichen Tickets vergleichen (
+																	<span id=compticketsfound>3</span> Tickets gefunden)</span>
 																	
 
 																	
@@ -934,7 +936,8 @@
   	    //Ticket abschliessen mit Rueckmeldung und Weiterleitung auf Ticket-Liste
 
   	     $('#finishTicket').click(function () {
-
+  	     	var newticketcount = Number(localStorage.getItem('newticketcount'))+3;
+  	     	$('#compticketsfound').text(newticketcount);
   	     	saveNewTicket();
   	    });
 
@@ -965,6 +968,16 @@
 
 
 function saveNewTicket(){
+	var newticketcount = localStorage.getItem('newticketcount');
+	if (newticketcount=='null') {
+		newticketcount = 0;
+	} else {
+		newticketcount++;
+		localStorage.setItem('newticketcount', newticketcount);
+	}
+	//alert(newticketcount+1);
+	var ticketlist = {};
+
 	var ticket = {};
   	    	ticket.subject = $('#subject_input').val();
   	    	ticket.geraet = $('#geraet_input').val();
@@ -985,7 +998,7 @@ function saveNewTicket(){
   	    	ticket.kundensichtbar = $('#kundensichtbar').text();
   	    	
 
-  	    	localStorage.setItem( 'ticket', JSON.stringify(ticket) );
+  	    	localStorage.setItem('ticket'+newticketcount, JSON.stringify(ticket) );
   	    	localStorage.setItem('newticket', true);
 
 };

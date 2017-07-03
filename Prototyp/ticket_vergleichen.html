@@ -126,7 +126,7 @@
                         
                         <br>
                         <small>
-                         3 &auml;hnliche Tickets gefunden:
+                         <span id=compticketsfound>3</span> &auml;hnliche Tickets gefunden:
                        </small>
                        <br>
                        <small>
@@ -1057,11 +1057,15 @@
 
   $(document).ready(function () {
 
+    var newticketcount = Number(localStorage.getItem('newticketcount'))+2;
+          $('#compticketsfound').text(newticketcount);
+
     var comp_ticket_index = 0;
 
     //CREATED TICKET
     //json-File as JS-obj
-    var data = JSON.parse(localStorage.getItem('ticket'));
+    var count = localStorage.getItem('newticketcount')
+    var data = JSON.parse(localStorage.getItem('ticket'+count));
     var similar_tickets = [];
 
     //load vars from json in textelements/inputs etc
@@ -1099,7 +1103,11 @@
 
     //json-File as JS-obj
     similar_tickets = JSON.parse(text);
-
+    var i;
+                for (i=1; i<localStorage.getItem('newticketcount'); i++){
+                    var data2 = JSON.parse(localStorage.getItem('ticket'+i));
+                    similar_tickets[2+i] = data2;
+                  };
     //SIMILAR TICKETS
     //load vars from json in textelements/inputs etc
     load_compTicket(comp_ticket_index, similar_tickets);

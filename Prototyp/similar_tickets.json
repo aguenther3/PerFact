@@ -4,11 +4,12 @@
 	"author": "Max Mustermann",
 	"modtime": "07.06.11 12:21", 
 	"status": "Dispatching",
-	"ticket_id": "345", 
+	"ticket_id": "987", 
 
-	"subject": "Defekte Kaffeemaschine",
-	"geraet": "Kaffeemaschine",
-	"description": "Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisici.",
+	"subject": "Defekte Waschmaschine",
+	"geraet": "Waschmaschine",
+	"description": "Ich habe gestern vor dem Schlafen gehen noch die WAMA eingeschaltet... Heute in der Früh wollte ich die Wäsche aufhängen, aber... Die WAMA war noch halb voll mit Wasser gefüllt. Ich habe dann beim Programm auf PUMPEN gestellt, aber da fängt sie nur an zu surren und sonst nix. Auch die Tür bringe ich in diesem Fall nicht auf. Woran kann das liegen?Freue mich auf eine Antwort.Für Rückfragen erreichen Sie mich tagsüber unter der Telefonnummer 0521/1561259.Mit freundlichen Grüßen,Carsten Mustermann",
+
 
 	"contact": [
 		{
@@ -31,9 +32,9 @@
   
 	"kundensichtbar": "ja",
 	"faellig": "2011-07-11",
-	"aufwand": "3",
+	"aufwand": "5",
 	"kategorie": "Reparatur",
-	"prioritaet": "hoch", 
+	"prioritaet": "niedrig", 
 	"abteilung": "Service/Reparatur",
 	"verantwortlicher": "",
 
@@ -61,34 +62,33 @@
     ]
 
 },
-{
+ {
 	"creator": "Max Mustermann",
 	"createtime": "07.06.11 12:19", 
 	"author": "Max Mustermann",
 	"modtime": "07.06.11 12:21", 
 	"status": "Dispatching",
-	"ticket_id": "987", 
+	"ticket_id": "345", 
 
-	"subject": "Ersatzteil Waschmaschine X123",
-	"geraet": "Waschmaschine",
-	"description": "Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisici.",
-
+	"subject": "Defekte Kaffeemaschine",
+	"geraet": "Kaffeemaschine",
+	"description": "Hallo, vor einem Jahr habe ich die Kaffeemaschine Modell VM810 in Ihrem Online-Shop gekauft. Leider funktioniert die eingebaute Zeitschaltung nicht mehr korrekt. Ich bitte Sie, das Gerät umzutauschen oder zu reparieren. Tagsüber stehe ich Ihnen für Rückfragen unter der Telefonnummer 0521/327850 zur Verfügung. Beste Grüße, Kirsten Musterfrau",
 
 	"contact": [
 		{
-		"anrede": "Herr",
-		"vorname": "Max",
+		"anrede": "Frau",
+		"vorname": "Kirsten",
 		"nachname": "Mustermann",
-		"telefon": "0123456780",
-		"email": "max@mustermann.de",
+		"telefon": "0521327850",
+		"email": "kirsten@mustermann.de",
 		"wishesemails": "ja"
 	    },
 	    {
-		"anrede": "Frau",
-		"vorname": "Maxine",
+		"anrede": "Herr",
+		"vorname": "Jan",
 		"nachname": "Mustermann",
-		"telefon": "0123456789",
-		"email": "maxine@mustermann.de",
+		"telefon": "0521458569",
+		"email": "jan@mustermann.de",
 		"wishesmails": "ja"
 	    }
 	],
@@ -133,9 +133,9 @@
 	"status": "Dispatching",
 	"ticket_id": "279", 
 
-	"subject": "Reparatur von TV M45",
-	"geraet": "Fernseher",
-	"description": "Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met. Lorem ipsum dolor met consectetur adipisici.",
+	"subject": "Defekte Spülmaschine",
+	"geraet": "Spülmaschine",
+	"description": "Meine Spülmaschine Siemens Top Line Serie IQ SN58250/09 zeigt folgendes Problem: Sie wäscht einigermassen, spült wohl (meist) auch klar, trocknet aber nicht. Vielmehr hängt sie sich im Trocknungsprogramm auf und bleibt dann bei einer Minute Restlaufzeit hängen. Wenn ich sie öffne, steht dann noch Wasser drin und aus dem unteren Spülarm fliesst auch noch etwas Wasser. Wie viel würde mich die Reparatur ca. kosten?Für Rückfragen erreichen Sie mich tagsüber unter der Telefonnummer 0521/4242667.Mit freundlichen Grüssen,Thomas Mustermann",
 
 
 	"contact": [
