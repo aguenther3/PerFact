@@ -1168,7 +1168,8 @@
 
 
   function saveNewTicket(){
-    var ticket = JSON.parse(localStorage.getItem('ticket'));
+    var ticketcount = localStorage.getItem('newticketcount');
+    var ticket = JSON.parse(localStorage.getItem('ticket'+ticketcount));
     ticket.subject = $('#subject_input').val();
     ticket.geraet = $('#geraet_input').val();
     ticket.description= tinyMCE.activeEditor.getContent();
@@ -1180,7 +1181,7 @@
     ticket.faellig = $('#faellig_input').val();
 
 
-    localStorage.setItem( 'ticket', JSON.stringify(ticket) );
+    localStorage.setItem( 'ticket'+ticketcount, JSON.stringify(ticket) );
 
   };
 
@@ -1196,7 +1197,7 @@
    $("#comp_ticket_id").text(similar_tickets[comp_ticket_index].ticket_id);
    $("#comp_subject").text(similar_tickets[comp_ticket_index].subject);
    $("#comp_subject2").text(similar_tickets[comp_ticket_index].subject);
-   $("#comp_description").text(similar_tickets[comp_ticket_index].description);
+   $("#comp_description").html(similar_tickets[comp_ticket_index].description);
    $("#comp_geraet").text(similar_tickets[comp_ticket_index].geraet);
    $("#comp_abteilung").text(similar_tickets[comp_ticket_index].abteilung);
    $("#comp_kategorie").text(similar_tickets[comp_ticket_index].kategorie);
