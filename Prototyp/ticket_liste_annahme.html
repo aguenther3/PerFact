@@ -600,11 +600,23 @@
 
                 newTicket.find('#ticket_id').text(rand_id);
                 rand_id = rand_id + 17;
+
+                newTicket.find('#subject2').text("" );
+                newTicket.find('#geraet').text(" ");
+                newTicket.find('#kategorie').text(" ");
+                newTicket.find('#prioritaet').text(" ");
+                newTicket.find('#description').html(" ");
+
                 newTicket.find('#subject2').text(data.subject);
                 newTicket.find('#geraet').text(data.geraet);
                 newTicket.find('#kategorie').text(data.kategorie);
                 newTicket.find('#prioritaet').text(data.prioritaet);
+
+                if(data.chronikCommentCounter == 0 || data.chronikCommentCounter == null){
                 newTicket.find('#description').html(data.description);
+              } else{
+                newTicket.find('#description').html(data.chronikComments[data.chronikCommentCounter]);
+              }
                 //newTicket.find('#description').innerHTML="";
 
                 //alert(data.description);

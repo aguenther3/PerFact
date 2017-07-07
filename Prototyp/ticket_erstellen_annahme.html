@@ -198,7 +198,7 @@
 													<option selected></option>
 													<option value="Kaffeemaschine">Kaffeemaschine</option>
 													<option value="Waschmaschine">Waschmaschine</option>
-                                                    <option value="Spülmaschine">Sp&uuml;lmaschine</option>
+                                                    <option value="Sp&uuml;lmaschine">Sp&uuml;lmaschine</option>
 													<option value="Fernseher">Fernseher</option>
 												</select>
 												<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
@@ -996,6 +996,8 @@ function saveNewTicket(){
   	    	ticket.prioritaet = $('#prioritaet_input').val();
   	    	ticket.faellig = $('#faellig_input').val();
   	    	ticket.kundensichtbar = $('#kundensichtbar').text();
+  	    	ticket.chronikCommentCounter = 0;
+  	    	ticket.chronikComments = [];
   	    	
 
   	    	localStorage.setItem('ticket'+newticketcount, JSON.stringify(ticket) );

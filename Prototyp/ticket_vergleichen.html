@@ -759,6 +759,7 @@
                           <option selected></option>
                           <option value="Kaffeemaschine">Kaffeemaschine</option>
                           <option value="Waschmaschine">Waschmaschine</option>
+                          <option value="Sp&uuml;lmaschine">Sp&uuml;lmaschine</option>
                           <option value="Fernseher">Fernseher</option>
                         </select>
                         <div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
@@ -1172,7 +1173,7 @@
     var ticket = JSON.parse(localStorage.getItem('ticket'+ticketcount));
     ticket.subject = $('#subject_input').val();
     ticket.geraet = $('#geraet_input').val();
-    ticket.description= tinyMCE.activeEditor.getContent();
+    ticket.description= tinyMCE.activeEditor.getContent({format : 'raw'})
 
     ticket.abteilung = $('#abteilung_input').val();
     ticket.aufwand = $('#aufwand_input').val();
@@ -1194,6 +1195,18 @@
 
 
   function load_compTicket(comp_ticket_index, similar_tickets){
+
+   $("#comp_subject").text(" ");
+   $("#comp_subject2").text(" ");
+   $("#comp_description").html(" ");
+   $("#comp_geraet").text(" ");
+   $("#comp_abteilung").text(" ");
+   $("#comp_kategorie").text(" ");
+   $("#comp_prioritaet").text(" ");
+   $("#comp_faellig").text(" ");
+   $("#comp_aufwand").text(" ");
+   $("#comp_kundensichtbar").text(" ");
+
    $("#comp_ticket_id").text(similar_tickets[comp_ticket_index].ticket_id);
    $("#comp_subject").text(similar_tickets[comp_ticket_index].subject);
    $("#comp_subject2").text(similar_tickets[comp_ticket_index].subject);

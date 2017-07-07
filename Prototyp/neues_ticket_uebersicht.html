@@ -494,6 +494,7 @@
 															<option selected></option>
 															<option value="Kaffeemaschine">Kaffeemaschine</option>
 															<option value="Waschmaschine">Waschmaschine</option>
+															<option value="Sp&uuml;lmaschine">Sp&uuml;lmaschine</option>
 															<option value="Fernseher">Fernseher</option>
 														</select>
 														<div class="help-block">Pflichtfeld, bitte ausf&uuml;llen!</div>
@@ -878,12 +879,27 @@
       	    };
 
 
+      //chronik füllen 
+
+ for (var i=1; i<=data.chronikCommentCounter; i++){
+ 	
+
+	var new_entry = $('#chronik').children(':last').clone();
+	new_entry.find('#message').html(data.chronikComments[i]);
+	new_entry.find('#entry-author-name').text("Dispatcher");
+	$('#chronik').append(new_entry);
+}
+
+
+
+
       	    
 
       	    
 
 $('a[href="#tab2"]').on('shown.bs.tab', function (e) {
  // $('#chronik').scrollTop($("#chronik")[0].scrollHeight);
+ 
  var elem = document.getElementById('chronik');
  elem.scrollTop = elem.scrollHeight;
 });
@@ -895,9 +911,13 @@ $('#addComment').click(function () {
 	new_entry.find('#message').html(tinyMCE.activeEditor.getContent({format : 'raw'}));
 	new_entry.find('#entry-author-name').text("Dispatcher");
 	$('#chronik').append(new_entry);
+	saveNewComment(tinyMCE.activeEditor.getContent({format : 'raw'}));
 	//$('#chronik').scrollTop(($('#chronik').children(':last')).offset().top);
 	$("#chronik").animate({ scrollTop: $("#chronik")[0].scrollHeight}, 1000);
 	tinyMCE.activeEditor.setContent("");
+
+
+	
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1028,6 +1048,26 @@ $(document).ready(function () {
   	    	console.log(label);
   	    });
 
+  	    // Prueft bei Tabwechsel alle Pflichtfelder
+  	    $('#saveChanges').click(function (event){
+  	    	checkRequiredForms();
+			//Tabwechsel nur falls keine unausgefuellten pflichtfelder
+			if ($('.has-error').length!=0){ 
+					//alert("error"+$('.tab-pane.active .has-error').length);
+					focusFirstError();
+				} else {
+					//save inmputfields
+					saveChangesTicket();
+					
+					//modal close
+					$('#modal').modal('toggle');
+					//$('#ticket-head').load(document.URL + " #ticket-head");
+					//$('#tab1').load(document.URL + " #tab1");
+					location.reload();
+
+				};
+			});
+
 
 
   	});
@@ -1082,11 +1122,12 @@ function getParameter(theParameter) {
 };
 
 
+
+
 function saveChangesTicket(){
 	var ticket = JSON.parse(localStorage.getItem('ticket'+getParameter('key')));
 	//alert(newticketcount+1);
 
-	var ticket = {};
   	    	ticket.subject = $('#subject_input').val();
   	    	ticket.geraet = $('#geraet_input').val();
   	    	//ticket.description= tinyMCE.activeEditor.getContent();
@@ -1108,6 +1149,20 @@ function saveChangesTicket(){
 
   	    	localStorage.setItem('ticket'+getParameter('key'), JSON.stringify(ticket) );
 
+};
+
+function saveNewComment(newComment){
+
+
+	var ticket = JSON.parse(localStorage.getItem('ticket'+getParameter('key')));
+
+		ticket.chronikCommentCounter = ticket.chronikCommentCounter+1;
+  	    	ticket.chronikComments[ticket.chronikCommentCounter] = newComment;
+
+	localStorage.setItem('ticket'+getParameter('key'), JSON.stringify(ticket) );
+
+	ticket = JSON.parse(localStorage.getItem('ticket'+getParameter('key')));
+	//alert(ticket.chronikCommentCounter + ", "+ticket.chronikComments[ticket.chronikCommentCounter]);
 };
 
 
